@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Router>
-      <div id="preloader"></div>
+      {/* <div id="preloader"></div> */}
       <TopHeader />
       <Header />
       <main className="main">
