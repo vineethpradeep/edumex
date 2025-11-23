@@ -1,0 +1,22 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+const PageTitle = ({ title, current }) => {
+  return (
+    <div className="page-title light-background">
+      <div className="container d-lg-flex justify-content-between align-items-center">
+        <h1 className="mb-2 mb-lg-0">{title}</h1>
+        <nav className="breadcrumbs">
+          <ol>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li className="current">{current}</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  );
+};
+
+export default PageTitle;
