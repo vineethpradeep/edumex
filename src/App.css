@@ -8720,7 +8720,7 @@ section,
 }
 
 .sidebar-card button.enroll-btn {
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
