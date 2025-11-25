@@ -8719,15 +8719,18 @@ section,
   font-family: inherit;
 }
 
-.sidebar-card button.enroll-btn {
+.sidebar-card button.enroll-btn,
+.sidebar-card a.enroll-btn {
   background-color: var(--accent-color);
   color: var(--contrast-color);
 }
 
-.sidebar-card button.enroll-btn:hover {
+.sidebar-card button.enroll-btn:hover,
+.sidebar-card a.enroll-btn:hover {
   background-color: color-mix(in srgb, var(--secondary-color), black 10%);
 }
 
-.sidebar-card button.buy-btn {
+.sidebar-card button.buy-btn,
+.sidebar-card a.buy-btn {
   border: 1px solid var(--accent-color);
 }

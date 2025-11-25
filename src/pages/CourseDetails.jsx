@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useMemo } from "react";
 import CurriculumModule from "../components/CurriculumModule";
 import PageTitle from "../components/PageTitle";
@@ -149,9 +149,12 @@ const CourseDetails = () => {
                 </div>
 
                 {/* Enroll / Buy Buttons */}
-                <button className="btn w-100 mb-2 fw-semibold enroll-btn">
+                <Link
+                  to="/enroll"
+                  className="btn w-100 mb-2 fw-semibold enroll-btn"
+                >
                   Enroll Now
-                </button>
+                </Link>
                 <button className="btn w-100 mb-4 fw-semibold buy-btn">
                   Buy Now
                 </button>
