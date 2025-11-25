@@ -103,7 +103,7 @@ const CourseDetails = () => {
                 <img
                   src={course.image}
                   alt={course.title}
-                  className="img-fluid rounded mb-3"
+                  className="img-fluid rounded mb-3 fixed-height-img"
                 />
 
                 {/* Offer */}

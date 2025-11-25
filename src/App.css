@@ -8734,3 +8734,10 @@ section,
 .sidebar-card a.buy-btn {
   border: 1px solid var(--accent-color);
 }
+
+.fixed-height-img {
+  width: 100%;
+  height: 250px !important;
+  object-fit: cover;
+  border-radius: 8px;
+}
