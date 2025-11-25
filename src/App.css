@@ -17,6 +17,7 @@
   --accent-color-light: #3b82f6;
   --accent-color-dark: #1e40af;
   --border-color: #e2e8f0;
+  --tag-level-color: #d9a403;
   --light-gray-color: rgba(255, 255, 255, 0.515);
 }
 
@@ -674,6 +675,15 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
+.page-title button {
+  border-color: 1px solid var(--accent-color);
+}
+
+.page-title button:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -1161,8 +1171,9 @@ section,
 }
 
 .featured-courses .course-meta span.level {
-  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  background: color-mix(in srgb, var(--tag-level-color), transparent 85%);
   color: var(--accent-color);
+  border: 1px solid var(--tag-level-color);
 }
 
 .featured-courses .course-meta span.duration {
@@ -2588,7 +2599,7 @@ section,
   gap: 10px;
 }
 
-.courses-2 .course-filters .filter-checkbox {
+/* .courses-2 .course-filters .filter-checkbox {
   position: relative;
   display: flex;
   align-items: center;
@@ -2642,7 +2653,43 @@ section,
   border: solid var(--contrast-color);
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
+} */
+
+.courses-2 .course-filters .filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border: 1px solid var(--default-color);
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: var(--surface-color);
+  color: var(--default-color);
 }
+
+.courses-2 .course-filters .filter-pill input {
+  display: none;
+}
+
+.courses-2 .course-filters .filter-pill:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.courses-2 .course-filters .filter-pill input:checked+span,
+.courses-2 .course-filters .filter-pill input:checked~span {
+  font-weight: 600;
+  color: var(--contrast-color);
+}
+
+.courses-2 .course-filters .filter-pill input:checked~span {
+  background: var(--accent-color);
+  color: #fff;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
 
 .courses-2 .courses-header {
   display: flex;
@@ -2769,7 +2816,7 @@ section,
   position: absolute;
   top: 15px;
   right: 15px;
-  background-color: #28a745;
+  background-color: var(--secondary-color);
   color: var(--contrast-color);
   padding: 8px 15px;
   border-radius: 20px;
@@ -2804,7 +2851,7 @@ section,
 }
 
 .courses-2 .courses-grid .course-content .course-meta span.level {
-  background-color: color-mix(in srgb, var(--heading-color), transparent 85%);
+  background-color: color-mix(in srgb, var(--tag-level-color) 15%, transparent);
   color: var(--heading-color);
 }
 
@@ -4539,6 +4586,51 @@ section,
   font-size: 14px;
   margin: 0;
 }
+
+.stat-box {
+  transition: background-color 0.2s ease;
+}
+
+.stat-box:hover {
+  background-color: #f1f3f5;
+  cursor: pointer;
+}
+
+.learn-item {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.learn-item:hover {
+  background-color: #f1f3f5;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.badge {
+  font-size: 0.85rem;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+}
+
+.badge i {
+  font-size: 0.9rem;
+}
+
+
+.modern-input {
+  border-radius: 6px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.modern-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.hover-primary:hover {
+  color: #0d6efd !important;
+}
+
 
 .instructor-profile .sidebar-widgets .achievements-widget .achievement-list {
   display: flex;
@@ -8600,4 +8692,42 @@ section,
   background: #dbe8ff;
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+
+
+.cat-card-square {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* ensures square shape */
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cat-card-square:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.sidebar-card h3.fw-bold {
+  font-family: inherit;
+}
+
+.sidebar-card button.enroll-btn {
+  background-color: var(--secondary-color);
+  color: var(--contrast-color);
+}
+
+.sidebar-card button.enroll-btn:hover {
+  background-color: color-mix(in srgb, var(--secondary-color), black 10%);
+}
+
+.sidebar-card button.buy-btn {
+  border: 1px solid var(--accent-color);
 }

@@ -12,50 +12,38 @@ export default function ContactSection() {
         setMapHeight(contentRef.current.offsetHeight);
       }
     };
-
     updateHeight();
     window.addEventListener("resize", updateHeight);
     return () => window.removeEventListener("resize", updateHeight);
   }, []);
 
   return (
-    <main className="main">
+    <main className="main bg-light">
       <PageTitle title="Contact Us" current="Contact" />
       <section id="contact" className="contact section">
         <div className="container" data-aos="fade-up" data-aos-delay="100">
-          <div
-            className="contact-main-wrapper d-flex flex-wrap"
-            style={{ gap: "30px", alignItems: "stretch" }}
-          >
+          <div className="row g-4 align-items-stretch">
             {/* Map */}
-            <div
-              className="map-wrapper flex-grow-1"
-              style={{
-                minWidth: "300px",
-                flex: "1 1 45%",
-                height: mapHeight,
-                borderRadius: "8px",
-                overflow: "hidden",
-              }}
-            >
-              <iframe
-                title="map"
-                src="https://www.google.com/maps?q=19+Mansel+Street,+Swansea,+SA1+5SG,+UK&output=embed"
-                style={{ border: 0, width: "100%", height: "100%" }}
-                allowFullScreen
-                loading="lazy"
-              />
+            <div className="col-lg-6">
+              <div
+                className="map-wrapper rounded shadow-sm overflow-hidden h-100"
+                style={{ height: mapHeight }}
+              >
+                <iframe
+                  title="map"
+                  src="https://www.google.com/maps?q=19+Mansel+Street,+Swansea,+SA1+5SG,+UK&output=embed"
+                  style={{ border: 0, width: "100%", height: "100%" }}
+                  allowFullScreen
+                  loading="lazy"
+                />
+              </div>
             </div>
 
             {/* Right Section */}
-            <div
-              className="contact-content flex-grow-1"
-              style={{ minWidth: "300px", flex: "1 1 45%" }}
-              ref={contentRef}
-            >
+            <div className="col-lg-6" ref={contentRef}>
               {/* Cards */}
               <div
-                className="contact-cards-container"
+                className="contact-cards-container mb-4"
                 data-aos="fade-up"
                 data-aos-delay="300"
               >
@@ -64,19 +52,16 @@ export default function ContactSection() {
                   title="Location"
                   text="19 Mansel Street, Swansea, SA1 5SG. United Kingdom"
                 />
-
                 <ContactCard
                   icon="bi bi-envelope"
                   title="Email"
                   text="support@edumex.co.uk"
                 />
-
                 <ContactCard
                   icon="bi bi-telephone"
                   title="Call"
                   text="+44(0) 7831 533 017"
                 />
-
                 <ContactCard
                   icon="bi bi-clock"
                   title="Open Hours"
@@ -86,12 +71,12 @@ export default function ContactSection() {
 
               {/* Form */}
               <div
-                className="contact-form-container"
+                className="contact-form-container p-4 rounded shadow-sm bg-white"
                 data-aos="fade-up"
                 data-aos-delay="400"
               >
-                <h3>Get in Touch</h3>
-                <p>
+                <h3 className="fw-semibold mb-2">Get in Touch</h3>
+                <p className="text-muted mb-4">
                   Feel free to reach out with any queries — our team will assist
                   you as soon as possible.
                 </p>
@@ -101,16 +86,15 @@ export default function ContactSection() {
                     <div className="col-md-6">
                       <input
                         type="text"
-                        className="form-control modern-input"
+                        className="form-control form-control-lg modern-input"
                         placeholder="Your Name"
                         required
                       />
                     </div>
-
                     <div className="col-md-6">
                       <input
                         type="email"
-                        className="form-control modern-input"
+                        className="form-control form-control-lg modern-input"
                         placeholder="Your Email"
                         required
                       />
@@ -119,37 +103,37 @@ export default function ContactSection() {
 
                   <input
                     type="text"
-                    className="form-control modern-input mt-3"
+                    className="form-control form-control-lg modern-input mt-3"
                     placeholder="Subject"
                     required
                   />
 
                   <textarea
-                    className="form-control modern-input mt-3"
+                    className="form-control form-control-lg modern-input mt-3"
                     rows="5"
                     placeholder="Message"
                     required
                   ></textarea>
 
-                  <div className="form-submit mt-3 d-flex align-items-center justify-content-between">
+                  <div className="form-submit mt-4 d-flex align-items-center justify-content-between">
                     <button
                       type="submit"
-                      className="btn-submit btn btn-primary"
+                      className="btn btn-primary btn-lg fw-semibold"
                     >
                       Send Message
                     </button>
 
-                    <div className="social-links d-flex gap-2">
-                      <a href="#">
+                    <div className="social-links d-flex gap-3 fs-5">
+                      <a href="#" className="text-muted hover-primary">
                         <i className="bi bi-twitter"></i>
                       </a>
-                      <a href="#">
+                      <a href="#" className="text-muted hover-primary">
                         <i className="bi bi-facebook"></i>
                       </a>
-                      <a href="#">
+                      <a href="#" className="text-muted hover-primary">
                         <i className="bi bi-instagram"></i>
                       </a>
-                      <a href="#">
+                      <a href="#" className="text-muted hover-primary">
                         <i className="bi bi-linkedin"></i>
                       </a>
                     </div>

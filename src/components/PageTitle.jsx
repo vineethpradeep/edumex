@@ -1,17 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const PageTitle = ({ title, current }) => {
+const PageTitle = ({ current }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="page-title light-background">
-      <div className="container d-lg-flex justify-content-between align-items-center">
-        <h1 className="mb-2 mb-lg-0">{title}</h1>
+    <div className="page-title light-background py-3 border-bottom">
+      <div className="container d-flex justify-content-between align-items-center">
+        {/* Back Button */}
+        <button
+          onClick={() => navigate(-1)}
+          className="btn d-flex align-items-center"
+        >
+          <i className="bi bi-arrow-left me-2"></i> Back
+        </button>
+
+        {/* Breadcrumbs */}
         <nav className="breadcrumbs">
-          <ol>
-            <li>
-              <Link to="/">Home</Link>
+          <ol className="breadcrumb mb-0">
+            <li className="breadcrumb-item">
+              <Link to="/" className="text-decoration-none text-muted">
+                Home
+              </Link>
             </li>
-            <li className="current">{current}</li>
+            <li
+              className="breadcrumb-item active fw-semibold"
+              aria-current="page"
+            >
+              {current}
+            </li>
           </ol>
         </nav>
       </div>

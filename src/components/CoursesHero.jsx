@@ -109,7 +109,7 @@ const CoursesHero = () => {
                       <i className="bi bi-code-slash"></i>
                     </div>
                     <div className="card-content">
-                      <h6>Web Development</h6>
+                      <h6>Tech Coding Courses</h6>
                       <span>2,450 Students</span>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ const CoursesHero = () => {
                       <i className="bi bi-palette"></i>
                     </div>
                     <div className="card-content">
-                      <h6>UI/UX Design</h6>
+                      <h6>Creative Design</h6>
                       <span>1,890 Students</span>
                     </div>
                   </div>
@@ -137,7 +137,7 @@ const CoursesHero = () => {
                       <i className="bi bi-graph-up"></i>
                     </div>
                     <div className="card-content">
-                      <h6>Digital Marketing</h6>
+                      <h6>Skilles Development</h6>
                       <span>3,200 Students</span>
                     </div>
                   </div>
