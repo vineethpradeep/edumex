@@ -1,0 +1,634 @@
+{
+  "programmes": [
+    {
+      "id": 1,
+      "programme": "International Higher Diploma",
+      "classes": [
+        {
+          "id": 101,
+          "level": "Higher Diploma",
+          "courses": [
+            {
+              "id": 1001,
+              "category": "Qualification",
+              "title": "International Higher Diploma Business Management & Marketing",
+              "description": "Advanced programme covering business, marketing strategy, digital marketing, operations and leadership.",
+              "image": "/assets/img/scratch_CS_Level1.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": [
+                "Business",
+                "Marketing",
+                "Management",
+                "Tourism",
+                "Hospitality"
+              ],
+              "whatYouLearn": [
+                "Business fundamentals",
+                "Marketing strategies",
+                "Leadership and management skills",
+                "Digital marketing concepts"
+              ],
+              "subcourses": [
+                {
+                  "id": 10011,
+                  "title": "International Higher Diploma Tourism & Hospital Management",
+                  "overview": "This course equips learners with in-depth understanding of tourism operations, hospitality management, customer service excellence and global tourism trends.",
+                  "tags": [
+                    "Tourism",
+                    "Hospitality",
+                    "Customer Service",
+                    "Operations"
+                  ],
+                  "whatYouLearn": [
+                    "Hospitality operations",
+                    "Tourism sector insights",
+                    "Customer experience management",
+                    "Global tourism trends"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Fundamentals of Tourism",
+                      "units": [
+                        {
+                          "title": "Introduction to Global Tourism",
+                          "duration": "22 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Tourism Sectors & Trends",
+                          "duration": "30 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Hospitality Management",
+                      "units": [
+                        {
+                          "title": "Hotel Operations & Services",
+                          "duration": "35 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Food & Beverage Management",
+                          "duration": "40 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 3: Guest Relations",
+                      "units": [
+                        {
+                          "title": "Customer Experience in Tourism",
+                          "duration": "25 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Handling Complaints & Service Recovery",
+                          "duration": "28 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Business Fundamentals",
+                  "units": [
+                    {
+                      "title": "Introduction to Business",
+                      "duration": "20 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Business Environment Overview",
+                      "duration": "25 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: Marketing & Strategy",
+                  "units": [
+                    {
+                      "title": "Marketing Basics",
+                      "duration": "28 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Digital Marketing",
+                      "duration": "32 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 3: Operations & Leadership",
+                  "units": [
+                    {
+                      "title": "Leadership Principles",
+                      "duration": "30 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Operations Management",
+                      "duration": "35 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1002,
+              "category": "Qualification",
+              "title": "International Higher Diploma Social Psychology",
+              "description": "A comprehensive psychology programme exploring human behaviour, relationships, emotions and cognitive science.",
+              "image": "/assets/img/social_psychology.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": ["Social Psychology", "Behavior", "Healthcare"],
+              "whatYouLearn": [
+                "Foundations of social psychology",
+                "Behavioral analysis",
+                "Group dynamics",
+                "Cognitive processes"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Introduction to Social Psychology",
+                  "units": [
+                    {
+                      "title": "Foundations of Social Thinking",
+                      "duration": "20 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Attitudes & Behaviour",
+                      "duration": "26 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: Group & Social Influence",
+                  "units": [
+                    {
+                      "title": "Social Norms",
+                      "duration": "25 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Group Dynamics",
+                      "duration": "32 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1003,
+              "category": "Qualification",
+              "title": "International Higher Diploma LAW",
+              "description": "Covers the fundamentals of law, criminal justice, legal systems and international legal frameworks.",
+              "image": "/assets/img/international_law.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": ["Law", "Legal", "Arbitration", "Construction"],
+              "whatYouLearn": [
+                "Legal systems overview",
+                "Criminal law principles",
+                "International law frameworks",
+                "Arbitration processes"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Introduction to Law",
+                  "units": [
+                    {
+                      "title": "Legal Systems Overview",
+                      "duration": "22 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Principles of Criminal Law",
+                      "duration": "34 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: International Law",
+                  "units": [
+                    {
+                      "title": "Human Rights Law",
+                      "duration": "28 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Legal Ethics & Responsibility",
+                      "duration": "26 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1004,
+              "category": "Qualification",
+              "title": "International Higher Diploma English",
+              "description": "A professional English training programme covering communication, advanced grammar, writing, and academics.",
+              "image": "/assets/img/international_english.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": ["English", "Communication", "Grammar", "Writing"],
+              "whatYouLearn": [
+                "Effective communication",
+                "Advanced grammar",
+                "Writing & reading proficiency",
+                "Academic English skills"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Academic English Skills",
+                  "units": [
+                    {
+                      "title": "Essay Writing Techniques",
+                      "duration": "20 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Formal Communication",
+                      "duration": "25 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1005,
+              "category": "Qualification",
+              "title": "International Higher Diploma Computing",
+              "description": "Covers programming, networking, databases, web development and modern computing systems.",
+              "image": "/assets/img/higher_computing.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": [
+                "Computing",
+                "Programming",
+                "Networking",
+                "Web Development"
+              ],
+              "whatYouLearn": [
+                "Programming basics",
+                "Networking concepts",
+                "Database management",
+                "Web development fundamentals"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Fundamentals of Computing",
+                  "units": [
+                    {
+                      "title": "Computer Systems & OS",
+                      "duration": "24 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Networking Basics",
+                      "duration": "28 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: Programming Concepts",
+                  "units": [
+                    {
+                      "title": "Variables & Logic",
+                      "duration": "30 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Functions & Algorithms",
+                      "duration": "34 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1006,
+              "category": "Qualification",
+              "title": "International Higher Diploma Engineering",
+              "description": "A wide-ranging engineering programme covering civil, mechanical, electrical, electronics and quantity surveying.",
+              "image": "/assets/img/engineering.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": [
+                "Engineering",
+                "Civil",
+                "Mechanical",
+                "Electrical",
+                "Electronics",
+                "Procurement",
+                "Logistics",
+                "Supply Chain"
+              ],
+              "whatYouLearn": [
+                "Engineering fundamentals",
+                "Civil & Mechanical principles",
+                "Electrical & Electronics basics",
+                "Project & Quantity Surveying skills"
+              ],
+              "subcourses": [
+                {
+                  "id": 10061,
+                  "title": "International Higher Diploma Procurement Management",
+                  "overview": "This course equips learners with procurement, supply chain, vendor management and strategic sourcing skills.",
+                  "tags": [
+                    "Procurement",
+                    "Supply Chain",
+                    "Vendor Management",
+                    "Sourcing"
+                  ],
+                  "whatYouLearn": [
+                    "Procurement process",
+                    "Supply chain management",
+                    "Vendor selection & evaluation",
+                    "Strategic sourcing"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Procurement Foundations",
+                      "units": [
+                        {
+                          "title": "Principles of Procurement",
+                          "duration": "25 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Procurement Planning",
+                          "duration": "30 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Logistics & Warehousing",
+                      "units": [
+                        {
+                          "title": "Warehousing Operations",
+                          "duration": "40 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Vendor Management",
+                          "duration": "35 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 10062,
+                  "title": "International Higher Diploma Logistics and Supply Chain",
+                  "overview": "Covers key logistics processes, transportation systems, operations and inventory management.",
+                  "tags": [
+                    "Logistics",
+                    "Supply Chain",
+                    "Transportation",
+                    "Inventory"
+                  ],
+                  "whatYouLearn": [
+                    "Logistics operations",
+                    "Transportation management",
+                    "Inventory control",
+                    "Supply chain planning"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Logistics Operations",
+                      "units": [
+                        {
+                          "title": "Transport Systems Overview",
+                          "duration": "26 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Freight & Shipping",
+                          "duration": "35 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Supply Chain Planning",
+                      "units": [
+                        {
+                          "title": "Inventory Control Techniques",
+                          "duration": "28 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Demand Forecasting",
+                          "duration": "33 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "courseStructure": []
+            },
+
+            {
+              "id": 1007,
+              "category": "Qualification",
+              "title": "International Higher Diploma Arts & Science",
+              "description": "Covers arts, humanities, cultural studies and applied science subjects.",
+              "image": "/assets/img/arts_science.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": ["Arts", "Science", "Humanities", "Culture"],
+              "whatYouLearn": [
+                "Arts & humanities understanding",
+                "Cultural awareness",
+                "Scientific basics",
+                "Creative expression"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Arts & Humanities",
+                  "units": [
+                    {
+                      "title": "World Culture & History",
+                      "duration": "30 min",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Creative Expression",
+                      "duration": "22 min",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1008,
+              "category": "Qualification",
+              "title": "International Higher Diploma Education",
+              "description": "Covers child development, teacher training, learning psychology and modern teaching strategies.",
+              "image": "/assets/img/education.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "duration": "6–12 Months",
+              "tags": [
+                "Education",
+                "Child Development",
+                "Teacher Training",
+                "Pedagogy"
+              ],
+              "whatYouLearn": [
+                "Child development",
+                "Teaching strategies",
+                "Learning psychology",
+                "Curriculum planning"
+              ],
+              "subcourses": [
+                {
+                  "id": 10081,
+                  "title": "International Higher Diploma Teacher Education",
+                  "overview": "Professional programme for teachers focusing on pedagogy, classroom management and educational psychology.",
+                  "tags": [
+                    "Teacher Education",
+                    "Pedagogy",
+                    "Classroom Management",
+                    "Educational Psychology"
+                  ],
+                  "whatYouLearn": [
+                    "Teaching methodologies",
+                    "Curriculum planning",
+                    "Assessment techniques",
+                    "Classroom management"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Teacher Development",
+                      "units": [
+                        {
+                          "title": "Teaching Methodologies",
+                          "duration": "22 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Curriculum Planning",
+                          "duration": "30 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Classroom Practice",
+                      "units": [
+                        {
+                          "title": "Student Assessment",
+                          "duration": "33 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Managing Learning Environments",
+                          "duration": "28 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 10082,
+                  "title": "International Higher Diploma Child Education",
+                  "overview": "Specialized programme in child teaching, psychology, learning behaviour and classroom activities.",
+                  "tags": [
+                    "Child Education",
+                    "Child Development",
+                    "Learning",
+                    "Psychology"
+                  ],
+                  "whatYouLearn": [
+                    "Child development stages",
+                    "Learning psychology",
+                    "Activity-based teaching",
+                    "Classroom creativity"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Child Development",
+                      "units": [
+                        {
+                          "title": "Cognitive Development Stages",
+                          "duration": "24 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Child Behaviour",
+                          "duration": "26 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Practical Teaching",
+                      "units": [
+                        {
+                          "title": "Activity-Based Learning",
+                          "duration": "35 min",
+                          "icon": "bi bi-play-circle"
+                        },
+                        {
+                          "title": "Classroom Creativity",
+                          "duration": "30 min",
+                          "icon": "bi bi-play-circle"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "courseStructure": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
