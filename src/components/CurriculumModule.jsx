@@ -32,9 +32,9 @@ const CurriculumModule = ({ module, lessons = [], lessonsCount }) => {
             >
               <i className="bi bi-play-circle me-2 text-primary"></i>
               <span className="flex-grow-1">{lesson.title}</span>
-              {/* {lesson.duration && (
-                <small className="text-muted">{lesson.duration}</small>
-              )} */}
+              {lesson.credits && (
+                <small className="text-muted">{lesson.credits} credits</small>
+              )}
             </li>
           ))}
         </ul>

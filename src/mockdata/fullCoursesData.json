@@ -16,7 +16,15 @@
               "image": "/assets/img/scratch_CS_Level1.png",
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
               "tags": [
                 "Business",
                 "Marketing",
@@ -24,6 +32,7 @@
                 "Tourism",
                 "Hospitality"
               ],
+              "duration": "8 Weeks",
               "whatYouLearn": [
                 "Business fundamentals",
                 "Marketing strategies",
@@ -53,12 +62,12 @@
                       "units": [
                         {
                           "title": "Introduction to Global Tourism",
-                          "duration": "22 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Tourism Sectors & Trends",
-                          "duration": "30 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -68,12 +77,12 @@
                       "units": [
                         {
                           "title": "Hotel Operations & Services",
-                          "duration": "35 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Food & Beverage Management",
-                          "duration": "40 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -83,12 +92,12 @@
                       "units": [
                         {
                           "title": "Customer Experience in Tourism",
-                          "duration": "25 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Handling Complaints & Service Recovery",
-                          "duration": "28 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -102,12 +111,12 @@
                   "units": [
                     {
                       "title": "Introduction to Business",
-                      "duration": "20 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Business Environment Overview",
-                      "duration": "25 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -117,12 +126,12 @@
                   "units": [
                     {
                       "title": "Marketing Basics",
-                      "duration": "28 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Digital Marketing",
-                      "duration": "32 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -132,12 +141,12 @@
                   "units": [
                     {
                       "title": "Leadership Principles",
-                      "duration": "30 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Operations Management",
-                      "duration": "35 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -153,8 +162,17 @@
               "image": "/assets/img/social_psychology.png",
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": ["Social Psychology", "Behavior", "Healthcare"],
+              "duration": "8 Weeks",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "whatYouLearn": [
                 "Foundations of social psychology",
                 "Behavioral analysis",
@@ -168,12 +186,12 @@
                   "units": [
                     {
                       "title": "Foundations of Social Thinking",
-                      "duration": "20 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Attitudes & Behaviour",
-                      "duration": "26 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -183,12 +201,12 @@
                   "units": [
                     {
                       "title": "Social Norms",
-                      "duration": "25 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Group Dynamics",
-                      "duration": "32 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -200,15 +218,24 @@
               "id": 1003,
               "category": "Qualification",
               "title": "International Higher Diploma LAW",
-              "description": "Covers the fundamentals of law, criminal justice, legal systems and international legal frameworks.",
+              "description": "Covers the fundamentals of law, crial justice, legal systems and international legal frameworks.",
               "image": "/assets/img/international_law.png",
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": ["Law", "Legal", "Arbitration", "Construction"],
+              "duration": "8 Weeks",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "whatYouLearn": [
                 "Legal systems overview",
-                "Criminal law principles",
+                "Crial law principles",
                 "International law frameworks",
                 "Arbitration processes"
               ],
@@ -219,12 +246,12 @@
                   "units": [
                     {
                       "title": "Legal Systems Overview",
-                      "duration": "22 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
-                      "title": "Principles of Criminal Law",
-                      "duration": "34 min",
+                      "title": "Principles of Crial Law",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -234,12 +261,12 @@
                   "units": [
                     {
                       "title": "Human Rights Law",
-                      "duration": "28 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Legal Ethics & Responsibility",
-                      "duration": "26 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -255,8 +282,17 @@
               "image": "/assets/img/international_english.png",
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": ["English", "Communication", "Grammar", "Writing"],
+              "duration": "8 Weeks",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "whatYouLearn": [
                 "Effective communication",
                 "Advanced grammar",
@@ -270,12 +306,12 @@
                   "units": [
                     {
                       "title": "Essay Writing Techniques",
-                      "duration": "20 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Formal Communication",
-                      "duration": "25 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -287,19 +323,28 @@
               "id": 1005,
               "category": "Qualification",
               "title": "International Higher Diploma Computing",
-              "description": "Covers programming, networking, databases, web development and modern computing systems.",
+              "description": "Covers programg, networking, databases, web development and modern computing systems.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "image": "/assets/img/higher_computing.png",
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": [
                 "Computing",
-                "Programming",
+                "Programg",
                 "Networking",
                 "Web Development"
               ],
+              "duration": "8 Weeks",
               "whatYouLearn": [
-                "Programming basics",
+                "Programg basics",
                 "Networking concepts",
                 "Database management",
                 "Web development fundamentals"
@@ -311,27 +356,27 @@
                   "units": [
                     {
                       "title": "Computer Systems & OS",
-                      "duration": "24 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Networking Basics",
-                      "duration": "28 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
                 },
                 {
-                  "module": "Module 2: Programming Concepts",
+                  "module": "Module 2: Programg Concepts",
                   "units": [
                     {
                       "title": "Variables & Logic",
-                      "duration": "30 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Functions & Algorithms",
-                      "duration": "34 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -344,10 +389,18 @@
               "category": "Qualification",
               "title": "International Higher Diploma Engineering",
               "description": "A wide-ranging engineering programme covering civil, mechanical, electrical, electronics and quantity surveying.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
               "image": "/assets/img/engineering.png",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": [
                 "Engineering",
                 "Civil",
@@ -358,6 +411,7 @@
                 "Logistics",
                 "Supply Chain"
               ],
+              "duration": "8 Weeks",
               "whatYouLearn": [
                 "Engineering fundamentals",
                 "Civil & Mechanical principles",
@@ -387,12 +441,12 @@
                       "units": [
                         {
                           "title": "Principles of Procurement",
-                          "duration": "25 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Procurement Planning",
-                          "duration": "30 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -402,12 +456,12 @@
                       "units": [
                         {
                           "title": "Warehousing Operations",
-                          "duration": "40 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Vendor Management",
-                          "duration": "35 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -436,12 +490,12 @@
                       "units": [
                         {
                           "title": "Transport Systems Overview",
-                          "duration": "26 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Freight & Shipping",
-                          "duration": "35 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -451,12 +505,12 @@
                       "units": [
                         {
                           "title": "Inventory Control Techniques",
-                          "duration": "28 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Demand Forecasting",
-                          "duration": "33 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -472,11 +526,19 @@
               "category": "Qualification",
               "title": "International Higher Diploma Arts & Science",
               "description": "Covers arts, humanities, cultural studies and applied science subjects.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
               "image": "/assets/img/arts_science.png",
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": ["Arts", "Science", "Humanities", "Culture"],
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "whatYouLearn": [
                 "Arts & humanities understanding",
                 "Cultural awareness",
@@ -490,12 +552,12 @@
                   "units": [
                     {
                       "title": "World Culture & History",
-                      "duration": "30 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     },
                     {
                       "title": "Creative Expression",
-                      "duration": "22 min",
+                      "credits": "20",
                       "icon": "bi bi-play-circle"
                     }
                   ]
@@ -508,10 +570,18 @@
               "category": "Qualification",
               "title": "International Higher Diploma Education",
               "description": "Covers child development, teacher training, learning psychology and modern teaching strategies.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
               "image": "/assets/img/education.png",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
               "badge": "Qualification",
               "level": "Diploma",
-              "duration": "6–12 Months",
+              "credits": "20",
               "tags": [
                 "Education",
                 "Child Development",
@@ -547,12 +617,12 @@
                       "units": [
                         {
                           "title": "Teaching Methodologies",
-                          "duration": "22 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Curriculum Planning",
-                          "duration": "30 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -562,12 +632,12 @@
                       "units": [
                         {
                           "title": "Student Assessment",
-                          "duration": "33 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Managing Learning Environments",
-                          "duration": "28 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -596,12 +666,12 @@
                       "units": [
                         {
                           "title": "Cognitive Development Stages",
-                          "duration": "24 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Child Behaviour",
-                          "duration": "26 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -611,12 +681,12 @@
                       "units": [
                         {
                           "title": "Activity-Based Learning",
-                          "duration": "35 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         },
                         {
                           "title": "Classroom Creativity",
-                          "duration": "30 min",
+                          "credits": "20",
                           "icon": "bi bi-play-circle"
                         }
                       ]
@@ -625,6 +695,106 @@
                 }
               ],
               "courseStructure": []
+            },
+
+            {
+              "id": 1009,
+              "category": "Qualification",
+              "title": "Level 4 & 5 Extended Diploma in Quantity Surveying",
+              "description": "This programme opens the door to the modern construction world, guiding learners into the art and science of quantity surveying. It equips you with the practical knowledge needed to support cost planning, procurement, contract management, and the financial control of construction projects. Across Levels 4 and 5, you’ll build your capabilities step-by-step from understanding measurement and estimating, to handling variations, claims, and contract adistration within real-world project environments, including large-scale developments. Completing this diploma also provides a pathway to progress directly into the final stages of a relevant university degree, enabling you to advance toward a BSc (Hons) in Quantity Surveying with advanced entry.",
+              "image": "/assets/img/quantity_surveying.png",
+              "assessments": "Coursework and assignments",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": ["Finance", "Accounting", "Auditing", "Investment"],
+              "duration": "18 Months",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
+              "entryRequirements": "Open to learners aged 17+ with a Level 3 qualification in Quantity Surveying or an equivalent pathway. If you’re ready to step into the construction world, this course welcomes you",
+              "whatYouLearn": [
+                "Financial management basics",
+                "Accounting principles",
+                "Auditing techniques",
+                "Investment strategies"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Level 4",
+                  "units": [
+                    {
+                      "title": "Academic Writing & Digital Skills",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Construction Technology & Sustainability",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Quantity Surveying Fundamentals",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Materials & Building Science",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Measurement, Estimating & Tendering",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "QS Mathematics",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                },
+                {
+                  "module": "Level 5",
+                  "units": [
+                    {
+                      "title": "Site Surveying & Field Techniques",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "QS Practice for Complex Projects",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Industry Research & Career Skills",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Contracts & Construction Management ",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "MEP Services",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    },
+                    {
+                      "title": "Final Research Project",
+                      "credits": "20",
+                      "icon": "bi bi-play-circle"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

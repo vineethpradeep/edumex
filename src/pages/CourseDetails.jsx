@@ -23,6 +23,7 @@ const CourseDetails = () => {
 
   const whatYouLearn = course.whatYouLearn || [];
   const hasSubcourses = course.subcourses && course.subcourses.length > 0;
+  const tags = course.tags || [];
 
   const curriculum =
     course.courseStructure?.map((mod) => ({
@@ -43,21 +44,7 @@ const CourseDetails = () => {
               <p className="text-muted mb-4">{course.description}</p>
               {!hasSubcourses && (
                 <>
-                  {/* {whatYouLearn.length > 0 && (
-                    <>
-                      <h3 className="fw-semibold mb-3">What you'll learn</h3>
-                      <ul className="list-unstyled ms-2 mb-4">
-                        {whatYouLearn.map((item, idx) => (
-                          <li key={idx} className="d-flex mb-2">
-                            <i className="bi bi-check-circle-fill text-success me-2"></i>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </>
-                  )} */}
-
-                  <h3 className="fw-semibold mb-4">Course Structure</h3>
+                  <h3 className="fw-semibold mb-4">Modules</h3>
                   {curriculum.length > 0 ? (
                     <div className="curriculum-list">
                       {curriculum.map((mod, i) => (
@@ -65,7 +52,7 @@ const CourseDetails = () => {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-muted">No course structure available.</p>
+                    <p className="text-muted">No modules available.</p>
                   )}
                 </>
               )}
@@ -138,6 +125,9 @@ const CourseDetails = () => {
                   )}
                 </>
               )}
+
+              <h3 className="fw-semibold mb-4 mt-4">Entry Requirements</h3>
+              <p className="text-muted mb-4">{course.entryRequirements}</p>
             </div>
             <div className="col-lg-4">
               <div className="sidebar-card p-4 border rounded shadow-sm bg-white">
@@ -146,7 +136,10 @@ const CourseDetails = () => {
                   alt={course.title}
                   className="img-fluid rounded mb-3 fixed-height-img"
                 />
-
+                <div className="rounded bg-light shadow-sm p-3 mb-3 text-center">
+                  <h6 className="fw-semibold mb-2">Duration</h6>
+                  <p className="text-muted mb-0">{course.duration}</p>
+                </div>
                 <Link
                   to="/enroll"
                   className="btn w-100 mb-2 fw-semibold enroll-btn"
@@ -154,7 +147,14 @@ const CourseDetails = () => {
                   Register Now
                 </Link>
 
-                <p className="small text-muted mb-3">{course.description}</p>
+                <div className="mt-3">
+                  <h6 className="fw-semibold mb-1">Mode</h6>
+                  <p className="text-muted mb-3">{course.mode.join(", ")}</p>
+                </div>
+                <div className="mt-3">
+                  <h6 className="fw-semibold mb-1">Assessments</h6>
+                  <p className="text-muted mb-3">{course.assessments}</p>
+                </div>
                 {whatYouLearn.length > 0 && (
                   <div className="mt-3">
                     <h6 className="fw-semibold mb-3">What you'll learn</h6>
@@ -166,6 +166,21 @@ const CourseDetails = () => {
                             <span className="small">{item}</span>
                           </div>
                         </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {{ tags } && tags.length > 0 && (
+                  <div className="mt-3">
+                    <h6 className="fw-semibold mb-3">Tags</h6>
+                    <div className="d-flex flex-wrap gap-2">
+                      {tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="badge rounded-pill bg-light text-dark"
+                        >
+                          {tag}
+                        </span>
                       ))}
                     </div>
                   </div>

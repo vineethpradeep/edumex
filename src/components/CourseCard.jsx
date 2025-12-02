@@ -32,7 +32,11 @@ const CourseCard = ({
           <h3>
             <Link to={`/course_details/${id}`}>{title}</Link>
           </h3>
-          <p>{description}</p>
+          <p>
+            {description.length > 100
+              ? `${description.substring(0, 100)}...`
+              : description}
+          </p>
 
           <Link to={`/course_details/${id}`} className="btn-course">
             View Details
