@@ -59,6 +59,9 @@ function Nav() {
           </ul>
         </li> */}
         <li>
+          <Link to="/">Validate Certificate</Link>
+        </li>
+        <li>
           <Link to="/">Instructors</Link>
         </li>
         <li>
