@@ -1,15 +1,16 @@
+import { Link } from "react-router-dom";
 import "./nav.css";
 function Nav() {
   return (
     <nav id="navmenu" className="navmenu">
       <ul>
         <li>
-          <a href="/" className="active">
+          <Link to="/" className="active">
             Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/courses">Courses</a>
+          <Link to="/courses">Courses</Link>
         </li>
         {/* <li className="dropdown">
           <a href="/courses">
@@ -58,35 +59,35 @@ function Nav() {
           </ul>
         </li> */}
         <li>
-          <a href="#">Instructors</a>
+          <Link to="/">Instructors</Link>
         </li>
         <li>
-          <a href="#">Blog</a>
+          <Link to="/">Blog</Link>
         </li>
 
         <li className="dropdown">
-          <a href="#">
+          <Link to="/">
             <span>About</span>
             <i className="bi bi-chevron-down toggle-dropdown"></i>
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="#">Events</a>
+              <Link to="/events">Events</Link>
             </li>
             <li>
-              <a href="#">Blog Details</a>
+              <Link to="/blog-details">Blog Details</Link>
             </li>
             <li>
-              <a href="#">Terms</a>
+              <Link to="/">Terms</Link>
             </li>
             <li>
-              <a href="#">Privacy</a>
+              <Link to="/">Privacy</Link>
             </li>
           </ul>
         </li>
 
         <li>
-          <a href="/contact">Contact</a>
+          <Link to="/contact">Contact</Link>
         </li>
       </ul>
 
