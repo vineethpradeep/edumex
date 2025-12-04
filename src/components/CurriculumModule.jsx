@@ -30,7 +30,11 @@ const CurriculumModule = ({ module, lessons = [], lessonsCount }) => {
                   idx !== lessons.length - 1 ? "1px solid #f1f3f5" : "none",
               }}
             >
-              <i className="bi bi-play-circle me-2 text-primary"></i>
+              <i
+                className={`${
+                  lesson.icon || "bi bi-file-earmark-text"
+                } me-2 text-primary`}
+              ></i>
               <span className="flex-grow-1">{lesson.title}</span>
               {lesson.credits && (
                 <small className="text-muted">{lesson.credits} credits</small>
