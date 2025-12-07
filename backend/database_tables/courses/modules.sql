@@ -1,0 +1,7 @@
+CREATE TABLE modules (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    subcourse_id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (subcourse_id) REFERENCES subcourses(id) ON DELETE CASCADE
+);

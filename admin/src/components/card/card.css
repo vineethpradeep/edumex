@@ -1,0 +1,89 @@
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Header */
+.card-header {
+    padding: 18px 20px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    background: linear-gradient(90deg, #696cff, #9b9bff);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Optional badge or action in header */
+.card-header .header-action {
+    font-size: 14px;
+    color: #f0f0ff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.card-header .header-action:hover {
+    color: #fff;
+}
+
+/* Content */
+.card-content {
+    padding: 20px;
+    font-size: 14px;
+    color: #495057;
+    background: #fdfdff;
+}
+
+/* Footer */
+.card-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e9ecef;
+    background: #f8f9ff;
+    text-align: right;
+    font-size: 14px;
+    color: #343a40;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* Footer buttons */
+.card-footer .btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s;
+}
+
+.card-footer .btn-primary {
+    background: #696cff;
+    color: #fff;
+}
+
+.card-footer .btn-primary:hover {
+    background: #5952e6;
+}
+
+.card-footer .btn-secondary {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.card-footer .btn-secondary:hover {
+    background: #d8dfea;
+}

@@ -1,0 +1,81 @@
+.page-header.modern {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    /* background: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
+}
+
+.header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.header-text .header-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.header-text .header-subtitle {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.breadcrumb {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.breadcrumb a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.breadcrumb-separator {
+    margin: 0 5px;
+    color: #9ca3af;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-back,
+.btn-action {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-back {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.btn-back:hover {
+    background: #e5e7eb;
+}
+
+.btn-action {
+    background: #3b82f6;
+    color: #ffffff;
+}
+
+.btn-action:hover {
+    background: #2563eb;
+}
