@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaPlus } from "react-icons/fa";
+import { FaEye, FaTrash } from "react-icons/fa";
 import Card from "../components/card/Card";
 import PageHeader from "../components/pageHeader/PageHeader";
 import useModal from "../hooks/useModal";
@@ -79,7 +79,7 @@ export default function ViewAllEnquiries() {
   return (
     <>
       <PageHeader
-        title="All Enrollments"
+        title="All Enquiries"
         breadcrumbs={[
           { label: "Dashboard", to: "/dashboard" },
           { label: "Enrollments", to: "/view-all-enquiries" },
@@ -128,18 +128,21 @@ export default function ViewAllEnquiries() {
                       <span className="badge">{enroll.status}</span>
                     </td>
                     <td>{new Date(enroll.created_at).toLocaleString()}</td>
-                    <td>
+                    <td className="action-icons">
                       <button
-                        className="btn-view"
+                        className="icon-btn view"
                         onClick={() => navigate(`/enquiry/${enroll.id}`)}
+                        title="View Enquiry"
                       >
-                        View
+                        <FaEye />
                       </button>
+
                       <button
-                        className="btn-delete"
+                        className="icon-btn delete"
                         onClick={() => confirmDelete(enroll.id)}
+                        title="Delete Enquiry"
                       >
-                        Delete
+                        <FaTrash />
                       </button>
                     </td>
                   </tr>

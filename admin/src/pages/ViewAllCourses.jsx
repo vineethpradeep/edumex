@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaPlus } from "react-icons/fa";
+import { FaPlus, FaTrash, FaEye, FaEdit } from "react-icons/fa";
 import Card from "../components/card/Card";
 import PageHeader from "../components/pageHeader/PageHeader";
 import useModal from "../hooks/useModal";
@@ -151,25 +151,29 @@ export default function ViewAllCourses() {
                     </td>
 
                     <td>{course.subcourses?.length || 0}</td>
-
-                    <td>
+                    <td className="action-icons">
                       <button
-                        className="btn-view"
+                        className="icon-btn view"
                         onClick={() => navigate(`/course/${course.id}`)}
+                        title="View Course"
                       >
-                        View
+                        <FaEye />
                       </button>
+
                       <button
-                        className="btn-edit"
+                        className="icon-btn edit"
                         onClick={() => navigate(`/course/${course.id}/edit`)}
+                        title="Edit Course"
                       >
-                        Edit
+                        <FaEdit />
                       </button>
+
                       <button
-                        className="btn-delete"
+                        className="icon-btn delete"
                         onClick={() => confirmDelete(course.id)}
+                        title="Delete Course"
                       >
-                        Delete
+                        <FaTrash />
                       </button>
                     </td>
                   </tr>

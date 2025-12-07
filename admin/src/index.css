@@ -189,3 +189,69 @@ h6 {
   transform: translateY(-2px);
   box-shadow: 0px 4px 12px rgba(78, 63, 199, 0.3);
 }
+
+
+
+/* Action buttons container */
+.action-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+/* Base icon button */
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: none;
+  background: var(--bg-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-size: 16px;
+}
+
+/* Hover effects */
+.icon-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* View icon specific */
+.icon-btn.view {
+  background: rgba(105, 108, 255, 0.12);
+  color: var(--primary);
+}
+
+.icon-btn.view:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Edit icon specific */
+.icon-btn.edit {
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--primary);
+}
+
+.icon-btn.edit:hover {
+  background: var(--btn-hover-gradient);
+  color: #fff;
+}
+
+
+/* Delete icon specific */
+.icon-btn.delete {
+  background: rgba(255, 77, 79, 0.12);
+  color: #ff4d4f;
+}
+
+.icon-btn.delete:hover {
+  background: #ff4d4f;
+  color: white;
+}

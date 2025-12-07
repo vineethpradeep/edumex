@@ -4,8 +4,9 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import AdminLogin from "./pages/AdminLogin.jsx";
-import Dashboard from "./pages/Dashboard.jsx";
+import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import AddCourse from "./pages/addCourse/AddCourse.jsx";
 import DashboardLayout from "./pages/DashboardLayout.jsx";
 import ViewAllCourses from "./pages/ViewAllCourses.jsx";

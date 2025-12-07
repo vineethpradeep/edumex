@@ -1,0 +1,68 @@
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Stat Cards */
+.stat-number {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--primary);
+    line-height: 1.1;
+}
+
+.stat-label {
+    margin-top: 5px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+/* Recent Enquiries List */
+.recent-list {
+    margin-top: 10px;
+}
+
+.recent-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+}
+
+.email {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.recent-meta {
+    text-align: right;
+}
+
+.course {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.date {
+    display: inline-block;
+    background: var(--bg-gray);
+    color: var(--text-dark);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+    border: 1px solid var(--border-light);
+}
