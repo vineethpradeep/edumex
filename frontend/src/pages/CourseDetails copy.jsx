@@ -1,41 +1,33 @@
-import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import PageTitle from "../components/pageTitle/PageTitle";
+import { useMemo, useState } from "react";
 import CurriculumModule from "../components/CurriculumModule";
+import PageTitle from "../components/pageTitle/PageTitle";
+import fullCoursesData from "../mockdata/fullCoursesData.json";
 
 const CourseDetails = () => {
   const { id } = useParams();
-  const [course, setCourse] = useState(null);
   const [activeTab, setActiveTab] = useState(0);
-  console.log(course);
-  useEffect(() => {
-    const fetchCourse = async () => {
-      try {
-        const res = await fetch(
-          `http://localhost:8000/api/getSingleCourse.php?id=${id}`
-        );
-        const data = await res.json();
-        if (data.success) {
-          setCourse(data.course);
-        }
-      } catch (err) {
-        console.error("Fetch error:", err);
-      }
-    };
 
-    fetchCourse();
-  }, [id]);
+  const allCourses = useMemo(() => {
+    const mainCourses = fullCoursesData.programmes.flatMap((programme) =>
+      programme.classes.flatMap((cls) => cls.courses)
+    );
 
-  if (!course) return <p className="text-center mt-5">Loading...</p>;
+    const subCourses = mainCourses.flatMap((course) => course.subcourses || []);
 
-  const hasSubcourses = course.subcourses?.length > 0;
-  const tags = course.tags || [];
+    return [...mainCourses, ...subCourses];
+  }, []);
+
+  const course = allCourses.find((c) => c.id === parseInt(id));
+  if (!course) return <p>Course not found</p>;
+
   const whatYouLearn = course.whatYouLearn || [];
+  const hasSubcourses = course.subcourses && course.subcourses.length > 0;
+  const tags = course.tags || [];
 
-  // MAIN COURSE MODULES
   const curriculum =
-    course.modules?.map((mod) => ({
-      module: mod.module_name,
+    course.courseStructure?.map((mod) => ({
+      module: mod.module,
       lessons: mod.units || [],
       lessonsCount: `${mod.units?.length || 0} lessons`,
     })) || [];
@@ -47,13 +39,10 @@ const CourseDetails = () => {
       <section id="course-details" className="course-details section">
         <div className="container">
           <div className="row g-4">
-            {/* LEFT SECTION */}
             <div className="col-lg-8">
               <h1 className="fw-bold mb-3">{course.title}</h1>
               <p className="text-muted mb-4">{course.description}</p>
-
-              {/* MAIN COURSE MODULES */}
-              {course.modules && (
+              {!hasSubcourses && (
                 <>
                   <h3 className="fw-semibold mb-4">Modules</h3>
                   {curriculum.length > 0 ? (
@@ -67,8 +56,6 @@ const CourseDetails = () => {
                   )}
                 </>
               )}
-
-              {/* SUBCOURSES */}
               {hasSubcourses && (
                 <>
                   <h3 className="fw-semibold mb-4">Sub Courses</h3>
@@ -86,7 +73,6 @@ const CourseDetails = () => {
                       </li>
                     ))}
                   </ul>
-
                   {course.subcourses.map((sub, idx) =>
                     activeTab === idx ? (
                       <div
@@ -95,9 +81,7 @@ const CourseDetails = () => {
                       >
                         <h4 className="fw-bold">{sub.title}</h4>
                         <p className="text-muted">{sub.overview}</p>
-
-                        {/* Subcourse What you'll learn */}
-                        {sub.whatYouLearn?.length > 0 && (
+                        {sub.whatYouLearn && sub.whatYouLearn.length > 0 && (
                           <>
                             <h5 className="fw-semibold mt-4 mb-3">
                               What you'll learn
@@ -112,37 +96,39 @@ const CourseDetails = () => {
                             </ul>
                           </>
                         )}
-
-                        <h5 className="fw-semibold mt-4 mb-3">Modules</h5>
-
-                        {sub.modules?.length > 0 ? (
-                          sub.modules.map((mod, i) => (
+                        <h5 className="fw-semibold mt-4 mb-3">
+                          Course Structure
+                        </h5>
+                        {sub.courseStructure?.length > 0 ? (
+                          sub.courseStructure.map((mod, i) => (
                             <CurriculumModule
                               key={i}
-                              module={mod.module_name}
+                              module={mod.module}
                               lessons={mod.units || []}
                               lessonsCount={`${mod.units?.length || 0} lessons`}
                             />
                           ))
                         ) : (
-                          <p className="text-muted">No modules available.</p>
+                          <p className="text-muted">
+                            No course structure available.
+                          </p>
                         )}
+
+                        {/* <Link
+                          to={`/course/${sub.id}`}
+                          className="btn btn-outline-primary btn-sm mt-3"
+                        >
+                          View Full Details
+                        </Link> */}
                       </div>
                     ) : null
                   )}
                 </>
               )}
 
-              {/* ENTRY REQUIREMENTS */}
-              {course.entry_requirements && (
-                <>
-                  <h3 className="fw-semibold mb-4 mt-4">Entry Requirements</h3>
-                  <p className="text-muted mb-4">{course.entry_requirements}</p>
-                </>
-              )}
+              <h3 className="fw-semibold mb-4 mt-4">Entry Requirements</h3>
+              <p className="text-muted mb-4">{course.entryRequirements}</p>
             </div>
-
-            {/* RIGHT SIDEBAR */}
             <div className="col-lg-4">
               <div className="sidebar-card p-4 border rounded shadow-sm bg-white">
                 <img
@@ -150,15 +136,10 @@ const CourseDetails = () => {
                   alt={course.title}
                   className="img-fluid rounded mb-3 fixed-height-img"
                 />
-
-                {/* Duration */}
-                {course.duration && (
-                  <div className="rounded bg-light shadow-sm p-3 mb-3 text-center">
-                    <h6 className="fw-semibold mb-2">Duration</h6>
-                    <p className="text-muted mb-0">{course.duration}</p>
-                  </div>
-                )}
-
+                <div className="rounded bg-light shadow-sm p-3 mb-3 text-center">
+                  <h6 className="fw-semibold mb-2">Duration</h6>
+                  <p className="text-muted mb-0">{course.duration}</p>
+                </div>
                 <Link
                   to="/enroll"
                   className="btn w-100 mb-2 fw-semibold enroll-btn"
@@ -166,23 +147,14 @@ const CourseDetails = () => {
                   Register Now
                 </Link>
 
-                {/* Modes */}
-                {course.modes?.length > 0 && (
-                  <div className="mt-3">
-                    <h6 className="fw-semibold mb-1">Mode</h6>
-                    <p className="text-muted mb-3">{course.modes.join(", ")}</p>
-                  </div>
-                )}
-
-                {/* Assessments */}
-                {course.assessments && (
-                  <div className="mt-3">
-                    <h6 className="fw-semibold mb-1">Assessments</h6>
-                    <p className="text-muted mb-3">{course.assessments}</p>
-                  </div>
-                )}
-
-                {/* What you learn */}
+                <div className="mt-3">
+                  <h6 className="fw-semibold mb-1">Mode</h6>
+                  <p className="text-muted mb-3">{course.mode.join(", ")}</p>
+                </div>
+                <div className="mt-3">
+                  <h6 className="fw-semibold mb-1">Assessments</h6>
+                  <p className="text-muted mb-3">{course.assessments}</p>
+                </div>
                 {whatYouLearn.length > 0 && (
                   <div className="mt-3">
                     <h6 className="fw-semibold mb-3">What you'll learn</h6>
@@ -198,9 +170,7 @@ const CourseDetails = () => {
                     </div>
                   </div>
                 )}
-
-                {/* Tags */}
-                {tags.length > 0 && (
+                {{ tags } && tags.length > 0 && (
                   <div className="mt-3">
                     <h6 className="fw-semibold mb-3">Tags</h6>
                     <div className="d-flex flex-wrap gap-2">

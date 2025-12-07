@@ -2,2026 +2,799 @@
   "programmes": [
     {
       "id": 1,
-      "title": "Kids Programmes",
-      "description": "Programs for children to build foundational life and hygiene skills, creativity and early digital skills.",
+      "programme": "International Higher Diploma",
       "classes": [
         {
-          "id": 1011,
-          "title": "Hygiene & Healthy Habits",
-          "level": "Beginner",
-          "duration": "2–4 Weeks",
+          "id": 101,
+          "level": "Higher Diploma",
           "courses": [
             {
               "id": 1001,
-              "category": "Training Resource",
-              "title": "ZombieGerm - Children's Hygiene",
-              "description": "Fun, child-friendly resources teaching handwashing and basic hygiene using stories, posters and activities.",
-              "image": "/assets/img/scratch_hyg.png",
-              "badge": "Training Resource",
-              "price": 19,
-              "originalPrice": 29,
-              "level": "Kids",
-              "duration": "1 Week",
-              "instructorName": "Maya Green",
-              "instructorImg": "https://randomuser.me/api/portraits/women/31.jpg",
-              "instructorRole": "Early Years Educator",
-              "rating": 4.9,
-              "students": 420,
-              "certification": "Completion Certificate (Kids)",
-              "whatYouLearn": [
-                "Why hygiene matters",
-                "Proper handwashing steps",
-                "Basic germ awareness",
-                "Fun hygiene routines"
+              "category": "Qualification",
+              "title": "International Higher Diploma Business Management & Marketing",
+              "description": "Advanced programme covering business, marketing strategy, digital marketing, operations and leadership.",
+              "image": "/assets/img/scratch_CS_Level1.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "tags": [
+                "Business",
+                "Marketing",
+                "Management",
+                "Tourism",
+                "Hospitality"
+              ],
+              "duration": "8 Weeks",
+              "whatYouLearn": [
+                "Business fundamentals",
+                "Marketing strategies",
+                "Leadership and management skills",
+                "Digital marketing concepts"
+              ],
+              "subcourses": [
                 {
-                  "module": "Module 1: Meet ZombieGerm",
-                  "lessonsCount": "2 lessons • 30 min",
-                  "lessons": [
+                  "id": 10011,
+                  "title": "International Higher Diploma Tourism & Hospital Management",
+                  "overview": "This course equips learners with in-depth understanding of tourism operations, hospitality management, customer service excellence and global tourism trends.",
+                  "tags": [
+                    "Tourism",
+                    "Hospitality",
+                    "Customer Service",
+                    "Operations"
+                  ],
+                  "whatYouLearn": [
+                    "Hospitality operations",
+                    "Tourism sector insights",
+                    "Customer experience management",
+                    "Global tourism trends"
+                  ],
+                  "courseStructure": [
                     {
-                      "title": "Story: ZombieGerm Visits",
-                      "icon": "bi bi-play-circle",
-                      "duration": "15 min"
+                      "module": "Module 1: Fundamentals of Tourism",
+                      "units": [
+                        {
+                          "title": "Introduction to Global Tourism",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Tourism Sectors & Trends",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
                     },
                     {
-                      "title": "Handwashing Song & Activity",
-                      "icon": "bi bi-play-circle",
-                      "duration": "15 min"
+                      "module": "Module 2: Hospitality Management",
+                      "units": [
+                        {
+                          "title": "Hotel Operations & Services",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Food & Beverage Management",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 3: Guest Relations",
+                      "units": [
+                        {
+                          "title": "Customer Experience in Tourism",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Handling Complaints & Service Recovery",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
                     }
                   ]
                 }
               ],
-              "pricing": {
-                "price": 19,
-                "originalPrice": 29,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1 week duration" },
-                  {
-                    "icon": "bi bi-trophy",
-                    "text": "Kids completion certificate"
-                  }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Kids" },
-                { "label": "Students", "value": "420 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Kids", "Hygiene", "Health"]
+              "courseStructure": [
+                {
+                  "module": "Module 1: Business Fundamentals",
+                  "units": [
+                    {
+                      "title": "Introduction to Business",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Business Environment Overview",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: Marketing & Strategy",
+                  "units": [
+                    {
+                      "title": "Marketing Basics",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Digital Marketing",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 3: Operations & Leadership",
+                  "units": [
+                    {
+                      "title": "Leadership Principles",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Operations Management",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                }
+              ]
             },
+
             {
               "id": 1002,
-              "category": "Training Resource",
-              "title": "Basic Infection Control for Children",
-              "description": "An introduction for children and carers about germs, sneezing etiquette and basic infection control.",
-              "image": "/assets/img/scratch_2_inf.png",
-              "badge": "Training Resource",
-              "price": 15,
-              "originalPrice": 25,
-              "level": "Kids",
-              "duration": "1 Week",
-              "instructorName": "Liam Park",
-              "instructorImg": "https://randomuser.me/api/portraits/men/32.jpg",
-              "instructorRole": "Child Health Instructor",
-              "rating": 4.8,
-              "students": 310,
-              "certification": "Activity Pack Completion",
-              "whatYouLearn": [
-                "Basic infection control concepts",
-                "Sneeze and cough etiquette",
-                "Keeping toys clean"
+              "category": "Qualification",
+              "title": "International Higher Diploma Social Psychology",
+              "description": "A comprehensive psychology programme exploring human behaviour, relationships, emotions and cognitive science.",
+              "image": "/assets/img/social_psychology.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": ["Social Psychology", "Behavior", "Healthcare"],
+              "duration": "8 Weeks",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "whatYouLearn": [
+                "Foundations of social psychology",
+                "Behavioral analysis",
+                "Group dynamics",
+                "Cognitive processes"
+              ],
+              "subcourses": [],
+              "courseStructure": [
                 {
-                  "module": "Module 1: Germs Around Us",
-                  "lessonsCount": "2 lessons • 20 min",
-                  "lessons": [
+                  "module": "Module 1: Introduction to Social Psychology",
+                  "units": [
                     {
-                      "title": "Where Germs Live",
-                      "icon": "bi bi-play-circle",
-                      "duration": "10 min"
+                      "title": "Foundations of Social Thinking",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     },
                     {
-                      "title": "Keeping Toys Clean",
-                      "icon": "bi bi-play-circle",
-                      "duration": "10 min"
+                      "title": "Attitudes & Behaviour",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: Group & Social Influence",
+                  "units": [
+                    {
+                      "title": "Social Norms",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Group Dynamics",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     }
                   ]
                 }
-              ],
-              "pricing": {
-                "price": 15,
-                "originalPrice": 25,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1 week duration" },
-                  { "icon": "bi bi-book", "text": "Activity sheets" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Kids" },
-                { "label": "Students", "value": "310 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Kids", "Infection Control", "Hygiene"]
-            }
-          ]
-        },
-        {
-          "id": 1012,
-          "title": "Creative & Communication",
-          "level": "Beginner",
-          "duration": "3–6 Weeks",
-          "courses": [
+              ]
+            },
+
             {
               "id": 1003,
-              "category": "Training Resource",
-              "title": "Creative Arts for Kids",
-              "description": "Drawing, painting and crafts to build motor skills and creativity in young learners.",
-              "image": "/assets/img/scratch_3.png",
-              "badge": "Training Resource",
-              "price": 29,
-              "originalPrice": 49,
-              "level": "Kids",
-              "duration": "3 Weeks",
-              "instructorName": "Ava Roberts",
-              "instructorImg": "https://randomuser.me/api/portraits/women/33.jpg",
-              "instructorRole": "Arts Instructor",
-              "rating": 4.7,
-              "students": 290,
-              "certification": "Creative Participation Certificate",
-              "whatYouLearn": [
-                "Basic drawing skills",
-                "Color mixing",
-                "Simple craft making",
-                "Expressing ideas visually"
+              "category": "Qualification",
+              "title": "International Higher Diploma LAW",
+              "description": "Covers the fundamentals of law, crial justice, legal systems and international legal frameworks.",
+              "image": "/assets/img/international_law.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": ["Law", "Legal", "Arbitration", "Construction"],
+              "duration": "8 Weeks",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "whatYouLearn": [
+                "Legal systems overview",
+                "Crial law principles",
+                "International law frameworks",
+                "Arbitration processes"
+              ],
+              "subcourses": [],
+              "courseStructure": [
                 {
-                  "module": "Module 1: Drawing & Colour",
-                  "lessonsCount": "3 lessons • 1.5 hours",
-                  "lessons": [
+                  "module": "Module 1: Introduction to Law",
+                  "units": [
                     {
-                      "title": "Shapes & Lines",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
+                      "title": "Legal Systems Overview",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     },
                     {
-                      "title": "Color Play",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
+                      "title": "Principles of Crial Law",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: International Law",
+                  "units": [
+                    {
+                      "title": "Human Rights Law",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Legal Ethics & Responsibility",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     }
                   ]
                 }
-              ],
-              "pricing": {
-                "price": 29,
-                "originalPrice": 49,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "3 weeks duration" },
-                  {
-                    "icon": "bi bi-trophy",
-                    "text": "Certificate of completion"
-                  }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Kids" },
-                { "label": "Students", "value": "290 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Kids", "Arts", "Creativity"]
-            }
-          ]
-        },
-        {
-          "id": 1013,
-          "title": "Early Digital Skills",
-          "level": "Beginner",
-          "duration": "4–6 Weeks",
-          "courses": [
+              ]
+            },
+
             {
               "id": 1004,
               "category": "Qualification",
-              "title": "Intro to Scratch Programming (Kids)",
-              "description": "Beginner coding using Scratch — sequencing, loops and logic for kids aged 7–12.",
-              "image": "/assets/img/scratch.png",
+              "title": "International Higher Diploma English",
+              "description": "A professional English training programme covering communication, advanced grammar, writing, and academics.",
+              "image": "/assets/img/international_english.png",
               "badge": "Qualification",
-              "price": 39,
-              "originalPrice": 59,
-              "level": "Kids",
-              "duration": "4 Weeks",
-              "instructorName": "Ben Carter",
-              "instructorImg": "https://randomuser.me/api/portraits/men/34.jpg",
-              "instructorRole": "Coding Coach",
-              "rating": 4.8,
-              "students": 200,
-              "certification": "Kids Coding Certificate",
-              "whatYouLearn": [
-                "Sequence & events",
-                "Simple loops",
-                "Building interactive stories"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Scratch Basics",
-                  "lessonsCount": "4 lessons • 2 hours",
-                  "lessons": [
-                    {
-                      "title": "Sprites & Backdrops",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    },
-                    {
-                      "title": "Events & Actions",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 39,
-                "originalPrice": 59,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "4 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Kids certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Kids" },
-                { "label": "Students", "value": "200 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Kids", "Coding", "Scratch"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "Short Courses",
-      "description": "Short, focused courses delivering practical skills and compliance knowledge — ideal for CPD and refreshers.",
-      "classes": [
-        {
-          "id": 2011,
-          "title": "Food & Safety Short Courses",
-          "level": "Beginner",
-          "duration": "1–3 Weeks",
-          "courses": [
-            {
-              "id": 2001,
-              "category": "Training Resource",
-              "title": "Allergens Awareness (Short Course)",
-              "description": "Practical training on the 14 major allergens, labelling and preventing cross-contamination for catering staff.",
-              "image": "/assets/img/scratch_Allergens.png",
-              "badge": "Training Resource",
-              "price": 29,
-              "originalPrice": 49,
-              "level": "Beginner",
-              "duration": "1 Week",
-              "instructorName": "Alex Carter",
-              "instructorImg": "https://randomuser.me/api/portraits/men/10.jpg",
-              "instructorRole": "Food Safety Specialist",
-              "rating": 4.9,
-              "students": 840,
-              "certification": "Allergen Awareness Certificate",
-              "whatYouLearn": [
-                "The 14 allergens",
-                "Label interpretation",
-                "Managing customer allergy requests",
-                "Cross-contact prevention"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Allergens & Labelling",
-                  "lessonsCount": "2 lessons • 1 hour",
-                  "lessons": [
-                    {
-                      "title": "Recognising Allergens",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    },
-                    {
-                      "title": "Label Reading Practice",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 29,
-                "originalPrice": 49,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1 week duration" },
-                  { "icon": "bi bi-trophy", "text": "Certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "840 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Allergens", "Food Safety", "Short Course"]
-            },
-            {
-              "id": 2002,
-              "category": "Training Resource",
-              "title": "Fire Safety Essentials (Short)",
-              "description": "Key fire safety awareness for staff: identifying risks, using extinguishers, evacuation procedures.",
-              "image": "/assets/img/scratch_fire_safty.png",
-              "badge": "Training Resource",
-              "price": 35,
-              "originalPrice": 55,
-              "level": "Beginner",
-              "duration": "1 Week",
-              "instructorName": "Rachel Lee",
-              "instructorImg": "https://randomuser.me/api/portraits/women/12.jpg",
-              "instructorRole": "Fire Safety Trainer",
-              "rating": 4.7,
-              "students": 540,
-              "certification": "Fire Safety Awareness",
-              "whatYouLearn": [
-                "Fire risk basics",
-                "Extinguisher types & use",
-                "Escape routes & assembly points",
-                "Simple prevention checks"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Fire Risk Awareness",
-                  "lessonsCount": "2 lessons • 1 hour",
-                  "lessons": [
-                    {
-                      "title": "Identifying Risks",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    },
-                    {
-                      "title": "Practical Evacuation",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 35,
-                "originalPrice": 55,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1 week duration" },
-                  { "icon": "bi bi-trophy", "text": "Certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "540 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Fire Safety", "Short Course", "Compliance"]
-            },
-            {
-              "id": 2003,
-              "category": "Training Resource",
-              "title": "First Aid Basics (Short Course)",
-              "description": "Core first aid actions for workplace incidents: CPR awareness, treating burns, cuts and fractures.",
-              "image": "/assets/img/scratch_first_aid.png",
-              "badge": "Training Resource",
-              "price": 39,
-              "originalPrice": 69,
-              "level": "Beginner",
-              "duration": "1–2 Days",
-              "instructorName": "Tom Rivera",
-              "instructorImg": "https://randomuser.me/api/portraits/men/13.jpg",
-              "instructorRole": "First Aid Instructor",
-              "rating": 4.8,
-              "students": 720,
-              "certification": "First Aid Awareness",
-              "whatYouLearn": [
-                "Assessing an incident",
-                "CPR basics",
-                "Using a defibrillator (AED) overview",
-                "Treating minor injuries"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Emergency Response",
-                  "lessonsCount": "2 lessons • 1.5 hours",
-                  "lessons": [
-                    {
-                      "title": "Primary Survey & CPR",
-                      "icon": "bi bi-play-circle",
-                      "duration": "40 min"
-                    },
-                    {
-                      "title": "Minor Injury Care",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 39,
-                "originalPrice": 69,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1–2 days" },
-                  { "icon": "bi bi-trophy", "text": "Certificate included" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "720 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["First Aid", "Short Course", "Safety"]
-            }
-          ]
-        },
-        {
-          "id": 2012,
-          "title": "Customer & Retail Short Courses",
-          "level": "Beginner - Intermediate",
-          "duration": "1–4 Weeks",
-          "courses": [
-            {
-              "id": 2004,
-              "category": "Qualification",
-              "title": "Customer Service Essentials (Short)",
-              "description": "Key customer service skills for front-line staff — communication, complaint handling and upselling basics.",
-              "image": "/assets/img/scratch_customer_service.png",
-              "badge": "Qualification",
-              "price": 49,
-              "originalPrice": 79,
-              "level": "Beginner",
-              "duration": "2 Weeks",
-              "instructorName": "Emma Collins",
-              "instructorImg": "https://randomuser.me/api/portraits/women/24.jpg",
-              "instructorRole": "Customer Experience Trainer",
-              "rating": 4.7,
-              "students": 980,
-              "certification": "Customer Service Award",
-              "whatYouLearn": [
-                "Communication skills",
-                "De-escalation techniques",
-                "Handling complaints",
-                "Building loyalty"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Communication in Service",
-                  "lessonsCount": "3 lessons • 1.5 hours",
-                  "lessons": [
-                    {
-                      "title": "Active Listening",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    },
-                    {
-                      "title": "Professional Language",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 49,
-                "originalPrice": 79,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "2 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Accredited certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "980 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Customer Service", "Retail", "Short Course"]
-            },
-            {
-              "id": 2005,
-              "category": "Training Resource",
-              "title": "Retail Essentials (Short Course)",
-              "description": "Basic retail skills: till operations, stock handling, visual merchandising basics.",
-              "image": "/assets/img/scratch_retail.png",
-              "badge": "Training Resource",
-              "price": 45,
-              "originalPrice": 69,
-              "level": "Beginner",
-              "duration": "1–2 Weeks",
-              "instructorName": "Hannah Price",
-              "instructorImg": "https://randomuser.me/api/portraits/women/35.jpg",
-              "instructorRole": "Retail Trainer",
-              "rating": 4.6,
-              "students": 460,
-              "certification": "Retail Skills Certificate",
-              "whatYouLearn": [
-                "Customer engagement",
-                "Simple stock control",
-                "Point-of-sale basics",
-                "Visual merchandising fundamentals"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Selling Basics",
-                  "lessonsCount": "3 lessons • 1.5 hours",
-                  "lessons": [
-                    {
-                      "title": "Greeting & Assistance",
-                      "icon": "bi bi-play-circle",
-                      "duration": "18 min"
-                    },
-                    {
-                      "title": "Till Procedures",
-                      "icon": "bi bi-play-circle",
-                      "duration": "22 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 45,
-                "originalPrice": 69,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1–2 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "460 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Retail", "Customer Service", "Short Course"]
-            }
-          ]
-        },
-        {
-          "id": 2013,
-          "title": "Health & Wellbeing Short Courses",
-          "level": "Beginner - Intermediate",
-          "duration": "1–4 Weeks",
-          "courses": [
-            {
-              "id": 2006,
-              "category": "Qualification",
-              "title": "Infection Control Awareness (Short)",
-              "description": "Practical infection control skills for workplace prevention and standard precautions.",
-              "image": "/assets/img/scratch_infection.png",
-              "badge": "Qualification",
-              "price": 45,
-              "originalPrice": 79,
-              "level": "Beginner",
-              "duration": "1 Week",
-              "instructorName": "Dr. Lila Fernandez",
-              "instructorImg": "https://randomuser.me/api/portraits/women/36.jpg",
-              "instructorRole": "Infection Control Specialist",
-              "rating": 4.9,
-              "students": 610,
-              "certification": "Infection Control Certificate",
-              "whatYouLearn": [
-                "Standard precautions",
-                "PPE basics",
-                "Hygiene & cleaning protocols"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Prevention Practices",
-                  "lessonsCount": "2 lessons • 1 hour",
-                  "lessons": [
-                    {
-                      "title": "PPE & Hand Hygiene",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    },
-                    {
-                      "title": "Cleaning Protocols",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 45,
-                "originalPrice": 79,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1 week duration" },
-                  { "icon": "bi bi-trophy", "text": "Accredited certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "610 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Infection Control", "Health", "Short Course"]
-            },
-            {
-              "id": 2007,
-              "category": "Training Resource",
-              "title": "Substance Awareness (Short)",
-              "description": "Awareness course covering substance misuse signs, workplace policy and support routes.",
-              "image": "/assets/img/scratch_3substance_awar.png",
-              "badge": "Training Resource",
-              "price": 39,
-              "originalPrice": 59,
-              "level": "Beginner",
-              "duration": "1 Week",
-              "instructorName": "Nina Shah",
-              "instructorImg": "https://randomuser.me/api/portraits/women/37.jpg",
-              "instructorRole": "Substance Misuse Advisor",
-              "rating": 4.6,
-              "students": 380,
-              "certification": "Awareness Certificate",
-              "whatYouLearn": [
-                "Recognising misuse",
-                "Referral pathways",
-                "Workplace policy basics"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Awareness & Support",
-                  "lessonsCount": "2 lessons • 1 hour",
-                  "lessons": [
-                    {
-                      "title": "Signs & Symptoms",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    },
-                    {
-                      "title": "Referral & Support",
-                      "icon": "bi bi-play-circle",
-                      "duration": "20 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 39,
-                "originalPrice": 59,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "1 week duration" },
-                  { "icon": "bi bi-book", "text": "Support resources" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Beginner" },
-                { "label": "Students", "value": "380 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Substance Awareness", "Health", "Short Course"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "Certificate Programmes",
-      "description": "Regulated certificate programmes for entry to career pathways and role-specific competencies.",
-      "classes": [
-        {
-          "id": 3011,
-          "title": "Customer Service & Business",
-          "level": "Level 1–2",
-          "duration": "4–12 Weeks",
-          "courses": [
-            {
-              "id": 3001,
-              "category": "Qualification",
-              "title": "Customer Service Level 1 Certificate",
-              "description": "Entry-level customer service qualification focused on basic service skills and communication.",
-              "image": "/assets/img/scratch_CS_Level1.png",
-              "badge": "Qualification",
-              "price": 59,
-              "originalPrice": 89,
-              "level": "Level 1",
-              "duration": "4 Weeks",
-              "instructorName": "Nora White",
-              "instructorImg": "https://randomuser.me/api/portraits/women/38.jpg",
-              "instructorRole": "Customer Service Tutor",
-              "rating": 4.6,
-              "students": 410,
-              "certification": "Level 1 Certificate",
-              "whatYouLearn": [
-                "Greeting customers",
-                "Basic service processes",
-                "Simple problem-solving"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Service Basics",
-                  "lessonsCount": "3 lessons • 2 hours",
-                  "lessons": [
-                    {
-                      "title": "Customer Expectations",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    },
-                    {
-                      "title": "Service Standards",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 59,
-                "originalPrice": 89,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "4 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Regulated certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 1" },
-                { "label": "Students", "value": "410 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Customer Service", "Certificate", "Business"]
-            },
-            {
-              "id": 3002,
-              "category": "Qualification",
-              "title": "Functional Skills – English Level 1",
-              "description": "Certificate covering English reading, writing and communication at Level 1.",
-              "image": "/assets/img/scratch_eng_lev1.png",
-              "badge": "Qualification",
-              "price": 69,
-              "originalPrice": 99,
-              "level": "Level 1",
-              "duration": "6 Weeks",
-              "instructorName": "Pauline Marks",
-              "instructorImg": "https://randomuser.me/api/portraits/women/39.jpg",
-              "instructorRole": "Functional Skills Tutor",
-              "rating": 4.7,
-              "students": 520,
-              "certification": "Functional Skills Certificate L1",
-              "whatYouLearn": [
-                "Basic reading skills",
-                "Writing short texts",
-                "Everyday communication"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Reading & Writing",
-                  "lessonsCount": "4 lessons • 2.5 hours",
-                  "lessons": [
-                    {
-                      "title": "Reading for Purpose",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
-                    },
-                    {
-                      "title": "Writing Simple Texts",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 69,
-                "originalPrice": 99,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "6 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Exam included" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 1" },
-                { "label": "Students", "value": "520 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Functional Skills", "English", "Certificate"]
-            }
-          ]
-        },
-        {
-          "id": 3012,
-          "title": "Health & Social Care Certificates",
-          "level": "Level 2–3",
-          "duration": "6–12 Weeks",
-          "courses": [
-            {
-              "id": 3003,
-              "category": "Qualification",
-              "title": "Health & Social Care - Certificate Level 2",
-              "description": "Foundational knowledge for support workers — safe practice, communication & person-centred care.",
-              "image": "/assets/img/scratch_Health_Social.png",
-              "badge": "Qualification",
-              "price": 129,
-              "originalPrice": 179,
-              "level": "Level 2",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": ["English", "Communication", "Grammar", "Writing"],
               "duration": "8 Weeks",
-              "instructorName": "Dr. Emily Watson",
-              "instructorImg": "https://randomuser.me/api/portraits/women/2.jpg",
-              "instructorRole": "Health & Care Specialist",
-              "rating": 4.9,
-              "students": 1020,
-              "certification": "Level 2 Certificate",
-              "whatYouLearn": [
-                "Person-centred care",
-                "Safeguarding basics",
-                "Record-keeping"
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "whatYouLearn": [
+                "Effective communication",
+                "Advanced grammar",
+                "Writing & reading proficiency",
+                "Academic English skills"
+              ],
+              "subcourses": [],
+              "courseStructure": [
                 {
-                  "module": "Module 1: Care Principles",
-                  "lessonsCount": "3 lessons • 2.5 hours",
-                  "lessons": [
+                  "module": "Module 1: Academic English Skills",
+                  "units": [
                     {
-                      "title": "Person-Centred Approaches",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
+                      "title": "Essay Writing Techniques",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     },
                     {
-                      "title": "Basic Safeguarding",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
+                      "title": "Formal Communication",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     }
                   ]
                 }
-              ],
-              "pricing": {
-                "price": 129,
-                "originalPrice": 179,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "8 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Regulated certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 2" },
-                { "label": "Students", "value": "1020 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Health & Social Care", "Certificate", "Care"]
+              ]
             },
+
             {
-              "id": 3004,
-              "category": "Training Resource",
-              "title": "Safeguarding Children – Certificate",
-              "description": "Certificate-level training to ensure staff understand child protection, reporting and safer working practices.",
-              "image": "/assets/img/scratch_Safeguarding_Children.png",
-              "badge": "Training Resource",
-              "price": 89,
-              "originalPrice": 129,
-              "level": "Level 2",
-              "duration": "4 Weeks",
-              "instructorName": "Laura Bennett",
-              "instructorImg": "https://randomuser.me/api/portraits/women/40.jpg",
-              "instructorRole": "Safeguarding Consultant",
-              "rating": 4.8,
-              "students": 540,
-              "certification": "Safeguarding Certificate",
-              "whatYouLearn": [
-                "Recognising abuse",
-                "Reporting procedures",
-                "Safer working practices"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Child Protection Basics",
-                  "lessonsCount": "3 lessons • 2 hours",
-                  "lessons": [
-                    {
-                      "title": "Recognising Concerns",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    },
-                    {
-                      "title": "Making a Referral",
-                      "icon": "bi bi-play-circle",
-                      "duration": "25 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 89,
-                "originalPrice": 129,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "4 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Certificate included" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 2" },
-                { "label": "Students", "value": "540 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Safeguarding", "Children", "Certificate"]
-            }
-          ]
-        },
-        {
-          "id": 3013,
-          "title": "Digital & ICT Certificates",
-          "level": "Level 1–2",
-          "duration": "4–8 Weeks",
-          "courses": [
-            {
-              "id": 3005,
+              "id": 1005,
               "category": "Qualification",
-              "title": "Digital Skills Certificate – Level 1",
-              "description": "Fundamental digital skills for workplace productivity: email, documents and basic spreadsheets.",
-              "image": "/assets/img/scratch_Digital_skills.png",
-              "badge": "Qualification",
-              "price": 79,
-              "originalPrice": 119,
-              "level": "Level 1",
-              "duration": "6 Weeks",
-              "instructorName": "Michael Chen",
-              "instructorImg": "https://randomuser.me/api/portraits/men/1.jpg",
-              "instructorRole": "Digital Skills Trainer",
-              "rating": 5.0,
-              "students": 620,
-              "certification": "Digital Skills Certificate L1",
-              "whatYouLearn": [
-                "Using email effectively",
-                "Document production",
-                "Basic spreadsheet skills"
+              "title": "International Higher Diploma Computing",
+              "description": "Covers programg, networking, databases, web development and modern computing systems.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "image": "/assets/img/higher_computing.png",
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": [
+                "Computing",
+                "Programg",
+                "Networking",
+                "Web Development"
+              ],
+              "duration": "8 Weeks",
+              "whatYouLearn": [
+                "Programg basics",
+                "Networking concepts",
+                "Database management",
+                "Web development fundamentals"
+              ],
+              "subcourses": [],
+              "courseStructure": [
                 {
-                  "module": "Module 1: Office Tools",
-                  "lessonsCount": "4 lessons • 3 hours",
-                  "lessons": [
+                  "module": "Module 1: Fundamentals of Computing",
+                  "units": [
                     {
-                      "title": "Email & Communication",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
+                      "title": "Computer Systems & OS",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     },
                     {
-                      "title": "Intro to Spreadsheets",
-                      "icon": "bi bi-play-circle",
-                      "duration": "35 min"
+                      "title": "Networking Basics",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                },
+                {
+                  "module": "Module 2: Programg Concepts",
+                  "units": [
+                    {
+                      "title": "Variables & Logic",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Functions & Algorithms",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     }
                   ]
                 }
-              ],
-              "pricing": {
-                "price": 79,
-                "originalPrice": 119,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "6 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Regulated certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 1" },
-                { "label": "Students", "value": "620 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Digital Skills", "ICT", "Certificate"]
+              ]
             },
+
             {
-              "id": 3006,
-              "category": "Training Resource",
-              "title": "Functional Skills – Maths Level 1",
-              "description": "Certificate-level maths focusing on everyday numeracy and workplace calculations.",
-              "image": "/assets/img/scratch_Functional_math.png",
-              "badge": "Training Resource",
-              "price": 79,
-              "originalPrice": 119,
-              "level": "Level 1",
-              "duration": "6 Weeks",
-              "instructorName": "Daniel Price",
-              "instructorImg": "https://randomuser.me/api/portraits/men/41.jpg",
-              "instructorRole": "Functional Skills Tutor",
-              "rating": 4.6,
-              "students": 430,
-              "certification": "Functional Skills Certificate L1",
-              "whatYouLearn": [
-                "Basic numeracy",
-                "Everyday calculations",
-                "Problem solving"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Core Numeracy",
-                  "lessonsCount": "4 lessons • 3 hours",
-                  "lessons": [
-                    {
-                      "title": "Number Sense",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
-                    },
-                    {
-                      "title": "Practical Calculations",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 79,
-                "originalPrice": 119,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "6 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Exam included" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 1" },
-                { "label": "Students", "value": "430 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Functional Skills", "Maths", "Certificate"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Diploma Programmes",
-      "description": "Diploma-level programmes providing occupational skills and deeper technical knowledge for career progression.",
-      "classes": [
-        {
-          "id": 4011,
-          "title": "Health & Social Care Diplomas",
-          "level": "Level 3",
-          "duration": "12–24 Weeks",
-          "courses": [
-            {
-              "id": 4001,
+              "id": 1006,
               "category": "Qualification",
-              "title": "Diploma in Health & Social Care (Level 3)",
-              "description": "Comprehensive diploma covering complex care needs, safeguarding, and leadership at team level.",
-              "image": "/assets/img/scratch_Diploma_shc.png",
-              "badge": "Qualification",
-              "price": 399,
-              "originalPrice": 549,
-              "level": "Level 3",
-              "duration": "20 Weeks",
-              "instructorName": "Dr. Sarah Collins",
-              "instructorImg": "https://randomuser.me/api/portraits/women/42.jpg",
-              "instructorRole": "Senior Care Lecturer",
-              "rating": 4.9,
-              "students": 280,
-              "certification": "Diploma Level 3",
-              "whatYouLearn": [
-                "Complex care planning",
-                "Safeguarding & legal frameworks",
-                "Supervisory skills"
+              "title": "International Higher Diploma Engineering",
+              "description": "A wide-ranging engineering programme covering civil, mechanical, electrical, electronics and quantity surveying.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "image": "/assets/img/engineering.png",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": [
+                "Engineering",
+                "Civil",
+                "Mechanical",
+                "Electrical",
+                "Electronics",
+                "Procurement",
+                "Logistics",
+                "Supply Chain"
+              ],
+              "duration": "8 Weeks",
+              "whatYouLearn": [
+                "Engineering fundamentals",
+                "Civil & Mechanical principles",
+                "Electrical & Electronics basics",
+                "Project & Quantity Surveying skills"
+              ],
+              "subcourses": [
                 {
-                  "module": "Module 1: Advanced Care Practice",
-                  "lessonsCount": "4 lessons • 4 hours",
-                  "lessons": [
+                  "id": 10061,
+                  "title": "International Higher Diploma Procurement Management",
+                  "overview": "This course equips learners with procurement, supply chain, vendor management and strategic sourcing skills.",
+                  "tags": [
+                    "Procurement",
+                    "Supply Chain",
+                    "Vendor Management",
+                    "Sourcing"
+                  ],
+                  "whatYouLearn": [
+                    "Procurement process",
+                    "Supply chain management",
+                    "Vendor selection & evaluation",
+                    "Strategic sourcing"
+                  ],
+                  "courseStructure": [
                     {
-                      "title": "Complex Care Needs",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
+                      "module": "Module 1: Procurement Foundations",
+                      "units": [
+                        {
+                          "title": "Principles of Procurement",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Procurement Planning",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
                     },
                     {
-                      "title": "Care Planning & Evaluation",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
+                      "module": "Module 2: Logistics & Warehousing",
+                      "units": [
+                        {
+                          "title": "Warehousing Operations",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Vendor Management",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 10062,
+                  "title": "International Higher Diploma Logistics and Supply Chain",
+                  "overview": "Covers key logistics processes, transportation systems, operations and inventory management.",
+                  "tags": [
+                    "Logistics",
+                    "Supply Chain",
+                    "Transportation",
+                    "Inventory"
+                  ],
+                  "whatYouLearn": [
+                    "Logistics operations",
+                    "Transportation management",
+                    "Inventory control",
+                    "Supply chain planning"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Logistics Operations",
+                      "units": [
+                        {
+                          "title": "Transport Systems Overview",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Freight & Shipping",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Supply Chain Planning",
+                      "units": [
+                        {
+                          "title": "Inventory Control Techniques",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Demand Forecasting",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
                     }
                   ]
                 }
               ],
-              "pricing": {
-                "price": 399,
-                "originalPrice": 549,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "20 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Diploma certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 3" },
-                { "label": "Students", "value": "280 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Health & Social Care", "Diploma", "Care"]
+              "courseStructure": []
             },
+
             {
-              "id": 4002,
+              "id": 1007,
               "category": "Qualification",
-              "title": "Children & Young People's Workforce Diploma",
-              "description": "Diploma for practitioners working with children, including safeguarding, development and curriculum support.",
-              "image": "/assets/img/scratch_Young_Diploma.png",
+              "title": "International Higher Diploma Arts & Science",
+              "description": "Covers arts, humanities, cultural studies and applied science subjects.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "image": "/assets/img/arts_science.png",
               "badge": "Qualification",
-              "price": 379,
-              "originalPrice": 529,
-              "level": "Level 3",
-              "duration": "16 Weeks",
-              "instructorName": "Fiona Clarke",
-              "instructorImg": "https://randomuser.me/api/portraits/women/43.jpg",
-              "instructorRole": "Early Years Lecturer",
-              "rating": 4.8,
-              "students": 230,
-              "certification": "Diploma Level 3",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": ["Arts", "Science", "Humanities", "Culture"],
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
+              "whatYouLearn": [
+                "Arts & humanities understanding",
+                "Cultural awareness",
+                "Scientific basics",
+                "Creative expression"
+              ],
+              "subcourses": [],
+              "courseStructure": [
+                {
+                  "module": "Module 1: Arts & Humanities",
+                  "units": [
+                    {
+                      "title": "World Culture & History",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Creative Expression",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                }
+              ]
+            },
+
+            {
+              "id": 1008,
+              "category": "Qualification",
+              "title": "International Higher Diploma Education",
+              "description": "Covers child development, teacher training, learning psychology and modern teaching strategies.",
+              "entryRequirements": "Completion of secondary education or equivalent qualification.",
+              "assessments": "Coursework and assignments",
+              "image": "/assets/img/education.png",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
+              ],
+              "badge": "Qualification",
+              "level": "Diploma",
+              "credits": "20",
+              "tags": [
+                "Education",
+                "Child Development",
+                "Teacher Training",
+                "Pedagogy"
+              ],
               "whatYouLearn": [
                 "Child development",
-                "Safeguarding & welfare",
-                "Curriculum support"
+                "Teaching strategies",
+                "Learning psychology",
+                "Curriculum planning"
               ],
-              "curriculum": [
+              "subcourses": [
                 {
-                  "module": "Module 1: Child Development",
-                  "lessonsCount": "4 lessons • 3 hours",
-                  "lessons": [
+                  "id": 10081,
+                  "title": "International Higher Diploma Teacher Education",
+                  "overview": "Professional programme for teachers focusing on pedagogy, classroom management and educational psychology.",
+                  "tags": [
+                    "Teacher Education",
+                    "Pedagogy",
+                    "Classroom Management",
+                    "Educational Psychology"
+                  ],
+                  "whatYouLearn": [
+                    "Teaching methodologies",
+                    "Curriculum planning",
+                    "Assessment techniques",
+                    "Classroom management"
+                  ],
+                  "courseStructure": [
                     {
-                      "title": "Stages of Development",
-                      "icon": "bi bi-play-circle",
-                      "duration": "40 min"
+                      "module": "Module 1: Teacher Development",
+                      "units": [
+                        {
+                          "title": "Teaching Methodologies",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Curriculum Planning",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
                     },
                     {
-                      "title": "Supporting Learning",
-                      "icon": "bi bi-play-circle",
-                      "duration": "40 min"
+                      "module": "Module 2: Classroom Practice",
+                      "units": [
+                        {
+                          "title": "Student Assessment",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Managing Learning Environments",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": 10082,
+                  "title": "International Higher Diploma Child Education",
+                  "overview": "Specialized programme in child teaching, psychology, learning behaviour and classroom activities.",
+                  "tags": [
+                    "Child Education",
+                    "Child Development",
+                    "Learning",
+                    "Psychology"
+                  ],
+                  "whatYouLearn": [
+                    "Child development stages",
+                    "Learning psychology",
+                    "Activity-based teaching",
+                    "Classroom creativity"
+                  ],
+                  "courseStructure": [
+                    {
+                      "module": "Module 1: Child Development",
+                      "units": [
+                        {
+                          "title": "Cognitive Development Stages",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Child Behaviour",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
+                    },
+                    {
+                      "module": "Module 2: Practical Teaching",
+                      "units": [
+                        {
+                          "title": "Activity-Based Learning",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        },
+                        {
+                          "title": "Classroom Creativity",
+                          "credits": "20",
+                          "icon": "bi bi-file-earmark-text"
+                        }
+                      ]
                     }
                   ]
                 }
               ],
-              "pricing": {
-                "price": 379,
-                "originalPrice": 529,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "16 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Diploma certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 3" },
-                { "label": "Students", "value": "230 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Children", "Diploma", "Early Years"]
-            }
-          ]
-        },
-        {
-          "id": 4012,
-          "title": "Business & Logistics Diplomas",
-          "level": "Level 3–4",
-          "duration": "12–20 Weeks",
-          "courses": [
-            {
-              "id": 4003,
-              "category": "Qualification",
-              "title": "Diploma in Business Administration (Level 3)",
-              "description": "Practical diploma covering administration, business processes, digital record management and team coordination.",
-              "image": "/assets/img/scratch_DBA.png",
-              "badge": "Qualification",
-              "price": 349,
-              "originalPrice": 499,
-              "level": "Level 3",
-              "duration": "14 Weeks",
-              "instructorName": "Sarah Whitmore",
-              "instructorImg": "https://randomuser.me/api/portraits/women/28.jpg",
-              "instructorRole": "Business Consultant",
-              "rating": 4.8,
-              "students": 190,
-              "certification": "Diploma Level 3",
-              "whatYouLearn": [
-                "Admin systems",
-                "Professional communications",
-                "Project support"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Admin Systems",
-                  "lessonsCount": "4 lessons • 3 hours",
-                  "lessons": [
-                    {
-                      "title": "Managing Records",
-                      "icon": "bi bi-play-circle",
-                      "duration": "35 min"
-                    },
-                    {
-                      "title": "Digital Tools",
-                      "icon": "bi bi-play-circle",
-                      "duration": "35 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 349,
-                "originalPrice": 499,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "14 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Diploma certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 3" },
-                { "label": "Students", "value": "190 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Business", "Diploma", "Administration"]
+              "courseStructure": []
             },
+
             {
-              "id": 4004,
+              "id": 1009,
               "category": "Qualification",
-              "title": "Logistics & Warehousing Diploma",
-              "description": "Operational diploma covering warehousing, inventory control, health & safety in logistics environments.",
-              "image": "/assets/img/scratch_LW_Diploma.png",
+              "title": "Level 4 & 5 Extended Diploma in Quantity Surveying",
+              "description": "This programme opens the door to the modern construction world, guiding learners into the art and science of quantity surveying. It equips you with the practical knowledge needed to support cost planning, procurement, contract management, and the financial control of construction projects. Across Levels 4 and 5, you’ll build your capabilities step-by-step from understanding measurement and estimating, to handling variations, claims, and contract adistration within real-world project environments, including large-scale developments. Completing this diploma also provides a pathway to progress directly into the final stages of a relevant university degree, enabling you to advance toward a BSc (Hons) in Quantity Surveying with advanced entry.",
+              "image": "/assets/img/quantity_surveying.png",
+              "assessments": "Coursework and assignments",
               "badge": "Qualification",
-              "price": 329,
-              "originalPrice": 479,
-              "level": "Level 3",
-              "duration": "12 Weeks",
-              "instructorName": "Graham Cole",
-              "instructorImg": "https://randomuser.me/api/portraits/men/44.jpg",
-              "instructorRole": "Logistics Trainer",
-              "rating": 4.7,
-              "students": 210,
-              "certification": "Diploma Level 3",
-              "whatYouLearn": [
-                "Inventory control",
-                "Health & safety in warehouses",
-                "Picking & packing procedures"
+              "level": "Diploma",
+              "credits": "20",
+              "tags": ["Finance", "Accounting", "Auditing", "Investment"],
+              "duration": "18 Months",
+              "mode": [
+                "Blended learning",
+                "online",
+                "face-to-face",
+                "flexible virtual sessions"
               ],
-              "curriculum": [
+              "entryRequirements": "Open to learners aged 17+ with a Level 3 qualification in Quantity Surveying or an equivalent pathway. If you’re ready to step into the construction world, this course welcomes you",
+              "whatYouLearn": [
+                "Financial management basics",
+                "Accounting principles",
+                "Auditing techniques",
+                "Investment strategies"
+              ],
+              "subcourses": [],
+              "courseStructure": [
                 {
-                  "module": "Module 1: Warehouse Operations",
-                  "lessonsCount": "3 lessons • 3 hours",
-                  "lessons": [
+                  "module": "Level 4",
+                  "units": [
                     {
-                      "title": "Inventory Systems",
-                      "icon": "bi bi-play-circle",
-                      "duration": "40 min"
+                      "title": "Academic Writing & Digital Skills",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     },
                     {
-                      "title": "Safe Lifting Practices",
-                      "icon": "bi bi-play-circle",
-                      "duration": "30 min"
+                      "title": "Construction Technology & Sustainability",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Quantity Surveying Fundamentals",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Materials & Building Science",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Measurement, Estimating & Tendering",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "QS Mathematics",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    }
+                  ]
+                },
+                {
+                  "module": "Level 5",
+                  "units": [
+                    {
+                      "title": "Site Surveying & Field Techniques",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "QS Practice for Complex Projects",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Industry Research & Career Skills",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Contracts & Construction Management ",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "MEP Services",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
+                    },
+                    {
+                      "title": "Final Research Project",
+                      "credits": "20",
+                      "icon": "bi bi-file-earmark-text"
                     }
                   ]
                 }
-              ],
-              "pricing": {
-                "price": 329,
-                "originalPrice": 479,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "12 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Diploma certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 3" },
-                { "label": "Students", "value": "210 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Logistics", "Diploma", "Operations"]
-            }
-          ]
-        },
-        {
-          "id": 4013,
-          "title": "Hospitality & Catering Diplomas",
-          "level": "Level 2–3",
-          "duration": "8–16 Weeks",
-          "courses": [
-            {
-              "id": 4005,
-              "category": "Qualification",
-              "title": "Hospitality & Catering Diploma (Level 2)",
-              "description": "Practical skills and knowledge for food preparation, front-of-house service and hygiene at Level 2 diploma standard.",
-              "image": "/assets/img/HC_Diploma.png",
-              "badge": "Qualification",
-              "price": 299,
-              "originalPrice": 419,
-              "level": "Level 2",
-              "duration": "10 Weeks",
-              "instructorName": "James Porter",
-              "instructorImg": "https://randomuser.me/api/portraits/men/45.jpg",
-              "instructorRole": "Chef Trainer",
-              "rating": 4.7,
-              "students": 170,
-              "certification": "Diploma Level 2",
-              "whatYouLearn": [
-                "Food preparation techniques",
-                "Front-of-house service",
-                "Food safety & hygiene"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Food Preparation",
-                  "lessonsCount": "4 lessons • 4 hours",
-                  "lessons": [
-                    {
-                      "title": "Kitchen Safety & Hygiene",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
-                    },
-                    {
-                      "title": "Basic Cookery Skills",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 299,
-                "originalPrice": 419,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "10 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Diploma certificate" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 2" },
-                { "label": "Students", "value": "170 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Hospitality", "Catering", "Diploma"]
-            },
-            {
-              "id": 4006,
-              "category": "Training Resource",
-              "title": "Performing Manufacturing Operations (Diploma)",
-              "description": "Diploma module set for manufacturing roles covering production processes and quality checks.",
-              "image": "/assets/img/scratch_POM.png",
-              "badge": "Training Resource",
-              "price": 279,
-              "originalPrice": 399,
-              "level": "Level 2",
-              "duration": "12 Weeks",
-              "instructorName": "Kurt Hammond",
-              "instructorImg": "https://randomuser.me/api/portraits/men/46.jpg",
-              "instructorRole": "Manufacturing Trainer",
-              "rating": 4.6,
-              "students": 150,
-              "certification": "Diploma Module Set",
-              "whatYouLearn": [
-                "Production line operations",
-                "Quality assurance checks",
-                "Basic machine safety"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Production Basics",
-                  "lessonsCount": "3 lessons • 3 hours",
-                  "lessons": [
-                    {
-                      "title": "Line Operations",
-                      "icon": "bi bi-play-circle",
-                      "duration": "45 min"
-                    },
-                    {
-                      "title": "Quality Checks",
-                      "icon": "bi bi-play-circle",
-                      "duration": "45 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 279,
-                "originalPrice": 399,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "12 weeks duration" },
-                  {
-                    "icon": "bi bi-trophy",
-                    "text": "Diploma module certificate"
-                  }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 2" },
-                { "label": "Students", "value": "150 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Manufacturing", "Diploma", "Operations"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "title": "Higher Diploma Programmes",
-      "description": "Higher diplomas for advanced vocational knowledge, supervisory skills and technical management.",
-      "classes": [
-        {
-          "id": 5011,
-          "title": "Advanced Food Safety & HACCP",
-          "level": "Level 4",
-          "duration": "8–16 Weeks",
-          "courses": [
-            {
-              "id": 5001,
-              "category": "Qualification",
-              "title": "HACCP Level 4",
-              "description": "Advanced HACCP principles, system implementation and verification for food manufacturing supervision.",
-              "image": "/assets/img/scratch_HACCP.png",
-              "badge": "Qualification",
-              "price": 449,
-              "originalPrice": 599,
-              "level": "Level 4",
-              "duration": "12 Weeks",
-              "instructorName": "Dr. Martin Blake",
-              "instructorImg": "https://randomuser.me/api/portraits/men/47.jpg",
-              "instructorRole": "Food Safety Auditor",
-              "rating": 4.9,
-              "students": 120,
-              "certification": "HACCP Level 4 Certificate",
-              "whatYouLearn": [
-                "HACCP hazard analysis",
-                "Critical control points",
-                "Verification & audit techniques"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: HACCP Systems",
-                  "lessonsCount": "4 lessons • 4 hours",
-                  "lessons": [
-                    {
-                      "title": "Hazard Analysis",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
-                    },
-                    {
-                      "title": "CCP Monitoring",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 449,
-                "originalPrice": 599,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "12 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Level 4 accreditation" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 4" },
-                { "label": "Students", "value": "120 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["HACCP", "Food Safety", "Higher Diploma"]
-            },
-            {
-              "id": 5002,
-              "category": "Qualification",
-              "title": "Food Safety & Hygiene Level 4",
-              "description": "Advanced food safety for managers covering systems, microbiology and regulation.",
-              "image": "/assets/img/scratch_Food_Hygiene.png",
-              "badge": "Qualification",
-              "price": 429,
-              "originalPrice": 579,
-              "level": "Level 4",
-              "duration": "10 Weeks",
-              "instructorName": "Dr. Helen Rowe",
-              "instructorImg": "https://randomuser.me/api/portraits/women/48.jpg",
-              "instructorRole": "Food Safety Lecturer",
-              "rating": 4.8,
-              "students": 140,
-              "certification": "Level 4 Certificate",
-              "whatYouLearn": [
-                "Advanced hygiene systems",
-                "Regulation & compliance",
-                "Microbiology basics"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Managerial Food Safety",
-                  "lessonsCount": "4 lessons • 4 hours",
-                  "lessons": [
-                    {
-                      "title": "Regulatory Framework",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
-                    },
-                    {
-                      "title": "Microbial Controls",
-                      "icon": "bi bi-play-circle",
-                      "duration": "50 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 429,
-                "originalPrice": 579,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "10 weeks duration" },
-                  {
-                    "icon": "bi bi-trophy",
-                    "text": "Higher Diploma certificate"
-                  }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 4" },
-                { "label": "Students", "value": "140 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Food Safety", "Higher Diploma", "Management"]
-            }
-          ]
-        },
-        {
-          "id": 5012,
-          "title": "Leadership, Quality & Auditing",
-          "level": "Level 4",
-          "duration": "8–20 Weeks",
-          "courses": [
-            {
-              "id": 5003,
-              "category": "Qualification",
-              "title": "Leadership & Management Higher Diploma",
-              "description": "Advanced leadership skills for managerial roles covering performance management and strategic planning.",
-              "image": "/assets/img/scratch_LeadershipManagementHigherDiploma.png",
-              "badge": "Qualification",
-              "price": 499,
-              "originalPrice": 699,
-              "level": "Level 4",
-              "duration": "16 Weeks",
-              "instructorName": "Karen Holt",
-              "instructorImg": "https://randomuser.me/api/portraits/women/49.jpg",
-              "instructorRole": "Leadership Coach",
-              "rating": 4.9,
-              "students": 160,
-              "certification": "Higher Diploma in Leadership",
-              "whatYouLearn": [
-                "Strategic planning",
-                "Performance management",
-                "Coaching & development"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Strategic Leadership",
-                  "lessonsCount": "4 lessons • 5 hours",
-                  "lessons": [
-                    {
-                      "title": "Vision & Strategy",
-                      "icon": "bi bi-play-circle",
-                      "duration": "60 min"
-                    },
-                    {
-                      "title": "Managing Teams",
-                      "icon": "bi bi-play-circle",
-                      "duration": "60 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 499,
-                "originalPrice": 699,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "16 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Higher Diploma" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 4" },
-                { "label": "Students", "value": "160 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Leadership", "Higher Diploma", "Management"]
-            },
-            {
-              "id": 5004,
-              "category": "Qualification",
-              "title": "Internal Quality Assurance (IQA)",
-              "description": "Higher diploma level training for internal quality assurance practitioners and verifiers.",
-              "image": "/assets/img/scratch_IQA.png",
-              "badge": "Qualification",
-              "price": 399,
-              "originalPrice": 549,
-              "level": "Level 4",
-              "duration": "10 Weeks",
-              "instructorName": "Owen Blake",
-              "instructorImg": "https://randomuser.me/api/portraits/men/50.jpg",
-              "instructorRole": "Quality Assurance Lead",
-              "rating": 4.8,
-              "students": 130,
-              "certification": "IQA Certificate",
-              "whatYouLearn": [
-                "Quality assurance principles",
-                "Internal verification",
-                "Assessment standardisation"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: IQA Fundamentals",
-                  "lessonsCount": "3 lessons • 3 hours",
-                  "lessons": [
-                    {
-                      "title": "Internal Verification",
-                      "icon": "bi bi-play-circle",
-                      "duration": "45 min"
-                    },
-                    {
-                      "title": "Standards & Compliance",
-                      "icon": "bi bi-play-circle",
-                      "duration": "45 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 399,
-                "originalPrice": 549,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "10 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Higher Diploma (IQA)" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Level 4" },
-                { "label": "Students", "value": "130 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Quality Assurance", "IQA", "Higher Diploma"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "title": "Top Up Degree Courses",
-      "description": "Top-up degree modules allowing progression from diploma to honours degree with focused subjects.",
-      "classes": [
-        {
-          "id": 6011,
-          "title": "Business & Operational Management",
-          "level": "Top-up Degree",
-          "duration": "12–36 Weeks",
-          "courses": [
-            {
-              "id": 6001,
-              "category": "Qualification",
-              "title": "Top-up Degree: Logistics Management",
-              "description": "Advanced logistics topics suitable for top-up degree progression — supply chain design, transport planning and optimisation.",
-              "image": "/assets/img/scratch_topup_log.png",
-              "badge": "Top-up Degree",
-              "price": 899,
-              "originalPrice": 1199,
-              "level": "Top-up",
-              "duration": "36 Weeks",
-              "instructorName": "Prof. Alan Turner",
-              "instructorImg": "https://randomuser.me/api/portraits/men/51.jpg",
-              "instructorRole": "Logistics Professor",
-              "rating": 4.9,
-              "students": 75,
-              "certification": "Top-up Degree (subject to university validation)",
-              "whatYouLearn": [
-                "Supply chain strategy",
-                "Transport modelling",
-                "Logistics optimisation"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Supply Chain Design",
-                  "lessonsCount": "4 lessons • 6 hours",
-                  "lessons": [
-                    {
-                      "title": "Network Design",
-                      "icon": "bi bi-play-circle",
-                      "duration": "90 min"
-                    },
-                    {
-                      "title": "Inventory Strategy",
-                      "icon": "bi bi-play-circle",
-                      "duration": "90 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 899,
-                "originalPrice": 1199,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "36 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Top-up Degree pathway" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Top-up" },
-                { "label": "Students", "value": "75 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Logistics", "Top-up", "Degree"]
-            },
-            {
-              "id": 6002,
-              "category": "Qualification",
-              "title": "Top-up Degree: Environmental Conservation (Advanced)",
-              "description": "Advanced study in conservation policy, habitat management and project planning for degree progression.",
-              "image": "/assets/img/env_Advanced.png",
-              "badge": "Top-up Degree",
-              "price": 899,
-              "originalPrice": 1199,
-              "level": "Top-up",
-              "duration": "36 Weeks",
-              "instructorName": "Dr. Aisha Rahman",
-              "instructorImg": "https://randomuser.me/api/portraits/women/52.jpg",
-              "instructorRole": "Conservation Lecturer",
-              "rating": 4.8,
-              "students": 65,
-              "certification": "Top-up Degree (subject to validation)",
-              "whatYouLearn": [
-                "Habitat management planning",
-                "Conservation policy",
-                "Project management for conservation"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Conservation Planning",
-                  "lessonsCount": "4 lessons • 6 hours",
-                  "lessons": [
-                    {
-                      "title": "Habitat Assessment",
-                      "icon": "bi bi-play-circle",
-                      "duration": "90 min"
-                    },
-                    {
-                      "title": "Conservation Policy",
-                      "icon": "bi bi-play-circle",
-                      "duration": "90 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 899,
-                "originalPrice": 1199,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "36 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Top-up Degree pathway" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Top-up" },
-                { "label": "Students", "value": "65 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Conservation", "Top-up", "Degree"]
-            }
-          ]
-        },
-        {
-          "id": 6012,
-          "title": "Health & Social Care Top-up",
-          "level": "Top-up Degree",
-          "duration": "24–36 Weeks",
-          "courses": [
-            {
-              "id": 6003,
-              "category": "Qualification",
-              "title": "Top-up Degree: Advanced Health & Social Care",
-              "description": "Top-up modules focusing on advanced policy, research methods and leadership in health and social care.",
-              "image": "/assets/img/scratch_Social_Care.png",
-              "badge": "Top-up Degree",
-              "price": 899,
-              "originalPrice": 1199,
-              "level": "Top-up",
-              "duration": "36 Weeks",
-              "instructorName": "Prof. Linda Brookes",
-              "instructorImg": "https://randomuser.me/api/portraits/women/53.jpg",
-              "instructorRole": "Social Care Professor",
-              "rating": 4.9,
-              "students": 60,
-              "certification": "Top-up Degree (subject to university validation)",
-              "whatYouLearn": [
-                "Advanced research methods",
-                "Health policy analysis",
-                "Leadership in care services"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Research & Policy",
-                  "lessonsCount": "4 lessons • 6 hours",
-                  "lessons": [
-                    {
-                      "title": "Research Methods",
-                      "icon": "bi bi-play-circle",
-                      "duration": "90 min"
-                    },
-                    {
-                      "title": "Policy Evaluation",
-                      "icon": "bi bi-play-circle",
-                      "duration": "90 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 899,
-                "originalPrice": 1199,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "36 weeks duration" },
-                  { "icon": "bi bi-trophy", "text": "Top-up Degree pathway" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Top-up" },
-                { "label": "Students", "value": "60 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Health & Social Care", "Top-up", "Degree"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "Masters Programmes",
-      "description": "Advanced professional and academic masters-level programmes for leadership roles and specialist practice.",
-      "classes": [
-        {
-          "id": 7011,
-          "title": "Advanced Security & Risk",
-          "level": "Masters",
-          "duration": "12–24 Months",
-          "courses": [
-            {
-              "id": 7001,
-              "category": "Qualification",
-              "title": "Masters: Security Management",
-              "description": "Masters-level pathway in security management covering strategy, risk assessment and countermeasures.",
-              "image": "/assets/img/scratch_Security_Management.png",
-              "badge": "Masters",
-              "price": 2999,
-              "originalPrice": 3999,
-              "level": "Masters",
-              "duration": "12 Months",
-              "instructorName": "Dr. Richard Holmes",
-              "instructorImg": "https://randomuser.me/api/portraits/men/54.jpg",
-              "instructorRole": "Security Strategist",
-              "rating": 4.9,
-              "students": 32,
-              "certification": "Master of Professional Security (subject to validation)",
-              "whatYouLearn": [
-                "Strategic security planning",
-                "Threat & vulnerability assessment",
-                "Incident command and crisis management"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Strategic Security",
-                  "lessonsCount": "6 lessons • 12 hours",
-                  "lessons": [
-                    {
-                      "title": "Threat Assessment",
-                      "icon": "bi bi-play-circle",
-                      "duration": "120 min"
-                    },
-                    {
-                      "title": "Security Strategy",
-                      "icon": "bi bi-play-circle",
-                      "duration": "120 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 2999,
-                "originalPrice": 3999,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "12 months duration" },
-                  { "icon": "bi bi-trophy", "text": "Master's pathway" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Masters" },
-                { "label": "Students", "value": "32 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Security", "Masters", "Risk"]
-            },
-            {
-              "id": 7002,
-              "category": "Qualification",
-              "title": "Masters: Auditing & Inspection Leadership",
-              "description": "High-level masters module for designing and leading audit programmes across organisations.",
-              "image": "/assets/img/scratch_Auditing_leader.png",
-              "badge": "Masters",
-              "price": 2799,
-              "originalPrice": 3799,
-              "level": "Masters",
-              "duration": "12 Months",
-              "instructorName": "Prof. Elaine Morris",
-              "instructorImg": "https://randomuser.me/api/portraits/women/55.jpg",
-              "instructorRole": "Audit Professor",
-              "rating": 4.9,
-              "students": 28,
-              "certification": "Master's audit pathway",
-              "whatYouLearn": [
-                "Designing audit frameworks",
-                "Leading inspection teams",
-                "Regulatory compliance strategies"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Audit Design",
-                  "lessonsCount": "6 lessons • 12 hours",
-                  "lessons": [
-                    {
-                      "title": "Framework Development",
-                      "icon": "bi bi-play-circle",
-                      "duration": "120 min"
-                    },
-                    {
-                      "title": "Leadership in Audits",
-                      "icon": "bi bi-play-circle",
-                      "duration": "120 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 2799,
-                "originalPrice": 3799,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "12 months duration" },
-                  { "icon": "bi bi-trophy", "text": "Master's pathway" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Masters" },
-                { "label": "Students", "value": "28 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Auditing", "Masters", "Leadership"]
-            }
-          ]
-        },
-        {
-          "id": 7012,
-          "title": "Advanced Leadership & Policy",
-          "level": "Masters",
-          "duration": "12–24 Months",
-          "courses": [
-            {
-              "id": 7003,
-              "category": "Qualification",
-              "title": "Masters: Strategic Leadership",
-              "description": "Masters module focused on strategy, research, organisational change and policy leadership.",
-              "image": "/assets/img/scratch_Strategic_Leadership.png",
-              "badge": "Masters",
-              "price": 2899,
-              "originalPrice": 3899,
-              "level": "Masters",
-              "duration": "12 Months",
-              "instructorName": "Prof. James Ridley",
-              "instructorImg": "https://randomuser.me/api/portraits/men/56.jpg",
-              "instructorRole": "Leadership Professor",
-              "rating": 4.9,
-              "students": 40,
-              "certification": "Master's in Strategic Leadership (pathway)",
-              "whatYouLearn": [
-                "Organisational change",
-                "Advanced research methods",
-                "Policy & governance"
-              ],
-              "curriculum": [
-                {
-                  "module": "Module 1: Organisational Strategy",
-                  "lessonsCount": "6 lessons • 12 hours",
-                  "lessons": [
-                    {
-                      "title": "Leading Change",
-                      "icon": "bi bi-play-circle",
-                      "duration": "120 min"
-                    },
-                    {
-                      "title": "Research for Leaders",
-                      "icon": "bi bi-play-circle",
-                      "duration": "120 min"
-                    }
-                  ]
-                }
-              ],
-              "pricing": {
-                "price": 2899,
-                "originalPrice": 3899,
-                "features": [
-                  { "icon": "bi bi-clock", "text": "12 months duration" },
-                  { "icon": "bi bi-trophy", "text": "Master's pathway" }
-                ]
-              },
-              "info": [
-                { "label": "Level", "value": "Masters" },
-                { "label": "Students", "value": "40 enrolled" },
-                { "label": "Language", "value": "English" }
-              ],
-              "tags": ["Leadership", "Masters", "Policy"]
+              ]
             }
           ]
         }

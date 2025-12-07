@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import CourseCard from "../components/CourseCard";
 import CourseFilters from "../components/CourseFilters";
 import PageTitle from "../components/pageTitle/PageTitle";
+import fullCoursesData from "../mockdata/fullCoursesData.json";
 
 const CoursesSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -9,11 +10,11 @@ const CoursesSection = () => {
   const [sortOption, setSortOption] = useState("Most Popular");
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [courses, setCourses] = useState([]);
-  const [loading, setLoading] = useState(true);
-
+  console.log(courses);
+  console.log(fullCoursesData);
   const coursesPerPage = 6;
 
-  // --- Load ALL courses dynamically ---
+  // --- Load all courses ---
   const loadCourses = async () => {
     try {
       const res = await fetch("http://localhost:8000/api/getAllCourses.php");
@@ -21,7 +22,6 @@ const CoursesSection = () => {
 
       if (data.success) {
         setCourses(data.courses);
-        setFilteredCourses(data.courses);
       }
     } catch (err) {
       console.error("Failed to fetch courses:", err);
@@ -30,34 +30,53 @@ const CoursesSection = () => {
     }
   };
 
+  // Flatten all courses from programmes -> classes
+  const allCourses = useMemo(() => {
+    return fullCoursesData.programmes.flatMap((programme) =>
+      programme.classes.flatMap((cls) => cls.courses)
+    );
+  }, []);
+
+  // Initialize filteredCourses on first render
+  useEffect(() => {
+    setFilteredCourses(allCourses);
+  }, [allCourses]);
+
   useEffect(() => {
     loadCourses();
   }, []);
 
-  // -- SEARCH + SORT + PAGINATION --
+  // Apply search & sort whenever searchTerm or sortOption changes
   const paginatedCourses = useMemo(() => {
-    let sorted = [...filteredCourses];
+    let sortedCourses = [...filteredCourses];
 
     // Search
-    if (searchTerm.trim()) {
-      sorted = sorted.filter((course) =>
+    if (searchTerm.trim() !== "") {
+      sortedCourses = sortedCourses.filter((course) =>
         course.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Sorting
+    // Sort
     switch (sortOption) {
       case "Newest First":
-        sorted.sort((a, b) => b.id - a.id);
+        sortedCourses.sort((a, b) => b.id - a.id);
         break;
-
+      case "Price: Low to High":
+        sortedCourses.sort((a, b) => a.price - b.price);
+        break;
+      case "Price: High to Low":
+        sortedCourses.sort((a, b) => b.price - a.price);
+        break;
       case "Duration: Short to Long":
-        sorted.sort((a, b) => a.duration.localeCompare(b.duration));
+        sortedCourses.sort((a, b) => a.duration.localeCompare(b.duration));
         break;
+      default:
+        break; // Most Popular: keep original order
     }
 
     const start = (currentPage - 1) * coursesPerPage;
-    return sorted.slice(start, start + coursesPerPage);
+    return sortedCourses.slice(start, start + coursesPerPage);
   }, [filteredCourses, searchTerm, sortOption, currentPage]);
 
   const totalPages = Math.ceil(filteredCourses.length / coursesPerPage);
@@ -66,25 +85,68 @@ const CoursesSection = () => {
     if (page >= 1 && page <= totalPages) setCurrentPage(page);
   };
 
-  if (loading) return <div className="text-center py-5">Loading...</div>;
-
   return (
     <main className="main">
       <PageTitle title="All Courses" current="Courses" />
-
       <section id="courses-2" className="courses-2 featured-courses section">
         <div className="container">
           <div className="row">
-            {/* LEFT FILTERS */}
+            {/* Filters */}
             <div className="col-lg-3">
+              {/* <CourseFilters
+                allCourses={allCourses}
+                onFilterChange={({ category, level, duration, price }) => {
+                  let filtered = allCourses;
+
+                  if (!category.includes("All Categories")) {
+                    filtered = filtered.filter((c) =>
+                      category.includes(c.category)
+                    );
+                  }
+
+                  if (!level.includes("All Levels")) {
+                    filtered = filtered.filter((c) => level.includes(c.level));
+                  }
+
+                  if (!duration.includes("All Durations")) {
+                    filtered = filtered.filter((c) =>
+                      duration.includes(c.duration)
+                    );
+                  }
+
+                  if (!price.includes("All Prices")) {
+                    filtered = filtered.filter(
+                      (c) =>
+                        (price.includes("Free") && c.price === 0) ||
+                        (price.includes("Paid") && c.price > 0)
+                    );
+                  }
+
+                  setFilteredCourses(filtered);
+                  setCurrentPage(1); // Reset pagination
+                }}
+              /> */}
               <CourseFilters
-                allCourses={courses}
-                onFilterChange={(selectedCategory) => {
-                  if (selectedCategory === "All Courses") {
-                    setFilteredCourses(courses);
+                allCourses={allCourses}
+                onFilterChange={(selectedTitle) => {
+                  if (selectedTitle === "All Courses") {
+                    setFilteredCourses(allCourses);
                   } else {
                     setFilteredCourses(
-                      courses.filter((c) => c.category === selectedCategory)
+                      allCourses.filter(
+                        (course) =>
+                          course.title.replace(
+                            "International Higher Diploma ",
+                            ""
+                          ) === selectedTitle ||
+                          course.subcourses?.some(
+                            (sub) =>
+                              sub.title.replace(
+                                "International Higher Diploma ",
+                                ""
+                              ) === selectedTitle
+                          )
+                      )
                     );
                   }
                   setCurrentPage(1);
@@ -92,8 +154,9 @@ const CoursesSection = () => {
               />
             </div>
 
-            {/* COURSES GRID */}
+            {/* Courses Grid */}
             <div className="col-lg-9">
+              {/* Header Search + Sort */}
               <div className="courses-header" data-aos="fade-left">
                 <div className="search-box">
                   <i className="bi bi-search"></i>
@@ -104,7 +167,6 @@ const CoursesSection = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </div>
-
                 <div className="sort-dropdown">
                   <select
                     value={sortOption}
@@ -112,16 +174,15 @@ const CoursesSection = () => {
                   >
                     <option>Most Popular</option>
                     <option>Newest First</option>
+                    <option>Price: Low to High</option>
+                    <option>Price: High to Low</option>
                     <option>Duration: Short to Long</option>
                   </select>
                 </div>
               </div>
 
+              {/* Courses Grid */}
               <div className="courses-grid row" data-aos="fade-up">
-                {paginatedCourses.length === 0 && (
-                  <div className="text-center py-4">No courses found.</div>
-                )}
-
                 {paginatedCourses.map((course) => (
                   <CourseCard
                     key={course.id}
@@ -132,11 +193,13 @@ const CoursesSection = () => {
               </div>
 
               {/* Pagination */}
-              <div className="pagination-wrapper">
+              <div className="pagination-wrapper" data-aos="fade-up">
                 <nav aria-label="Courses pagination">
                   <ul className="pagination justify-content-center">
                     <li
-                      className={`page-item ${currentPage === 1 && "disabled"}`}
+                      className={`page-item ${
+                        currentPage === 1 ? "disabled" : ""
+                      }`}
                     >
                       <button
                         className="page-link"
@@ -145,7 +208,6 @@ const CoursesSection = () => {
                         <i className="bi bi-chevron-left"></i>
                       </button>
                     </li>
-
                     {Array.from({ length: totalPages }, (_, i) => (
                       <li
                         key={i}
@@ -161,10 +223,9 @@ const CoursesSection = () => {
                         </button>
                       </li>
                     ))}
-
                     <li
                       className={`page-item ${
-                        currentPage === totalPages && "disabled"
+                        currentPage === totalPages ? "disabled" : ""
                       }`}
                     >
                       <button

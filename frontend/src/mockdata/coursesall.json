@@ -1,0 +1,116 @@
+{
+  "success": true,
+  "courses": [
+    {
+      "id": 14,
+      "category": "Certificate",
+      "level": "Level 6",
+      "title": "Diploma in Quantity Surveying",
+      "description": "This programme opens the door to the modern construction world, guiding learners into the art and science of quantity surveying. It equips you with the practical knowledge needed to support cost planning, procurement, contract management, and the financial control of construction projects. Across Levels 4 and 5, you\u2019ll build your capabilities step-by-step from understanding measurement and estimating, to handling variations, claims, and contract adistration within real-world project environments, including large-scale developments. Completing this diploma also provides a pathway to progress directly into the final stages of a relevant university degree, enabling you to advance toward a BSc (Hons) in Quantity Surveying with advanced entry.",
+      "entryRequirements": "Open to learners aged 17+ with a Level 3 qualification in Quantity Surveying or an equivalent pathway. If you\u2019re ready to step into the construction world, this course welcomes you",
+      "assessments": "Coursework and assignments",
+      "badge": "12 Badge",
+      "credits": "120",
+      "duration": "12 weeks",
+      "image": "http://localhost:8000/uploads/courses/1765116186_3491.png",
+      "modes": ["Online", "Face-to-face", "Flexible virtual sessions"],
+      "tags": ["Finance", "Accounting", "Auditing", "Investment"],
+      "whatYouLearn": [
+        "Financial management basics",
+        "Accounting principles",
+        "Auditing techniques",
+        "Investment strategies"
+      ],
+      "subcourses": [
+        {
+          "id": 30,
+          "title": "International Higher Diploma LAW",
+          "overview": "Covers the fundamentals of law, crial justice, legal systems and international legal frameworks."
+        },
+        {
+          "id": 31,
+          "title": "International Higher Diploma Computing",
+          "overview": "Covers programg, networking, databases, web development and modern computing systems."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "category": "Qualification",
+      "level": "Level 6",
+      "title": "test the data correctly ",
+      "description": "description",
+      "entryRequirements": "",
+      "assessments": "",
+      "badge": "",
+      "credits": "",
+      "duration": "",
+      "image": "http://localhost:8000/uploads/courses/1765079202_1159.png",
+      "modes": ["Face-to-face", "Flexible virtual sessions", "Online"],
+      "tags": [],
+      "whatYouLearn": ["ddddd"],
+      "subcourses": []
+    },
+    {
+      "id": 12,
+      "category": "Diploma",
+      "level": "Certificate",
+      "title": "Test the modes",
+      "description": "test the modes description ",
+      "entryRequirements": "",
+      "assessments": "",
+      "badge": "",
+      "credits": "",
+      "duration": "",
+      "image": "http://localhost:8000/uploads/courses/1765077513_7659.png",
+      "modes": ["Face-to-face", "Online"],
+      "tags": [],
+      "whatYouLearn": [],
+      "subcourses": []
+    },
+    {
+      "id": 11,
+      "category": "Certificate",
+      "level": "Level 5",
+      "title": "International Higher Diploma Business Management & Marketing",
+      "description": "Advanced programme covering business, marketing strategy, digital marketing, operations and leadership.\r\n\r\n",
+      "entryRequirements": "",
+      "assessments": "Coursework and assignments",
+      "badge": "onlide badge",
+      "credits": "120",
+      "duration": "8 weeks",
+      "image": "http://localhost:8000/uploads/courses/1765079223_8514.png",
+      "modes": [
+        "Flexible virtual sessions",
+        "Face-to-face",
+        "Blended learning"
+      ],
+      "tags": ["nw tag", "sfdfdsf"],
+      "whatYouLearn": ["add too", "add"],
+      "subcourses": []
+    },
+    {
+      "id": 8,
+      "category": "Certificate",
+      "level": "Level 5",
+      "title": "Level 4 & 5 Extended Diploma in Quantity Surveying",
+      "description": "Advance Course in International StudiesThis programme opens the door to the modern construction world, guiding learners into the art and science of quantity surveying. It equips you with the practical knowledge needed to support cost planning, procurement, contract management, and the financial control of construction projects. Across Levels 4 and 5, you\u2019ll build your capabilities step-by-step from understanding measurement and estimating, to handling variations, claims, and contract adistration within real-world project environments, including large-scale developments. Completing this diploma also provides a pathway to progress directly into the final stages of a relevant university degree, enabling you to advance toward a BSc (Hons) in Quantity Surveying with advanced entry.",
+      "entryRequirements": "",
+      "assessments": "Coursework and assignments",
+      "badge": "Geade A",
+      "credits": "240",
+      "duration": "12 weeks",
+      "image": "http://localhost:8000/uploads/courses/1765113136_6336.png",
+      "modes": ["Online", "Face-to-face"],
+      "tags": ["people"],
+      "whatYouLearn": ["Learn building", "Social service"],
+      "subcourses": [
+        {
+          "id": 29,
+          "title": "Second course",
+          "overview": "Second cource over view"
+        }
+      ]
+    }
+  ]
+}

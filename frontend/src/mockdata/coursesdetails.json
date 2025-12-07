@@ -1,0 +1,111 @@
+{
+  "success": true,
+  "course": {
+    "id": 14,
+    "category": "Certificate",
+    "level": "Level 6",
+    "title": "Diploma in Quantity Surveying",
+    "description": "This programme opens the door to the modern construction world, guiding learners into the art and science of quantity surveying. It equips you with the practical knowledge needed to support cost planning, procurement, contract management, and the financial control of construction projects. Across Levels 4 and 5, you\u2019ll build your capabilities step-by-step from understanding measurement and estimating, to handling variations, claims, and contract adistration within real-world project environments, including large-scale developments. Completing this diploma also provides a pathway to progress directly into the final stages of a relevant university degree, enabling you to advance toward a BSc (Hons) in Quantity Surveying with advanced entry.",
+    "entry_requirements": "Open to learners aged 17+ with a Level 3 qualification in Quantity Surveying or an equivalent pathway. If you\u2019re ready to step into the construction world, this course welcomes you",
+    "assessments": "Coursework and assignments",
+    "image": "http://localhost:8000/uploads/courses/1765116186_3491.png",
+    "badge": "12 Badge",
+    "credits": "120",
+    "duration": "12 weeks",
+    "created_at": "2025-12-07 14:03:06",
+    "modes": ["Online", "Face-to-face", "Flexible virtual sessions"],
+    "tags": ["Finance", "Accounting", "Auditing", "Investment"],
+    "whatYouLearn": [
+      "Financial management basics",
+      "Accounting principles",
+      "Auditing techniques",
+      "Investment strategies"
+    ],
+    "modules": [
+      {
+        "id": 88,
+        "module_name": "Level 4",
+        "units": [
+          {
+            "title": "Academic Writing & Digital Skills",
+            "credits": "10"
+          },
+          {
+            "title": "Construction Technology & Sustainability",
+            "credits": "10"
+          },
+          {
+            "title": "Quantity Surveying Fundamentals",
+            "credits": "10"
+          },
+          {
+            "title": "Materials & Building Science",
+            "credits": "10"
+          }
+        ]
+      },
+      {
+        "id": 89,
+        "module_name": "Level 5",
+        "units": [
+          {
+            "title": "Site Surveying & Field Techniques",
+            "credits": "10"
+          },
+          {
+            "title": "QS Practice for Complex Projects",
+            "credits": "10"
+          },
+          {
+            "title": "Industry Research & Career Skills",
+            "credits": "10"
+          }
+        ]
+      }
+    ],
+    "subcourses": [
+      {
+        "id": 30,
+        "title": "International Higher Diploma LAW",
+        "overview": "Covers the fundamentals of law, crial justice, legal systems and international legal frameworks.",
+        "modules": [
+          {
+            "id": 90,
+            "module_name": "Module 1: Introduction to Law",
+            "units": [
+              {
+                "title": "Legal Systems Overview",
+                "credits": "20"
+              },
+              {
+                "title": "Principles of Crial Law",
+                "credits": "20"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 31,
+        "title": "International Higher Diploma Computing",
+        "overview": "Covers programg, networking, databases, web development and modern computing systems.",
+        "modules": [
+          {
+            "id": 91,
+            "module_name": "Module 1: Fundamentals of Computing",
+            "units": [
+              {
+                "title": "Variables & Logic",
+                "credits": "20"
+              },
+              {
+                "title": "Functions & Algorithms",
+                "credits": "20"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
