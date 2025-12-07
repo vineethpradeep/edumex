@@ -1141,7 +1141,7 @@ export default function AddCourse() {
         </Card>
 
         <div className="form-actions">
-          <button type="submit" className="btn-primary" disabled={submitting}>
+          <button type="submit" className="btn-accept" disabled={submitting}>
             {submitting
               ? "Submitting..."
               : isEditMode

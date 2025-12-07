@@ -1,6 +1,104 @@
-import React from "react";
-
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 const EnrollmentForm = () => {
+  const location = useLocation();
+  const prefillCourseId = location.state?.courseId || "";
+  const prefillCourseTitle = location.state?.courseTitle || "";
+
+  const [courses, setCourses] = useState([]);
+  const [selectedCourse, setSelectedCourse] = useState(prefillCourseTitle);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    course: prefillCourseTitle || "",
+    education: "",
+    dob: "",
+    location: "",
+    experience: "",
+    motivation: "",
+    schedule: "flexible",
+    terms: false,
+    newsletter: false,
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  // Load courses
+  useEffect(() => {
+    const loadCourses = async () => {
+      try {
+        const res = await fetch("http://localhost:8000/api/getAllCourses.php");
+        const data = await res.json();
+        if (data.success) setCourses(data.courses);
+      } catch (err) {
+        console.error("Error loading courses:", err);
+      }
+    };
+    loadCourses();
+  }, []);
+
+  // Handle input changes
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+
+    if (name === "course") setSelectedCourse(value);
+  };
+
+  // Submit form
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccessMessage("");
+    setErrorMessage("");
+
+    try {
+      const res = await fetch("http://localhost:8000/api/enquiries.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSuccessMessage(
+          "Application enquiry enrollment form submitted successfully. "
+        );
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          course: "",
+          education: "",
+          experience: "",
+          motivation: "",
+          schedule: "flexible",
+          terms: false,
+          newsletter: false,
+        });
+        setSelectedCourse("");
+      } else {
+        setErrorMessage(data.message || "Failed to submit enrollment.");
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMessage("Server error. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="col-lg-8 mx-auto">
       <div className="enrollment-form-wrapper">
@@ -9,7 +107,7 @@ const EnrollmentForm = () => {
           data-aos="fade-up"
           data-aos-delay="200"
         >
-          <h2>Enroll in Your Dream Course</h2>
+          <h2>Enrollment Enquiry Form</h2>
           <p>
             Take the next step in your educational journey. Complete the form
             below to secure your spot in our comprehensive online learning
@@ -21,6 +119,7 @@ const EnrollmentForm = () => {
           className="enrollment-form"
           data-aos="fade-up"
           data-aos-delay="300"
+          onSubmit={handleSubmit}
         >
           {/* Name */}
           <div className="row mb-4">
@@ -35,6 +134,8 @@ const EnrollmentForm = () => {
                   name="firstName"
                   className="form-control"
                   required
+                  value={formData.firstName}
+                  onChange={handleChange}
                   autoComplete="given-name"
                 />
               </div>
@@ -51,6 +152,8 @@ const EnrollmentForm = () => {
                   className="form-control"
                   required
                   autoComplete="family-name"
+                  value={formData.lastName}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -70,6 +173,8 @@ const EnrollmentForm = () => {
                   className="form-control"
                   required
                   autoComplete="email"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -84,6 +189,47 @@ const EnrollmentForm = () => {
                   name="phone"
                   className="form-control"
                   autoComplete="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="row mb-4">
+            {/* Date of Birth */}
+            <div className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="dob" className="form-label">
+                  Date of Birth *
+                </label>
+                <input
+                  type="date"
+                  id="dob"
+                  name="dob"
+                  className="form-control modern-date"
+                  required
+                  value={formData.dob}
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            {/* Location */}
+            <div className="col-md-6">
+              <div className="form-group">
+                <label htmlFor="location" className="form-label">
+                  Location *
+                </label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  className="form-control"
+                  placeholder="Enter your city / country"
+                  required
+                  value={formData.location}
+                  onChange={handleChange}
                 />
               </div>
             </div>
@@ -96,7 +242,7 @@ const EnrollmentForm = () => {
                 <label htmlFor="course" className="form-label">
                   Select Course *
                 </label>
-                <select
+                {/* <select
                   id="course"
                   name="course"
                   className="form-select"
@@ -121,6 +267,33 @@ const EnrollmentForm = () => {
                   <option value="mobile-development">
                     Mobile App Development
                   </option>
+                </select> */}
+                <select
+                  id="course"
+                  name="course"
+                  className="form-select"
+                  required
+                  value={selectedCourse}
+                  onChange={handleChange}
+                >
+                  {/* Default option */}
+                  {!selectedCourse && (
+                    <option value="">Choose a course...</option>
+                  )}
+
+                  {/* Pre-selected course (if coming from Register Now) */}
+                  {selectedCourse && (
+                    <option value={selectedCourse}>{selectedCourse}</option>
+                  )}
+
+                  {/* Show ALL courses except pre-selected one */}
+                  {courses
+                    .filter((c) => c.title !== selectedCourse)
+                    .map((c) => (
+                      <option key={c.id} value={c.title}>
+                        {c.title}
+                      </option>
+                    ))}
                 </select>
               </div>
             </div>
@@ -133,7 +306,13 @@ const EnrollmentForm = () => {
                 <label htmlFor="education" className="form-label">
                   Education Level
                 </label>
-                <select id="education" name="education" className="form-select">
+                <select
+                  id="education"
+                  name="education"
+                  className="form-select"
+                  value={formData.education}
+                  onChange={handleChange}
+                >
                   <option value="">Select your education level...</option>
                   <option value="high-school">High School</option>
                   <option value="associate">Associate Degree</option>
@@ -177,6 +356,8 @@ const EnrollmentForm = () => {
                   className="form-control"
                   rows="4"
                   placeholder="Share your goals and what you hope to achieve..."
+                  value={formData.motivation}
+                  onChange={handleChange}
                 ></textarea>
               </div>
             </div>
@@ -197,6 +378,8 @@ const EnrollmentForm = () => {
                       name="schedule"
                       id="weekdays"
                       value="weekdays"
+                      checked={formData.schedule === "weekdays"}
+                      onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="weekdays">
                       Weekdays (Monday - Friday)
@@ -206,9 +389,11 @@ const EnrollmentForm = () => {
                     <input
                       className="form-check-input"
                       type="radio"
-                      name="schedule"
                       id="weekends"
+                      name="schedule"
                       value="weekends"
+                      checked={formData.schedule === "weekends"}
+                      onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="weekends">
                       Weekends (Saturday - Sunday)
@@ -221,7 +406,8 @@ const EnrollmentForm = () => {
                       name="schedule"
                       id="flexible"
                       value="flexible"
-                      defaultChecked
+                      checked={formData.schedule === "flexible"}
+                      onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="flexible">
                       Flexible (Self-paced)
@@ -244,6 +430,8 @@ const EnrollmentForm = () => {
                       id="terms"
                       name="terms"
                       required
+                      checked={formData.terms}
+                      onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="terms">
                       I agree to the <a href="#">Terms of Service</a> and{" "}
@@ -256,6 +444,8 @@ const EnrollmentForm = () => {
                       type="checkbox"
                       id="newsletter"
                       name="newsletter"
+                      checked={formData.newsletter}
+                      onChange={handleChange}
                     />
                     <label className="form-check-label" htmlFor="newsletter">
                       I would like to receive course updates and educational
@@ -266,13 +456,24 @@ const EnrollmentForm = () => {
               </div>
             </div>
           </div>
+          {/* Success / Error Messages */}
+          {successMessage && (
+            <div className="alert alert-success">{successMessage}</div>
+          )}
+          {errorMessage && (
+            <div className="alert alert-danger">{errorMessage}</div>
+          )}
 
           {/* Submit */}
           <div className="row">
             <div className="col-12 text-center">
-              <button type="submit" className="btn btn-enroll">
+              <button
+                type="submit"
+                className="btn btn-enroll"
+                disabled={loading}
+              >
                 <i className="bi bi-check-circle me-2"></i>
-                Enroll Now
+                {loading ? "Submitting..." : "Enquiry Now"}
               </button>
               <p className="enrollment-note mt-3">
                 <i className="bi bi-shield-check"></i>

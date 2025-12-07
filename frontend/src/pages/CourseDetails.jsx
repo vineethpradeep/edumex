@@ -161,6 +161,7 @@ const CourseDetails = () => {
 
                 <Link
                   to="/enroll"
+                  state={{ courseId: course.id, courseTitle: course.title }}
                   className="btn w-100 mb-2 fw-semibold enroll-btn"
                 >
                   Register Now

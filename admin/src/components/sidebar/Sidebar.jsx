@@ -11,6 +11,7 @@ import "./sidebar.css";
 
 export default function Sidebar() {
   const [courseDropdown, setCourseDropdown] = useState(false);
+  const [studentsDropdown, setStudentsDropdown] = useState(false);
 
   function handleLogout() {
     localStorage.removeItem("admin_token");
@@ -32,10 +33,32 @@ export default function Sidebar() {
         </li>
 
         <li>
-          <Link to="/" className="sidebar-link">
+          <div
+            className="sidebar-link dropdown-toggle"
+            onClick={() => setStudentsDropdown(!studentsDropdown)}
+          >
             <FaUsers className="icon" />
             <span className="link-text">Students</span>
-          </Link>
+            <FaChevronDown
+              className="dropdown-icon"
+              style={{
+                transform: studentsDropdown ? "rotate(0deg)" : "rotate(-90deg)",
+                transition: "transform 0.3s ease",
+              }}
+            />
+          </div>
+          <ul className={`dropdown-menu ${studentsDropdown ? "show" : ""}`}>
+            <li>
+              <Link to="/view-all-enquiries" className="sub-link">
+                Student Enquiry
+              </Link>
+            </li>
+            {/* <li>
+              <Link to="/view-all-courses" className="sub-link">
+                View All Courses
+              </Link>
+            </li> */}
+          </ul>
         </li>
 
         {/* Courses Dropdown */}

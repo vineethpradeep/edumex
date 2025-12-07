@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaPlus } from "react-icons/fa";
-import Card from "../../components/card/Card";
-import PageHeader from "../../components/pageHeader/PageHeader";
-import useModal from "../../hooks/useModal";
-import Modal from "../../components/modal/Modal";
-import "./viewAllCourses.css";
+import Card from "../components/card/Card";
+import PageHeader from "../components/pageHeader/PageHeader";
+import useModal from "../hooks/useModal";
+import Modal from "../components/modal/Modal";
 
 export default function ViewAllCourses() {
   const { isOpen, config, openModal, confirm, cancel } = useModal();

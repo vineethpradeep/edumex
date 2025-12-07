@@ -26,6 +26,11 @@
     border-top-right-radius: 12px;
 }
 
+.card-actions {
+    display: flex;
+    gap: 10px;
+}
+
 /* Optional badge or action in header */
 .card-header .header-action {
     font-size: 14px;

@@ -1,0 +1,145 @@
+:root {
+    --sidebar-width: 260px;
+    --bg-light: #fff;
+    --bg-page: #f5f5f9;
+
+    --primary: #696cff;
+    --primary-gradient: linear-gradient(135deg, #696cff, #8b5cf6);
+    --btn-hover-gradient: #7c3aed;
+
+    --text-dark: #344767;
+    --text-light: #67748e;
+
+    --border-light: rgba(0, 0, 0, 0.08);
+
+    --radius-lg: 14px;
+    --radius-sm: 8px;
+}
+
+/* ------------------ Layout ------------------ */
+
+.enquiry-header {
+    padding: 15px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enquiry-person-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.enquiry-person-title span {
+    color: var(--primary);
+}
+
+.enquiry-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 10px 5px 5px 5px;
+}
+
+/* ------------------ Section Titles ------------------ */
+
+.section-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-dark);
+    border-left: 3px solid var(--primary);
+    padding-left: 8px;
+}
+
+/* ------------------ Info Rows ------------------ */
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--border-light);
+}
+
+.label {
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.value {
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: right;
+}
+
+/* ------------------ Motivation Box ------------------ */
+
+.motivation-box {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.motivation-box .label {
+    margin-bottom: 6px;
+}
+
+.motivation-text {
+    background: var(--bg-page);
+    padding: 14px;
+    border-radius: var(--radius-sm);
+    color: var(--text-dark);
+    font-size: 14px;
+    border-left: 4px solid var(--primary);
+    line-height: 1.55;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* ------------------ Status Badge ------------------ */
+
+.status-badge {
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-new {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.status-contacted {
+    background: #fff4d8;
+    color: #b7791f;
+}
+
+.status-closed {
+    background: #ffe5e7;
+    color: #c53030;
+}
+
+/* ------------------ Buttons ------------------ */
+
+.action-buttons {
+    margin-top: 30px;
+}
+
+/* ------------------ Responsive ------------------ */
+
+@media (max-width: 768px) {
+    .enquiry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enquiry-header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
