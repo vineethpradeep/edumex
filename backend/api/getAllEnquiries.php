@@ -7,8 +7,8 @@ include "../db.php";
 
 try {
     $stmt = $conn->query("SELECT * FROM enquiries ORDER BY created_at DESC");
-    $enrollments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo json_encode(["success" => true, "enrollments" => $enrollments]);
+    $enquiries = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo json_encode(["success" => true, "enquiries" => $enquiries]);
 } catch (PDOException $e) {
     echo json_encode(["success" => false, "message" => $e->getMessage()]);
 }

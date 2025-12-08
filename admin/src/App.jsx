@@ -37,7 +37,7 @@ function App() {
           <Route path="course/:id" element={<ViewCourse />} />
           <Route path="course/:id/edit" element={<AddCourse />} />
           <Route path="view-all-courses" element={<ViewAllCourses />} />
-          {/* Enrollments */}
+          {/* Enquiries */}
           <Route path="view-all-enquiries" element={<ViewAllEnquiries />} />
           <Route path="enquiry/:id" element={<ViewSingleEnquiry />} />
           <Route path="*" element={<Navigate to="/dashboard" />} />

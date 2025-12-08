@@ -10,30 +10,30 @@ export default function ViewAllEnquiries() {
   const navigate = useNavigate();
   const { isOpen, config, openModal, confirm, cancel } = useModal();
 
-  const [enrollments, setEnrollments] = useState([]);
+  const [enquiries, setEnquiries] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // --- Load all enrollments ---
-  const loadEnrollments = async () => {
+  // --- Load all enquiries ---
+  const loadEnquiries = async () => {
     try {
       const res = await fetch("http://localhost:8000/api/getAllEnquiries.php");
       const data = await res.json();
 
       if (data.success) {
-        setEnrollments(data.enrollments);
+        setEnquiries(data.enquiries);
       }
     } catch (err) {
-      console.error("Failed to fetch enrollments:", err);
+      console.error("Failed to fetch enquiries:", err);
     } finally {
       setLoading(false);
     }
   };
 
-  // --- Delete enrollment ---
+  // --- Delete enquiry ---
   const confirmDelete = (id) => {
     openModal({
       title: "Confirm Delete",
-      message: "Are you sure you want to delete this enrollment?",
+      message: "Are you sure you want to delete this enquiry?",
       onConfirm: () => handleDelete(id),
       onCancel: () => {},
       confirmText: "Delete",
@@ -50,7 +50,7 @@ export default function ViewAllEnquiries() {
       const data = await res.json();
 
       if (data.success) {
-        setEnrollments((prev) => prev.filter((e) => e.id !== id));
+        setEnquiries((prev) => prev.filter((e) => e.id !== id));
         openModal({
           title: "Deleted",
           message: "Enrollment deleted successfully",
@@ -73,7 +73,7 @@ export default function ViewAllEnquiries() {
   };
 
   useEffect(() => {
-    loadEnrollments();
+    loadEnquiries();
   }, []);
 
   return (
@@ -82,16 +82,16 @@ export default function ViewAllEnquiries() {
         title="All Enquiries"
         breadcrumbs={[
           { label: "Dashboard", to: "/dashboard" },
-          { label: "Enrollments", to: "/view-all-enquiries" },
+          { label: "Enquiries", to: "/view-all-enquiries" },
           { label: "View All Enquiries" },
         ]}
       />
 
       <Card>
         {loading ? (
-          <p className="loading-text">Loading enrollments...</p>
-        ) : enrollments.length === 0 ? (
-          <p className="empty-text">No enrollments found.</p>
+          <p className="loading-text">Loading enquiries...</p>
+        ) : enquiries.length === 0 ? (
+          <p className="empty-text">No enquiries found.</p>
         ) : (
           <div className="table-container">
             <table className="custom-table">
@@ -112,7 +112,7 @@ export default function ViewAllEnquiries() {
               </thead>
 
               <tbody>
-                {enrollments.map((enroll, index) => (
+                {enquiries.map((enroll, index) => (
                   <tr key={enroll.id}>
                     <td>{index + 1}</td>
                     <td>
