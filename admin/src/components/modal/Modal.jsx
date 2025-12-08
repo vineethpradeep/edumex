@@ -1,4 +1,6 @@
+import { FaTimes, FaCheck } from "react-icons/fa";
 import "./modal.css";
+
 export default function Modal({
   isOpen,
   title,
@@ -7,6 +9,9 @@ export default function Modal({
   onCancel,
   confirmText,
   cancelText,
+  confirmIcon,
+  cancelIcon,
+  confirmType = "confirm",
 }) {
   if (!isOpen) return null;
 
@@ -16,8 +21,16 @@ export default function Modal({
         <h3>{title}</h3>
         <p>{message}</p>
         <div className="modal-actions">
-          {cancelText && <button onClick={onCancel}>{cancelText}</button>}
-          <button onClick={onConfirm}>{confirmText || "OK"}</button>
+          {cancelText && (
+            <button className="cancel" onClick={onCancel}>
+              {cancelIcon || <FaTimes />}
+              {cancelText}
+            </button>
+          )}
+          <button className={confirmType} onClick={onConfirm}>
+            {confirmIcon || <FaCheck />}
+            {confirmText || "OK"}
+          </button>
         </div>
       </div>
     </div>
