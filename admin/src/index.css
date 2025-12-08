@@ -255,3 +255,27 @@ h6 {
   background: #ff4d4f;
   color: white;
 }
+
+.btn-primary,
+.btn-add {
+  padding: 10px 18px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-gradient));
+  background-color: var(--primary);
+  color: var(--bg-light);
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 6px 0;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.btn-add:hover {
+  background: linear-gradient(90deg, var(--primary), var(--btn-hover-gradient));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
