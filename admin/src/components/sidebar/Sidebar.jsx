@@ -13,10 +13,10 @@ export default function Sidebar() {
   const [courseDropdown, setCourseDropdown] = useState(false);
   const [studentsDropdown, setStudentsDropdown] = useState(false);
 
-  function handleLogout() {
-    localStorage.removeItem("admin_token");
-    window.location.href = "/admin-login";
-  }
+  // function handleLogout() {
+  //   localStorage.removeItem("admin_token");
+  //   window.location.href = "/admin-login";
+  // }
 
   return (
     <div className="sidebar">
@@ -92,12 +92,12 @@ export default function Sidebar() {
           </ul>
         </li>
 
-        <li className="sidebar-logout">
+        {/* <li className="sidebar-logout">
           <div className="sidebar-link logout" onClick={handleLogout}>
             <FaSignOutAlt className="icon" />
             <span className="link-text">Logout</span>
           </div>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
