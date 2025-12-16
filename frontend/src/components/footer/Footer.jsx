@@ -61,18 +61,18 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="container copyright d-flex justify-content-between align-items-center mt-4">
+      <div className="container copyright d-flex justify-content-center align-items-center mt-4">
         <p className="mb-0">
           <span>Copyright</span> © {new Date().getFullYear()}
           <strong className="px-1 sitename">EduMex</strong>{" "}
           <span>All Rights Reserved</span>
         </p>
-        <div className="credits mb-0">
+        {/* <div className="credits mb-0">
           Designed by{" "}
           <a href="https://dotseek.co.uk/" target="__blank">
             DotSeek
           </a>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

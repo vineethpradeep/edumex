@@ -1,0 +1,152 @@
+.abacus-loader {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+}
+
+.abacus-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    position: relative;
+}
+
+.abacus-column::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 88px;
+    background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.bead {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    position: relative;
+    animation: abacusMove 2.8s infinite ease-in-out;
+    backdrop-filter: blur(1.5px);
+    opacity: 0.98;
+}
+
+.bead::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0.9;
+}
+
+.color-black {
+    background: radial-gradient(circle at 30% 30%, #555, #000 75%);
+}
+
+.color-orange {
+    background: radial-gradient(circle at 30% 30%, var(--color-orange) 55%, #b48b00 100%);
+}
+
+.color-primary {
+    background: radial-gradient(circle at 30% 30%, #8ee8ff 0%, var(--color-primary) 55%, #0a6d87 100%);
+}
+
+.color-secondary {
+    background: radial-gradient(circle at 30% 30%, #fff7b3 0%, var(--color-secondary) 55%, #b48b00 100%);
+}
+
+@keyframes abacusMove {
+
+    0%,
+    20%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(12px);
+    }
+
+    60% {
+        transform: translateY(-12px);
+    }
+}
+
+.abacus-column .bead:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.abacus-column .bead:nth-child(2) {
+    animation-delay: 0.25s;
+}
+
+.abacus-column .bead:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+@media (max-width: 768px) {
+    .abacus-loader {
+        transform: translate(-50%, -50%) scale(0.85);
+        gap: 16px;
+    }
+
+    .abacus-column::before {
+        height: 100px;
+    }
+
+    .bead {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 576px) {
+    .abacus-loader {
+        transform: translate(-50%, -50%) scale(0.70);
+        gap: 16px;
+    }
+
+    .abacus-column::before {
+        height: 100px;
+    }
+
+    .bead {
+        width: 28px;
+        height: 28px;
+    }
+
+    .bead::after {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .abacus-loader {
+        transform: translate(-50%, -50%) scale(0.60);
+        gap: 16px;
+    }
+
+    .abacus-column::before {
+        height: 100px;
+    }
+
+    .bead {
+        width: 28px;
+        height: 28px;
+    }
+}

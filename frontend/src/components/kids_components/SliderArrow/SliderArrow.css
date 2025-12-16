@@ -1,0 +1,27 @@
+.slider-arrow {
+    position: absolute;
+    border: none;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    color: var(--color-black);
+    padding: 0;
+}
+
+.slider-arrow img {
+    width: 8em;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.slider-arrow:hover img {
+    transform: scale(1.2);
+}
+
+.slider-arrow:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

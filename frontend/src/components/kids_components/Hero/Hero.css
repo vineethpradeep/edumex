@@ -1,0 +1,249 @@
+.hero-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    padding-top: 80px;
+    overflow: visible;
+}
+
+.hero-bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(#e5e5f7 1px, transparent 1px),
+        linear-gradient(90deg, #e5e5f7 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.25;
+    z-index: 0;
+}
+
+.hero-h1 {
+    font-weight: 800;
+    font-size: 4.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+}
+
+.hero-p {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1.8rem;
+    max-width: 520px;
+    font-weight: var(--fw-semibold);
+}
+
+.float-icon {
+    position: absolute;
+    width: 200px;
+    opacity: 0.85;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.small-float-icon {
+    position: absolute;
+    width: 80px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.rocket {
+    top: 10%;
+    right: 4%;
+}
+
+.floating-preserve {
+    position: absolute;
+    top: 15%;
+    left: 48%;
+    width: 200px;
+    height: 200px;
+}
+
+.abacus {
+    position: absolute;
+    top: 25%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    transform-origin: center;
+}
+
+.preserve {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.star {
+    top: 2%;
+    left: 40%;
+}
+
+.arrow {
+    bottom: 4%;
+}
+
+.hero-image-bg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 800px;
+    height: clamp(600px, 70vh, 1200px);
+    background-image: url('../../../assets/images/hero/slider-a-img-03.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom center;
+    z-index: 1;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+
+
+
+.purple-text {
+    color: var(--color-primary);
+}
+
+.hero-text {
+    flex: 0 1 auto;
+    overflow: visible;
+    max-width: 520px;
+}
+
+.hero-text h1 {
+    font-weight: 800;
+    font-size: 4.8rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.orange-text {
+    color: var(--color-secondary);
+    white-space: nowrap;
+    display: inline-block;
+    z-index: 3;
+}
+
+.hero-text p {
+    max-width: 520px;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 1.8rem;
+}
+
+@media (max-width: 992px) {
+
+    .hero-content {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+        padding: 2rem 1rem;
+        display: inline-block !important;
+    }
+
+    .hero-h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .hero-p {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+    .hero-image-bg {
+        max-width: 90%;
+        height: clamp(300px, 50vh, 600px);
+        left: 36%;
+        transform: translateX(-50%);
+        bottom: 0;
+    }
+
+    .rocket {
+        top: 60%;
+        left: 0;
+        width: 120px;
+    }
+
+    .floating-preserve {
+        top: 14%;
+        left: 74%;
+        width: 150px;
+        height: 150px;
+        transform: translateX(-50%);
+    }
+
+    .abacus {
+        width: 60px;
+        height: auto;
+        top: 10%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+    }
+
+    .preserve {
+        width: 100%;
+        height: 100%;
+    }
+
+    .star {
+        top: 5%;
+        left: 30%;
+        width: 60px;
+    }
+
+    .arrow {
+        bottom: -2%;
+        left: -2%;
+        width: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-h1 {
+        font-size: 2rem;
+    }
+
+    .hero-p {
+        font-size: 0.95rem;
+    }
+
+    .rocket,
+    .arrow {
+        width: 140px;
+    }
+
+
+    .star {
+        width: 90px;
+    }
+
+    .abacus {
+        width: 80px;
+    }
+
+    .floating-preserve {
+        width: 120px;
+        height: 120px;
+    }
+}

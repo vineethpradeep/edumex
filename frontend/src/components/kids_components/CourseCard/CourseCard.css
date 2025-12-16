@@ -1,0 +1,109 @@
+.course-card {
+    background-color: var(--color-primary);
+    border-radius: 2rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.4s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background-color: var(--color-white);
+}
+
+.course-card-bg {
+    position: absolute;
+    top: -25%;
+    left: -25%;
+    width: 150%;
+    height: 150%;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 0.6s ease, background 0.4s ease;
+}
+
+.course-card:hover .course-card-bg {
+    transform: scale(1.25);
+    background: linear-gradient(135deg,
+            var(--color-secondary-light20),
+            var(--color-secondary-light10));
+}
+
+.course-icon {
+    position: relative;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, background-color 0.4s ease;
+}
+
+.course-card:hover .course-icon {
+    transform: scale(1.15);
+    background: var(--color-primary);
+}
+
+.course-icon img {
+    width: 60px;
+    height: auto;
+    transition: filter 0.4s ease;
+}
+
+.course-card:hover .course-icon img {
+    filter: brightness(0) invert(1);
+}
+
+.course-title {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-heading);
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+    transition: color 0.4s ease;
+}
+
+.course-card:hover .course-title {
+    color: var(--color-black);
+}
+
+.course-description {
+    position: relative;
+    z-index: 1;
+    font-size: var(--fs-md);
+    color: var(--color-white);
+    flex-grow: 1;
+    transition: color 0.4s ease;
+}
+
+.course-card:hover .course-description {
+    color: var(--color-black);
+}
+
+.course-card .btn-primary {
+    position: relative;
+    z-index: 1;
+    border-radius: 50px;
+    padding: 0.6rem 2rem;
+    font-weight: var(--fw-semibold);
+    background: var(--color-white);
+    border: none;
+    color: var(--color-primary);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.course-card:hover .btn-primary {
+    transform: translateY(-2px);
+    background: var(--color-primary);
+    color: var(--color-white);
+}

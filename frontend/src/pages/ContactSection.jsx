@@ -60,7 +60,7 @@ export default function ContactSection() {
                 <ContactCard
                   icon="bi bi-telephone"
                   title="Call"
-                  text="+44(0) 7831 533 017"
+                  text="01792 951550"
                 />
                 <ContactCard
                   icon="bi bi-clock"

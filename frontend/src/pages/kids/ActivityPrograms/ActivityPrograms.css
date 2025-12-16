@@ -1,0 +1,84 @@
+.activity-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.slider-container {
+    overflow: hidden;
+    flex: 1;
+}
+
+.slider-track {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    transition: transform 0.5s ease;
+}
+
+.activity-programs-section {
+    padding-top: 8rem;
+    padding-bottom: 3rem;
+}
+
+@media (max-width: 992px) {
+
+    .slider-track {
+        gap: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .activity-slider {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+
+    .left-arrow,
+    .right-arrow {
+        display: none;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .activity-slider {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .left-arrow,
+    .right-arrow {
+        display: none !important;
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .slider-track {
+        flex-direction: column;
+        transform: translateX(0) !important;
+        gap: 1.5rem;
+    }
+
+    .slider-track>* {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .activity-programs-section {
+        padding-top: 5rem;
+    }
+
+    .slider-track {
+        gap: 0.5rem;
+    }
+}

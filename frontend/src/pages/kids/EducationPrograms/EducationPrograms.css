@@ -1,0 +1,16 @@
+.education-programs {
+    font-family: var(--font-body);
+    color: var(--color-black);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-extrabold);
+    color: var(--color-primary);
+}
+
+.section-description {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+}

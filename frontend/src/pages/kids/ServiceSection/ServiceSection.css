@@ -1,0 +1,107 @@
+.service-section {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+
+.section-subtitle {
+    color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+}
+
+.service-item {
+    max-width: 250px;
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background-color: var(--color-primary-light40);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.service-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    color: var(--color-black);
+}
+
+.service-desc {
+    font-size: var(--fs-sm);
+    color: #555;
+    line-height: 1.5;
+}
+
+.image-border {
+    position: relative;
+    display: inline-block;
+    border: 3px dashed var(--color-primary);
+    padding: 12px;
+    border-radius: 500px;
+    transition: all 0.4s ease;
+    height: 600px;
+}
+
+.image-border::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 90px;
+    height: 75px;
+    background-image: url("../../../assets/icons/pattern-img-01.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 2;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.image-border:hover {
+    transform: scale(1.03);
+    border-color: var(--color-secondary);
+}
+
+.service-center-img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 500px;
+    z-index: 1;
+    transition: transform 0.4s ease;
+}
+
+@media (max-width: 992px) {
+    .service-item {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-icon {
+        margin-bottom: 0.5rem;
+    }
+}

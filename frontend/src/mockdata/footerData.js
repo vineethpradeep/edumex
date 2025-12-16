@@ -30,6 +30,6 @@ export const socialLinks = [
 
 export const contactInfo = {
   address: ["19 Mansel Street", "Swansea, SA1 5SG", "United Kingdom"],
-  phone: "+44(0) 7831 533 017",
+  phone: "01792 951550",
   email: "support@edumex.co.uk",
 };

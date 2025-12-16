@@ -1,0 +1,154 @@
+.how-it-works-section {
+    background-color: var(--color-primary);
+    padding-top: 4rem;
+    position: relative !important;
+}
+
+.section-subtitle {
+    color: var(--color-primary);
+    font-size: var(--fs-md);
+    letter-spacing: 1px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    color: var(--color-black);
+}
+
+.how-steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.how-step {
+    width: 220px;
+    text-align: center;
+    position: relative;
+}
+
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.circle.outer {
+    width: 120px;
+    height: 120px;
+    background-color: var(--color-primary-light40);
+}
+
+.circle.middle {
+    width: 90px;
+    height: 90px;
+    background-color: var(--color-primary-light20);
+}
+
+.circle.inner {
+    width: 65px;
+    height: 65px;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    font-size: 1.8rem;
+}
+
+.icon-wrapper:hover .outer {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-wrapper:hover .middle {
+    transform: scale(1.15);
+}
+
+.icon-wrapper:hover .inner {
+    transform: scale(1.2);
+    background-color: var(--color-primary-light50);
+    color: var(--color-primary);
+}
+
+.how-step {
+    position: relative;
+    flex: 0 0 auto;
+}
+
+.how-step.has-arrow::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -9rem;
+    transform: translateY(-50%);
+    width: 150px;
+    height: 150px;
+    background-image: url('../../../assets/icons/fly-arrow.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: 0.6;
+    pointer-events: none;
+    color: var(--color-black);
+}
+
+.how-step-title {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-semibold);
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+}
+
+.how-step-desc {
+    font-size: var(--fs-sm);
+    color: var(--color-white);
+}
+
+
+.how-cloud {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.how-cloud svg {
+    display: block;
+    width: 100%;
+    height: 150px;
+}
+
+@media (max-width: 992px) {
+    .how-step {
+        width: 45%;
+    }
+
+    .step-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .how-step {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .how-step.has-arrow::after {
+        display: none;
+    }
+}

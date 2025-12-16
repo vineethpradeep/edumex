@@ -1,0 +1,51 @@
+.blog-section {
+    background-color: var(--color-primary-light50);
+}
+
+.text-purple {
+    color: var(--color-purple);
+}
+
+.btn-purple {
+    background-color: var(--color-purple);
+    color: var(--color-white);
+    border: none;
+}
+
+.btn-purple:hover {
+    background-color: var(--color-orange);
+    color: var(--color-white);
+}
+
+.date-box {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    border-radius: 10px;
+    padding: 0.3rem 0.7rem;
+    width: 90px;
+}
+
+.date-box h4 {
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 600 !important;
+    display: inline-block;
+    position: relative;
+    color: var(--color-primary);
+}
+
+.blog-card {
+    border-radius: 16px;
+    background-color: var(--color-white);
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.default-color {
+    color: var(--color-black);
+}
