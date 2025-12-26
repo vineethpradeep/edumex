@@ -4,12 +4,13 @@ import PageHeader from "../../components/pageHeader/PageHeader";
 import "./dashboard.css";
 
 export default function Dashboard() {
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const loadDashboard = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/dashboard.php");
+      const res = await fetch(`${API_URL}/dashboard.php`);
       const data = await res.json();
       if (data.success) setStats(data.data);
     } catch (err) {

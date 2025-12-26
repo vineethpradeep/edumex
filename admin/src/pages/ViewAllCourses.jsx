@@ -6,6 +6,7 @@ import PageHeader from "../components/pageHeader/PageHeader";
 import useModal from "../hooks/useModal";
 import Modal from "../components/modal/Modal";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 export default function ViewAllCourses() {
   const { isOpen, config, openModal, confirm, cancel } = useModal();
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ export default function ViewAllCourses() {
   // --- Load all courses ---
   const loadCourses = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/getAllCourses.php");
+      const res = await fetch(`${API_URL}/getAllCourses.php`);
       const data = await res.json();
 
       if (data.success) {
@@ -48,10 +49,9 @@ export default function ViewAllCourses() {
   // --- Delete course handler ---
   const handleDelete = async (courseId) => {
     try {
-      const res = await fetch(
-        `http://localhost:8000/api/delete_course.php?id=${courseId}`,
-        { method: "DELETE" }
-      );
+      const res = await fetch(`${API_URL}/delete_course.php?id=${courseId}`, {
+        method: "DELETE",
+      });
       const data = await res.json();
 
       if (data.success) {
@@ -140,7 +140,32 @@ export default function ViewAllCourses() {
                     </td>
 
                     <td>{course.category}</td>
-                    <td>{course.level}</td>
+                    <td>
+                      {/* {(() => {
+                        let levels = [];
+
+                        try {
+                          levels = Array.isArray(course.level)
+                            ? course.level
+                            : JSON.parse(course.level || "[]");
+                        } catch {
+                          levels = [];
+                        }
+
+                        return levels.length > 0 ? levels.join(", ") : "N/A";
+                      })()} */}
+                      {Array.isArray(course.level)
+                        ? course.level.join(", ")
+                        : (() => {
+                            try {
+                              return JSON.parse(course.level || "[]").join(
+                                ", "
+                              );
+                            } catch {
+                              return "N/A";
+                            }
+                          })()}
+                    </td>
 
                     <td>
                       {course.modes?.map((m, i) => (

@@ -6,6 +6,7 @@ import Card from "../../components/card/Card";
 import PageHeader from "../../components/pageHeader/PageHeader";
 import "./viewCourse.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 export default function ViewCourse() {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -15,9 +16,7 @@ export default function ViewCourse() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch(
-          `http://localhost:8000/api/getSingleCourse.php?id=${id}`
-        );
+        const res = await fetch(`${API_URL}/getSingleCourse.php?id=${id}`);
         const data = await res.json();
         if (data.success) setCourse(data.course);
       } catch (err) {

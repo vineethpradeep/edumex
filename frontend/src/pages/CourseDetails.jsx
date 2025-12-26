@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import PageTitle from "../components/pageTitle/PageTitle";
 import CurriculumModule from "../components/CurriculumModule";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
 const CourseDetails = () => {
   const { id } = useParams();
@@ -11,9 +12,7 @@ const CourseDetails = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const res = await fetch(
-          `http://localhost:8000/api/getSingleCourse.php?id=${id}`
-        );
+        const res = await fetch(`${API_URL}/getSingleCourse.php?id=${id}`);
         const data = await res.json();
         if (data.success) {
           setCourse(data.course);

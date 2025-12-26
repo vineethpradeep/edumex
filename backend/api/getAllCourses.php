@@ -3,6 +3,10 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Headers: Content-Type");
 
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'];
+$baseUrl = $protocol . '://' . $host;
+
 include "../db.php";
 
 try {
@@ -49,7 +53,7 @@ try {
 
         // IMAGE FULL PATH
         if (!empty($course["image"])) {
-            $course["image"] = "http://localhost:8000/" . $course["image"];
+            $course["image"] = $baseUrl . '/' . ltrim($course["image"], '/');
         } else {
             $course["image"] = null;
         }

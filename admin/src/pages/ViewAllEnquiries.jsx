@@ -6,6 +6,7 @@ import PageHeader from "../components/pageHeader/PageHeader";
 import useModal from "../hooks/useModal";
 import Modal from "../components/modal/Modal";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 export default function ViewAllEnquiries() {
   const navigate = useNavigate();
   const { isOpen, config, openModal, confirm, cancel } = useModal();
@@ -16,7 +17,7 @@ export default function ViewAllEnquiries() {
   // --- Load all enquiries ---
   const loadEnquiries = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/getAllEnquiries.php");
+      const res = await fetch(`${API_URL}/getAllEnquiries.php`);
       const data = await res.json();
 
       if (data.success) {
@@ -43,10 +44,9 @@ export default function ViewAllEnquiries() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(
-        `http://localhost:8000/api/deleteEnrollment.php?id=${id}`,
-        { method: "DELETE" }
-      );
+      const res = await fetch(`${API_URL}/deleteEnrollment.php?id=${id}`, {
+        method: "DELETE",
+      });
       const data = await res.json();
 
       if (data.success) {

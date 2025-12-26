@@ -18,7 +18,7 @@ function App() {
   const isLoggedIn = localStorage.getItem("admin_token");
 
   return (
-    <Router>
+    <Router basename="/admin">
       <Routes>
         <Route
           path="/admin-login"

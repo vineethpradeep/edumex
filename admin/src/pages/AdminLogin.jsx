@@ -1,4 +1,5 @@
 import { useState } from "react";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
 export default function AdminLogin() {
   const [username, setUsername] = useState("");
@@ -10,20 +11,17 @@ export default function AdminLogin() {
     setError("");
 
     try {
-      const response = await fetch(
-        "http://localhost:8000/api/admin_login.php",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ username, password }),
-        }
-      );
+      const response = await fetch(`${API_URL}/admin_login.php`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
 
       const data = await response.json();
 
       if (data.success) {
         localStorage.setItem("admin_token", "logged_in");
-        window.location.href = "/dashboard";
+        window.location.href = "/admin/dashboard";
       } else {
         setError(data.message);
       }

@@ -5,29 +5,32 @@ header("Access-Control-Allow-Headers: Content-Type");
 
 include "../db.php";
 
-// $data = json_decode(file_get_contents("php://input"), true);
+// Detect request type
 
+$contentType = $_SERVER['CONTENT_TYPE'] ?? '';
 
-// if (!$data) {
-//     echo json_encode(["success" => false, "message" => "Invalid JSON"]);
-//     exit;
-// }
+if (strpos($contentType, 'multipart/form-data') !== false) {
 
-// Check if it's multipart/form-data (file upload)
-if ($_SERVER['CONTENT_TYPE'] ?? '' !== '' && strpos($_SERVER['CONTENT_TYPE'], 'multipart/form-data') !== false) {
-
-    // Build JSON-like $data array from POST
     $data = $_POST;
 
-    // Decode JSON fields coming from FormData
-    $jsonFields = ["modes", "tags", "whatYouLearn", "courseStructure", "subcourses"];
+    // Decode JSON fields from FormData
+    $jsonFields = [
+        "level",
+        "modes",
+        "tags",
+        "whatYouLearn",
+        "courseStructure",
+        "subcourses"
+    ];
+
     foreach ($jsonFields as $field) {
         if (isset($data[$field]) && is_string($data[$field])) {
             $decoded = json_decode($data[$field], true);
             $data[$field] = is_array($decoded) ? $decoded : [];
         }
     }
-    // Handle image upload
+
+    //    Handle image upload
     if (!empty($_FILES['image']['name'])) {
         $uploadDir = "../uploads/courses/";
         if (!file_exists($uploadDir)) {
@@ -39,7 +42,7 @@ if ($_SERVER['CONTENT_TYPE'] ?? '' !== '' && strpos($_SERVER['CONTENT_TYPE'], 'm
         $filePath = $uploadDir . $filename;
 
         if (move_uploaded_file($_FILES['image']['tmp_name'], $filePath)) {
-            $data["image"] = "uploads/courses/" . $filename;  // Save relative path
+            $data["image"] = "uploads/courses/" . $filename;
         } else {
             echo json_encode(["success" => false, "message" => "Image upload failed"]);
             exit;
@@ -48,7 +51,7 @@ if ($_SERVER['CONTENT_TYPE'] ?? '' !== '' && strpos($_SERVER['CONTENT_TYPE'], 'm
         $data["image"] = null;
     }
 } else {
-    // JSON request fallback
+    //    JSON fallback
     $data = json_decode(file_get_contents("php://input"), true);
     if (!$data) {
         echo json_encode(["success" => false, "message" => "Invalid JSON"]);
@@ -56,34 +59,41 @@ if ($_SERVER['CONTENT_TYPE'] ?? '' !== '' && strpos($_SERVER['CONTENT_TYPE'], 'm
     }
 }
 
-
+// Normalize critical fields
+$data["level"] = json_encode($data["level"] ?? []);
+$data["modes"] = $data["modes"] ?? [];
+$data["tags"] = $data["tags"] ?? [];
+$data["whatYouLearn"] = $data["whatYouLearn"] ?? [];
+$data["courseStructure"] = $data["courseStructure"] ?? [];
+$data["subcourses"] = $data["subcourses"] ?? [];
 
 try {
     $conn->beginTransaction();
 
-    // INSERT MAIN COURSE
+    //    INSERT MAIN COURSE
     $stmt = $conn->prepare("
-        INSERT INTO courses 
-        (category, level, title, description, entry_requirements, assessments, image, badge, credits, duration)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        INSERT INTO courses
+    (category, level, title, description, entry_requirements, assessments, image, badge, credits, duration)
+    VALUES (?, CAST(? AS JSON), ?, ?, ?, ?, ?, ?, ?, ?)
     ");
 
     $stmt->execute([
-        $data["category"],
-        $data["level"],
-        $data["title"],
-        $data["description"],
+        $data["category"] ?? "",
+        json_encode($data["level"] ?? []),
+        $data["title"] ?? "",
+        $data["description"] ?? "",
         $data["entryRequirements"] ?? null,
         $data["assessments"] ?? null,
-        $data["image"] ?? null,
+        $data["image"],
         $data["badge"] ?? null,
+        $data["courseBudget"] ?? null,
         $data["credits"] ?? null,
         $data["duration"] ?? null
     ]);
 
     $course_id = $conn->lastInsertId();
 
-    // INSERT COURSE MODES
+    // MODES
     if (!empty($data["modes"])) {
         $stmt = $conn->prepare("INSERT INTO course_modes (course_id, mode) VALUES (?, ?)");
         foreach ($data["modes"] as $mode) {
@@ -91,7 +101,7 @@ try {
         }
     }
 
-    // INSERT COURSE TAGS
+    // TAGS
     if (!empty($data["tags"])) {
         $stmt = $conn->prepare("INSERT INTO course_tags (course_id, tag) VALUES (?, ?)");
         foreach ($data["tags"] as $tag) {
@@ -99,7 +109,7 @@ try {
         }
     }
 
-    // INSERT MAIN COURSE WHAT YOU LEARN
+    // WHAT YOU LEARN
     if (!empty($data["whatYouLearn"])) {
         $stmt = $conn->prepare("INSERT INTO course_what_you_learn (course_id, point) VALUES (?, ?)");
         foreach ($data["whatYouLearn"] as $point) {
@@ -107,77 +117,68 @@ try {
         }
     }
 
-    // INSERT PARENT COURSE MODULES + UNITS
-    if (!empty($data["courseStructure"])) {
-        foreach ($data["courseStructure"] as $module) {
-            // Insert module
-            $stmt = $conn->prepare("INSERT INTO modules (course_id, module_name) VALUES (?, ?)");
-            $stmt->execute([$course_id, $module["module"]]);
-            $module_id = $conn->lastInsertId();
+    // COURSE MODULES + UNITS
+    foreach ($data["courseStructure"] as $module) {
+        $stmt = $conn->prepare("INSERT INTO modules (course_id, module_name) VALUES (?, ?)");
+        $stmt->execute([$course_id, $module["module"]]);
+        $module_id = $conn->lastInsertId();
 
-            // Insert units
-            if (!empty($module["units"])) {
-                $unitStmt = $conn->prepare("INSERT INTO units (module_id, title, credits, icon) VALUES (?, ?, ?, ?)");
-                foreach ($module["units"] as $u) {
-                    $unitStmt->execute([
-                        $module_id,
-                        $u["title"],
-                        $u["credits"] ?? null,
-                        $u["icon"] ?? null
-                    ]);
-                }
-            }
+        foreach ($module["units"] ?? [] as $u) {
+            $unitStmt = $conn->prepare("
+                INSERT INTO units (module_id, title, credits, icon)
+                VALUES (?, ?, ?, ?)
+            ");
+            $unitStmt->execute([
+                $module_id,
+                $u["title"],
+                $u["credits"] ?? null,
+                $u["icon"] ?? null
+            ]);
         }
     }
 
-    // INSERT SUBCOURSES
-    if (!empty($data["subcourses"])) {
-        foreach ($data["subcourses"] as $sub) {
-            // Insert subcourse
-            $stmt = $conn->prepare("INSERT INTO subcourses (course_id, title, overview) VALUES (?, ?, ?)");
-            $stmt->execute([
-                $course_id,
-                $sub["title"],
-                $sub["overview"] ?? null
-            ]);
+    // SUBCOURSES
+    foreach ($data["subcourses"] as $sub) {
 
-            $subcourse_id = $conn->lastInsertId();
+        $stmt = $conn->prepare("
+            INSERT INTO subcourses (course_id, title, overview)
+            VALUES (?, ?, ?)
+        ");
+        $stmt->execute([
+            $course_id,
+            $sub["title"],
+            $sub["overview"] ?? null
+        ]);
 
-            // Subcourse tags
-            if (!empty($sub["tags"])) {
-                $tagStmt = $conn->prepare("INSERT INTO subcourse_tags (subcourse_id, tag) VALUES (?, ?)");
-                foreach ($sub["tags"] as $tag) {
-                    $tagStmt->execute([$subcourse_id, $tag]);
-                }
-            }
+        $subcourse_id = $conn->lastInsertId();
 
-            // Subcourse what you learn
-            if (!empty($sub["whatYouLearn"])) {
-                $learnStmt = $conn->prepare("INSERT INTO subcourse_what_you_learn (subcourse_id, point) VALUES (?, ?)");
-                foreach ($sub["whatYouLearn"] as $point) {
-                    $learnStmt->execute([$subcourse_id, $point]);
-                }
-            }
+        foreach ($sub["whatYouLearn"] ?? [] as $point) {
+            $learnStmt = $conn->prepare("
+                INSERT INTO subcourse_what_you_learn (subcourse_id, point)
+                VALUES (?, ?)
+            ");
+            $learnStmt->execute([$subcourse_id, $point]);
+        }
 
-            // Subcourse modules + units
-            if (!empty($sub["courseStructure"])) {
-                foreach ($sub["courseStructure"] as $module) {
-                    $stmt = $conn->prepare("INSERT INTO modules (subcourse_id, module_name) VALUES (?, ?)");
-                    $stmt->execute([$subcourse_id, $module["module"]]);
-                    $module_id = $conn->lastInsertId();
+        foreach ($sub["courseStructure"] ?? [] as $module) {
+            $stmt = $conn->prepare("
+                INSERT INTO modules (subcourse_id, module_name)
+                VALUES (?, ?)
+            ");
+            $stmt->execute([$subcourse_id, $module["module"]]);
+            $module_id = $conn->lastInsertId();
 
-                    if (!empty($module["units"])) {
-                        $unitStmt = $conn->prepare("INSERT INTO units (module_id, title, credits, icon) VALUES (?, ?, ?, ?)");
-                        foreach ($module["units"] as $u) {
-                            $unitStmt->execute([
-                                $module_id,
-                                $u["title"],
-                                $u["credits"] ?? null,
-                                $u["icon"] ?? null
-                            ]);
-                        }
-                    }
-                }
+            foreach ($module["units"] ?? [] as $u) {
+                $unitStmt = $conn->prepare("
+                    INSERT INTO units (module_id, title, credits, icon)
+                    VALUES (?, ?, ?, ?)
+                ");
+                $unitStmt->execute([
+                    $module_id,
+                    $u["title"],
+                    $u["credits"] ?? null,
+                    $u["icon"] ?? null
+                ]);
             }
         }
     }
@@ -191,5 +192,8 @@ try {
     ]);
 } catch (Exception $e) {
     $conn->rollBack();
-    echo json_encode(["success" => false, "message" => $e->getMessage()]);
+    echo json_encode([
+        "success" => false,
+        "message" => $e->getMessage()
+    ]);
 }

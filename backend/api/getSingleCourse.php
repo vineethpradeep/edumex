@@ -3,6 +3,10 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 header("Access-Control-Allow-Headers: Content-Type");
 
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$host = $_SERVER['HTTP_HOST'];
+$baseUrl = $protocol . '://' . $host;
+
 include "../db.php";
 
 $id = $_GET["id"] ?? 0;
@@ -69,7 +73,9 @@ try {
         "success" => true,
         "course" => [
             ...$course,
-            "image" => $course["image"] ? "http://localhost:8000/" . $course["image"] : null,
+            "image" => !empty($course["image"])
+                ? $baseUrl . '/' . ltrim($course["image"], '/')
+                : null,
             "modes" => $modes,
             "tags" => $tags,
             "whatYouLearn" => $whatYouLearn,

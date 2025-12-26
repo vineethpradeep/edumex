@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import CourseCard from "../components/CourseCard";
 import CourseFilters from "../components/CourseFilters";
 import PageTitle from "../components/pageTitle/PageTitle";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 
 const CoursesSection = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +17,7 @@ const CoursesSection = () => {
   // --- Load ALL courses dynamically ---
   const loadCourses = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/getAllCourses.php");
+      const res = await fetch(`${API_URL}/getAllCourses.php`);
       const data = await res.json();
 
       if (data.success) {

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 const EnrollmentForm = () => {
   const location = useLocation();
   const prefillCourseId = location.state?.courseId || "";
   const prefillCourseTitle = location.state?.courseTitle || "";
-
   const [courses, setCourses] = useState([]);
   const [selectedCourse, setSelectedCourse] = useState(prefillCourseTitle);
   const [formData, setFormData] = useState({
@@ -31,7 +31,7 @@ const EnrollmentForm = () => {
   useEffect(() => {
     const loadCourses = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/getAllCourses.php");
+        const res = await fetch(`${API_URL}/getAllCourses.php`);
         const data = await res.json();
         if (data.success) setCourses(data.courses);
       } catch (err) {
@@ -60,7 +60,7 @@ const EnrollmentForm = () => {
     setErrorMessage("");
 
     try {
-      const res = await fetch("http://localhost:8000/api/enquiries.php", {
+      const res = await fetch(`${API_URL}/enquiries.php`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

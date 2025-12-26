@@ -4,6 +4,7 @@ import PageHeader from "../../components/pageHeader/PageHeader";
 import Card from "../../components/card/Card";
 import "./viewSingleEnquiry.css";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 export default function ViewSingleEnquiry() {
   const { id } = useParams();
 
@@ -12,9 +13,7 @@ export default function ViewSingleEnquiry() {
 
   const loadEnquiry = async () => {
     try {
-      const res = await fetch(
-        `http://localhost:8000/api/getSingleEnquiry.php?id=${id}`
-      );
+      const res = await fetch(`${API_URL}/getSingleEnquiry.php?id=${id}`);
       const data = await res.json();
       if (data.success) setEnquiry(data.enquiry);
     } catch (err) {

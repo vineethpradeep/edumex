@@ -16,22 +16,26 @@ import useModal from "../../hooks/useModal";
 import Modal from "../../components/modal/Modal";
 import Card from "../../components/card/Card";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
 export default function AddCourse() {
   const { id } = useParams();
   const navigate = useNavigate();
   const isEditMode = Boolean(id);
   const [submitting, setSubmitting] = useState(false);
   const { isOpen, config, openModal, confirm, cancel } = useModal();
+  const LEVEL_OPTIONS = ["Diploma", "Certificate", "Level 5", "Level 6"];
 
   const initialForm = {
     category: "",
-    level: "",
+    level: [],
+    customLevel: "",
     title: "",
     description: "",
     entryRequirements: "",
     assessments: "",
     image: null,
     badge: "",
+    courseBudget: "",
     credits: "",
     duration: "",
     modes: [],
@@ -57,13 +61,29 @@ export default function AddCourse() {
   // --- Normalize API data ---
   const normalizeCourse = (course) => ({
     category: course.category || "",
-    level: course.level || "",
+    // level: Array.isArray(course.level) ? course.level : [],
+    level: (() => {
+      if (Array.isArray(course.level)) return course.level;
+
+      if (typeof course.level === "string") {
+        try {
+          const parsed = JSON.parse(course.level);
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      }
+
+      return [];
+    })(),
+    customLevel: "",
     title: course.title || "",
     description: course.description || "",
     entryRequirements: course.entryRequirements || "",
     assessments: course.assessments || "",
     image: course.image || null,
     badge: course.badge || "",
+    courseBudget: course.courseBudget || "",
     credits: course.credits || "",
     duration: course.duration || "",
     modes: course.modes || [],
@@ -99,9 +119,7 @@ export default function AddCourse() {
 
     async function fetchCourse() {
       try {
-        const res = await fetch(
-          `http://localhost:8000/api/getSingleCourse.php?id=${id}`
-        );
+        const res = await fetch(`${API_URL}/getSingleCourse.php?id=${id}`);
         const data = await res.json();
 
         if (data.success) {
@@ -121,7 +139,10 @@ export default function AddCourse() {
   const validateForm = () => {
     const newErrors = {};
     if (!form.category) newErrors.category = "Category is required";
-    if (!form.level) newErrors.level = "Level is required";
+    // if (!form.level) newErrors.level = "Level is required";
+    if (!form.level || form.level.length === 0) {
+      newErrors.level = "At least one level is required";
+    }
     if (!form.title.trim()) newErrors.title = "Title is required";
     if (!form.description.trim())
       newErrors.description = "Description is required";
@@ -130,8 +151,68 @@ export default function AddCourse() {
   };
 
   // Submit
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   if (!validateForm()) {
+  //     openModal({
+  //       title: "Validation Error",
+  //       message: "Please fix validation errors",
+  //       confirmText: "OK",
+  //     });
+  //     return;
+  //   }
+
+  //   setSubmitting(true);
+
+  //   try {
+  //     const url = isEditMode
+  //       ? `${API_URL}/update_course.php?id=${id}`
+  //       : `${API_URL}/add_course.php`;
+
+  //     const bodyData = { ...form };
+
+  //     let result;
+  //     if (bodyData.image instanceof File) {
+  //       const formData = new FormData();
+  //       Object.keys(bodyData).forEach((key) => {
+  //         if (
+  //           key === "courseStructure" ||
+  //           key === "subcourses" ||
+  //           key === "modes" ||
+  //           key === "tags" ||
+  //           key === "whatYouLearn"
+  //         ) {
+  //           formData.append(key, JSON.stringify(bodyData[key]));
+  //         } else {
+  //           formData.append(key, bodyData[key]);
+  //         }
+  //       });
+  //       const response = await fetch(url, { method: "POST", body: formData });
+  //       result = await response.json();
+  //     } else {
+  //       const response = await fetch(url, {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify(bodyData),
+  //       });
+  //       result = await response.json();
+  //     }
+
+  //     handleResponse(result);
+  //   } catch (err) {
+  //     openModal({
+  //       title: "Error",
+  //       message: "Failed to submit course: " + err.message,
+  //       confirmText: "OK",
+  //     });
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!validateForm()) {
       openModal({
         title: "Validation Error",
@@ -145,35 +226,59 @@ export default function AddCourse() {
 
     try {
       const url = isEditMode
-        ? `http://localhost:8000/api/update_course.php?id=${id}`
-        : "http://localhost:8000/api/add_course.php";
+        ? `${API_URL}/update_course.php?id=${id}`
+        : `${API_URL}/add_course.php`;
 
-      const bodyData = { ...form };
+      // MERGE LEVEL + CUSTOM LEVEL
+      const finalLevels = Array.isArray(form.level) ? [...form.level] : [];
+
+      if (form.customLevel && form.customLevel.trim()) {
+        finalLevels.push(form.customLevel.trim());
+      }
+
+      // CLEAN & PREPARE PAYLOAD
+      const bodyData = {
+        ...form,
+        level: finalLevels,
+      };
+
+      delete bodyData.customLevel;
 
       let result;
+
+      // MULTIPART (IMAGE UPLOAD)
       if (bodyData.image instanceof File) {
         const formData = new FormData();
+
         Object.keys(bodyData).forEach((key) => {
           if (
             key === "courseStructure" ||
             key === "subcourses" ||
             key === "modes" ||
             key === "tags" ||
-            key === "whatYouLearn"
+            key === "whatYouLearn" ||
+            key === "level"
           ) {
             formData.append(key, JSON.stringify(bodyData[key]));
-          } else {
+          } else if (bodyData[key] !== null && bodyData[key] !== undefined) {
             formData.append(key, bodyData[key]);
           }
         });
-        const response = await fetch(url, { method: "POST", body: formData });
+
+        const response = await fetch(url, {
+          method: "POST",
+          body: formData,
+        });
+
         result = await response.json();
       } else {
+        // JSON REQUEST
         const response = await fetch(url, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(bodyData),
         });
+
         result = await response.json();
       }
 
@@ -445,7 +550,7 @@ export default function AddCourse() {
         <Card title="Main Course Information">
           <div className="grid-2">
             <div>
-              <label htmlFor="category">Category</label>
+              <label htmlFor="category">Category *</label>
               <select
                 id="category"
                 name="category"
@@ -464,7 +569,7 @@ export default function AddCourse() {
               )}
             </div>
 
-            <div>
+            {/* <div>
               <label htmlFor="level">Level</label>
               <select
                 id="level"
@@ -482,6 +587,81 @@ export default function AddCourse() {
                   <FaExclamationCircle /> {errors.level}
                 </div>
               )}
+            </div> */}
+            <div className="form-group">
+              <label className="form-label">Course Levels *</label>
+
+              {/* Multi-select dropdown */}
+              <select
+                multiple
+                className="form-select"
+                value={form.level}
+                onChange={(e) => {
+                  const values = Array.from(
+                    e.target.selectedOptions,
+                    (opt) => opt.value
+                  );
+                  setForm({ ...form, level: values });
+                }}
+              >
+                {LEVEL_OPTIONS.map((lvl) => (
+                  <option key={lvl} value={lvl}>
+                    {lvl}
+                  </option>
+                ))}
+              </select>
+
+              {/* Manual input */}
+              <div className="d-flex gap-2 mt-2">
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Add custom level (eg: Advanced)"
+                  value={form.customLevel}
+                  onChange={(e) =>
+                    setForm({ ...form, customLevel: e.target.value })
+                  }
+                />
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={() => {
+                    if (
+                      form.customLevel.trim() &&
+                      !form.level.includes(form.customLevel.trim())
+                    ) {
+                      setForm({
+                        ...form,
+                        level: [...form.level, form.customLevel.trim()],
+                        customLevel: "",
+                      });
+                    }
+                  }}
+                >
+                  Add
+                </button>
+              </div>
+
+              {/* Selected levels */}
+              {form.level.length > 0 && (
+                <div className="mt-2 d-flex flex-wrap gap-2 chips">
+                  {form.level.map((lvl, idx) => (
+                    <span key={idx} className="chip">
+                      {lvl}{" "}
+                      <FaTrash
+                        className="trash-icon"
+                        onClick={() =>
+                          setForm({
+                            ...form,
+                            level: form.level.filter((l) => l !== lvl),
+                          })
+                        }
+                        style={{ cursor: "pointer" }}
+                      />
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 
@@ -489,13 +669,13 @@ export default function AddCourse() {
           {[
             {
               id: "title",
-              label: "Course Title",
+              label: "Course Title *",
               type: "text",
               placeholder: "Course Name",
             },
             {
               id: "description",
-              label: "Description",
+              label: "Description *",
               type: "textarea",
               placeholder: "Course Description",
             },
@@ -512,6 +692,12 @@ export default function AddCourse() {
               placeholder: "Assessments",
             },
             { id: "badge", label: "Badge", type: "text", placeholder: "Badge" },
+            {
+              id: "courseBudget",
+              label: "Course Budget",
+              type: "number",
+              placeholder: "Course Budget",
+            },
             {
               id: "credits",
               label: "Credits",
