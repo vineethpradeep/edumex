@@ -43,12 +43,12 @@ function AppLayout() {
   const isKidsRoute = location.pathname.startsWith("/kids");
 
   return (
-    <>
+    <div className="app-layout">
       {/* Landing Header */}
       {!isKidsRoute && <TopHeader />}
       {!isKidsRoute && <Header />}
 
-      <main className="main">
+      <main className="main app-content">
         <Routes>
           {/* Landing routes */}
           <Route path="/" element={<Home />} />
@@ -68,7 +68,7 @@ function AppLayout() {
       {/* Landing Footer */}
       {!isKidsRoute && <ChatWidget />}
       {!isKidsRoute && <Footer />}
-    </>
+    </div>
   );
 }
 

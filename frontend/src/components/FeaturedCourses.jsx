@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
-
 import CourseCard from "./CourseCard";
-import fullCoursesData from "../mockdata/fullCoursesData.json";
 
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
+const ROTATE_INTERVAL = 5000;
+
+// Shuffle helper
 const shuffleArray = (array) => {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
@@ -16,24 +18,43 @@ const shuffleArray = (array) => {
 };
 
 const FeaturedCourses = () => {
+  const [allCourses, setAllCourses] = useState([]);
   const [featuredCourses, setFeaturedCourses] = useState([]);
+  const intervalRef = useRef(null);
 
+  // ---- Fetch courses once ----
   useEffect(() => {
     AOS.init({ once: true });
 
-    // Flatten all courses
-    const allCourses = fullCoursesData.programmes.flatMap((programme) =>
-      programme.classes.flatMap((cls) => cls.courses)
-    );
+    const fetchCourses = async () => {
+      try {
+        const res = await fetch(`${API_URL}/getAllCourses.php`);
+        const data = await res.json();
 
-    // Pick 6 random courses
-    const randomCourses = shuffleArray(allCourses).slice(0, 6);
+        if (data.success && data.courses?.length) {
+          setAllCourses(data.courses);
 
-    // Defer setState to avoid synchronous call warning
-    setTimeout(() => {
-      setFeaturedCourses(randomCourses);
-    }, 0);
+          // initial 3
+          setFeaturedCourses(shuffleArray(data.courses).slice(0, 3));
+        }
+      } catch (err) {
+        console.error("Failed to load featured courses:", err);
+      }
+    };
+
+    fetchCourses();
   }, []);
+
+  // ---- Rotate featured courses ----
+  useEffect(() => {
+    if (!allCourses.length) return;
+
+    intervalRef.current = setInterval(() => {
+      setFeaturedCourses(shuffleArray(allCourses).slice(0, 3));
+    }, ROTATE_INTERVAL);
+
+    return () => clearInterval(intervalRef.current);
+  }, [allCourses]);
 
   return (
     <section id="featured-courses" className="featured-courses section">
@@ -56,12 +77,8 @@ const FeaturedCourses = () => {
           ))}
         </div>
 
-        <div
-          className="more-courses text-center"
-          data-aos="fade-up"
-          data-aos-delay="500"
-        >
-          <Link to={`/courses`} className="btn-more">
+        <div className="more-courses text-center mt-4" data-aos="fade-up">
+          <Link to="/courses" className="btn-more">
             View All Courses
           </Link>
         </div>
