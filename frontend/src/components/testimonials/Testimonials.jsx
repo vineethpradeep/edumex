@@ -22,7 +22,7 @@ const Testimonials = () => {
       <div className="container" data-aos="fade-up" data-aos-delay="100">
         <Swiper
           modules={[Navigation, Autoplay]}
-          loop={true}
+          loop={false}
           autoplay={{ delay: 4000 }}
           speed={600}
           spaceBetween={30}

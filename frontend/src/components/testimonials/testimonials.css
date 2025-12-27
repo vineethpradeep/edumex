@@ -23,7 +23,10 @@
     border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
     transition: all 0.4s ease;
     overflow: hidden;
-    position: relative;
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .testimonials .testimonial-item::before {
@@ -140,9 +143,9 @@
 }
 
 .testimonials .testimonial-footer .quote-icon {
-    position: absolute;
-    bottom: 15px;
-    right: 25px;
+    /* position: absolute; */
+    /* bottom: 15px;
+    right: 25px; */
     color: color-mix(in srgb, var(--accent-color), transparent 60%);
     font-size: 1.5rem;
     transition: all 0.3s ease;
