@@ -1,22 +1,15 @@
 export const footerLinks = [
   {
     title: "Useful Links",
-    links: [
-      "Home",
-      "About us",
-      "Services",
-      "Terms of service",
-      "Privacy policy",
-    ],
+    links: ["Home", "About us", "Terms of service", "Privacy policy"],
   },
   {
     title: "Our Services",
     links: [
-      "Web Design",
-      "Web Development",
-      "Product Management",
-      "Marketing",
-      "Graphic Design",
+      "Edumex International Research Conference",
+      "Careers",
+      "Cooperate Training",
+      "News",
     ],
   },
 ];

@@ -80,14 +80,20 @@ const CoursesSection = () => {
             <div className="col-lg-3">
               <CourseFilters
                 allCourses={courses}
-                onFilterChange={(selectedCategory) => {
-                  if (selectedCategory === "All Courses") {
-                    setFilteredCourses(courses);
-                  } else {
-                    setFilteredCourses(
-                      courses.filter((c) => c.category === selectedCategory)
+                onFilterChange={({ category, level }) => {
+                  let filtered = [...courses];
+
+                  if (category !== "All") {
+                    filtered = filtered.filter((c) => c.category === category);
+                  }
+
+                  if (level !== "All") {
+                    filtered = filtered.filter(
+                      (c) => Array.isArray(c.level) && c.level.includes(level)
                     );
                   }
+
+                  setFilteredCourses(filtered);
                   setCurrentPage(1);
                 }}
               />

@@ -9,12 +9,49 @@ $baseUrl = $protocol . '://' . $host;
 
 include "../db.php";
 
+function normalizeLevel($level)
+{
+    if (is_array($level)) {
+        return $level;
+    }
+
+    if (!is_string($level) || trim($level) === '') {
+        return [];
+    }
+
+    // Remove wrapping quotes if present
+    $level = trim($level);
+
+    // Decode repeatedly (max 3 times to be safe)
+    for ($i = 0; $i < 3; $i++) {
+        $decoded = json_decode($level, true);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return [];
+        }
+
+        if (is_array($decoded)) {
+            return $decoded;
+        }
+
+        // Still a string → decode again
+        if (is_string($decoded)) {
+            $level = $decoded;
+            continue;
+        }
+
+        break;
+    }
+
+    return [];
+}
+
 try {
     // FETCH ALL MAIN COURSES
     $stmt = $conn->prepare("
         SELECT 
             id, category, level, title, description, 
-            entry_requirements, assessments, badge, 
+            entry_requirements, assessments, badge, course_budget,
             credits, duration, image
         FROM courses
         ORDER BY id DESC
@@ -52,22 +89,30 @@ try {
         $subcourses = $subStmt->fetchAll(PDO::FETCH_ASSOC);
 
         // IMAGE FULL PATH
-        if (!empty($course["image"])) {
-            $course["image"] = $baseUrl . '/' . ltrim($course["image"], '/');
+        define('BASE_URL', 'https://edumex.co.uk/');
+
+        if (!empty($course['image'])) {
+            // Only prepend if it's not already a full URL
+            if (!preg_match('#^https?://#', $course['image'])) {
+                $course['image'] = rtrim(BASE_URL, '/') . '/' . ltrim($course['image'], '/');
+            }
         } else {
-            $course["image"] = null;
+            $course['image'] = null;
         }
+
+
 
         // BUILD COMPLETE RESPONSE
         $response[] = [
             "id" => $course_id,
             "category" => $course["category"],
-            "level" => $course["level"],
+            "level" => normalizeLevel($course["level"]),
             "title" => $course["title"],
             "description" => $course["description"],
             "entryRequirements" => $course["entry_requirements"],
             "assessments" => $course["assessments"],
             "badge" => $course["badge"],
+            "courseBudget" => $course["course_budget"],
             "credits" => $course["credits"],
             "duration" => $course["duration"],
             "image" => $course["image"],

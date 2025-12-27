@@ -36,7 +36,7 @@ const CourseDetails = () => {
     course.modules?.map((mod) => ({
       module: mod.module_name,
       lessons: mod.units || [],
-      lessonsCount: `${mod.units?.length || 0} lessons`,
+      lessonsCount: `${mod.units?.length || 0}`,
     })) || [];
 
   return (
@@ -120,7 +120,7 @@ const CourseDetails = () => {
                               key={i}
                               module={mod.module_name}
                               lessons={mod.units || []}
-                              lessonsCount={`${mod.units?.length || 0} lessons`}
+                              lessonsCount={`${mod.units?.length || 0}`}
                             />
                           ))
                         ) : (
@@ -133,10 +133,10 @@ const CourseDetails = () => {
               )}
 
               {/* ENTRY REQUIREMENTS */}
-              {course.entry_requirements && (
+              {course.entryRequirements && (
                 <>
                   <h3 className="fw-semibold mb-4 mt-4">Entry Requirements</h3>
-                  <p className="text-muted mb-4">{course.entry_requirements}</p>
+                  <p className="text-muted mb-4">{course.entryRequirements}</p>
                 </>
               )}
             </div>

@@ -857,7 +857,7 @@ section,
 } */
 
 .courses-2 .course-filters .filter-pill {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   padding: 6px 14px;
   border: 1px solid var(--default-color);
@@ -867,6 +867,7 @@ section,
   transition: all 0.3s ease;
   background-color: var(--surface-color);
   color: var(--default-color);
+  margin-bottom: 8px;
 }
 
 .courses-2 .course-filters .filter-pill input {

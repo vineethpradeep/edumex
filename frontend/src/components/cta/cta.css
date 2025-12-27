@@ -92,7 +92,7 @@
 }
 
 .cta .cta-actions .btn.btn-primary {
-    background: var(--accent-color);
+    background: var(--accent-color) !important;
     border: 2px solid var(--accent-color);
     color: var(--contrast-color);
 }

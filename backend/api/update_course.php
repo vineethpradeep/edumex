@@ -65,16 +65,18 @@ if (!$course_id || empty($data)) {
 // --------------------------------------------------
 // NORMALIZE JSON FIELDS
 // --------------------------------------------------
-$level          = decodeField($data['level'] ?? []);
-$levelJson = json_encode($level);
+$level = decodeField($data['level'] ?? []);
+$levelJson = json_encode($level, JSON_UNESCAPED_UNICODE);
+
+$courseBudget = $data['courseBudget'] ?? null;
+if ($courseBudget === '' || !is_numeric($courseBudget)) {
+    $courseBudget = null;
+}
 $modes          = decodeField($data['modes'] ?? []);
 $tags           = decodeField($data['tags'] ?? []);
 $whatYouLearn   = decodeField($data['whatYouLearn'] ?? []);
 $courseStructure = decodeField($data['courseStructure'] ?? []);
 $subcourses     = decodeField($data['subcourses'] ?? []);
-
-
-var_dump($levelJson);
 
 // --------------------------------------------------
 // DATABASE TRANSACTION
@@ -93,6 +95,7 @@ try {
             assessments = ?,
             image = ?,
             badge = ?,
+            course_budget = ?,
             credits = ?,
             duration = ?
         WHERE id = ?
@@ -107,6 +110,7 @@ try {
         $data['assessments'] ?? null,
         $data['image'] ?? null,
         $data['badge'] ?? null,
+        $courseBudget,
         $data['credits'] ?? null,
         $data['duration'] ?? null,
         $course_id

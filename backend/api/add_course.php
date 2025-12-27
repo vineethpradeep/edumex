@@ -60,12 +60,19 @@ if (strpos($contentType, 'multipart/form-data') !== false) {
 }
 
 // Normalize critical fields
-$data["level"] = json_encode($data["level"] ?? []);
+// $data["level"] = json_encode($data["level"] ?? []);
+$levelJson = json_encode($data["level"] ?? [], JSON_UNESCAPED_UNICODE);
 $data["modes"] = $data["modes"] ?? [];
 $data["tags"] = $data["tags"] ?? [];
 $data["whatYouLearn"] = $data["whatYouLearn"] ?? [];
 $data["courseStructure"] = $data["courseStructure"] ?? [];
 $data["subcourses"] = $data["subcourses"] ?? [];
+
+$courseBudget = $data['courseBudget'] ?? null;
+if ($courseBudget === '' || !is_numeric($courseBudget)) {
+    $courseBudget = null;
+}
+
 
 try {
     $conn->beginTransaction();
@@ -73,20 +80,20 @@ try {
     //    INSERT MAIN COURSE
     $stmt = $conn->prepare("
         INSERT INTO courses
-    (category, level, title, description, entry_requirements, assessments, image, badge, credits, duration)
-    VALUES (?, CAST(? AS JSON), ?, ?, ?, ?, ?, ?, ?, ?)
+    (category, level, title, description, entry_requirements, assessments, image, badge, course_budget, credits, duration)
+    VALUES (?, CAST(? AS JSON), ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
 
     $stmt->execute([
         $data["category"] ?? "",
-        json_encode($data["level"] ?? []),
+        $levelJson,
         $data["title"] ?? "",
         $data["description"] ?? "",
         $data["entryRequirements"] ?? null,
         $data["assessments"] ?? null,
         $data["image"],
         $data["badge"] ?? null,
-        $data["courseBudget"] ?? null,
+        $courseBudget,
         $data["credits"] ?? null,
         $data["duration"] ?? null
     ]);

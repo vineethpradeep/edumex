@@ -86,13 +86,13 @@
 }
 
 .courses-hero .hero-buttons .btn.btn-primary {
-    background-color: var(--accent-color);
+    background-color: var(--accent-color) !important;
     border-color: var(--accent-color);
     color: var(--contrast-color);
 }
 
 .courses-hero .hero-buttons .btn.btn-primary:hover {
-    background-color: color-mix(in srgb, var(--accent-color), black 15%);
+    background-color: color-mix(in srgb, var(--accent-color), black 15%) !important;
     border-color: color-mix(in srgb, var(--accent-color), black 15%);
     transform: translateY(-2px);
 }

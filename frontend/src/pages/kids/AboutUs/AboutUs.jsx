@@ -71,27 +71,6 @@ const AboutUs = () => {
                   Read More
                 </Button>
               </div>
-              <div className="col-sm-6">
-                <div className="d-flex align-items-center">
-                  <div
-                    className="rounded-circle d-flex align-items-center justify-content-center"
-                    style={{
-                      width: 45,
-                      height: 45,
-                      backgroundColor: "#f0f0f0",
-                    }}
-                  >
-                    <FontAwesomeIcon
-                      icon={faUserCircle}
-                      style={{ fontSize: "28px", color: "#6c757d" }}
-                    />
-                  </div>
-                  <div className="ms-3">
-                    <h6 className="text-primary mb-0">Arshik</h6>
-                    <small>CEO & Founder</small>
-                  </div>
-                </div>
-              </div>
             </Motion.div>
           </Motion.div>
 

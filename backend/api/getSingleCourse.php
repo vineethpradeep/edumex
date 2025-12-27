@@ -9,6 +9,26 @@ $baseUrl = $protocol . '://' . $host;
 
 include "../db.php";
 
+function normalizeLevel($level)
+{
+    if (is_array($level)) return $level;
+    if (!is_string($level) || trim($level) === '') return [];
+
+    $level = trim($level);
+    for ($i = 0; $i < 3; $i++) {
+        $decoded = json_decode($level, true);
+        if (json_last_error() !== JSON_ERROR_NONE) return [];
+        if (is_array($decoded)) return $decoded;
+        if (is_string($decoded)) {
+            $level = $decoded;
+            continue;
+        }
+        break;
+    }
+    return [];
+}
+
+
 $id = $_GET["id"] ?? 0;
 
 try {
@@ -72,9 +92,21 @@ try {
     echo json_encode([
         "success" => true,
         "course" => [
-            ...$course,
+            "id" => (int)$course["id"],
+            "category" => $course["category"],
+            "level" => normalizeLevel($course["level"]),
+            "title" => $course["title"],
+            "description" => $course["description"],
+            "entryRequirements" => $course["entry_requirements"],
+            "assessments" => $course["assessments"],
+            "badge" => $course["badge"],
+            "courseBudget" => $course["course_budget"] !== null ? (float)$course["course_budget"] : null,
+            "credits" => $course["credits"],
+            "duration" => $course["duration"],
             "image" => !empty($course["image"])
-                ? $baseUrl . '/' . ltrim($course["image"], '/')
+                ? (preg_match('#^https?://#', $course["image"])
+                    ? $course["image"]
+                    : rtrim($baseUrl, '/') . '/' . ltrim($course["image"], '/'))
                 : null,
             "modes" => $modes,
             "tags" => $tags,

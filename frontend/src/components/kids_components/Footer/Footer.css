@@ -31,17 +31,17 @@
     color: var(--color-primary);
 }
 
-.footer-heading {
+.kids-app .footer-heading {
     font-weight: var(--fw-bold);
     font-size: var(--fs-lg);
     margin-bottom: 1rem;
 }
 
-.footer-links li {
+.kids-app .footer-links li {
     margin-bottom: 0.8rem;
 }
 
-.footer-links a {
+.kids-app .footer-links a {
     color: var(--color-gray);
     text-decoration: none;
     position: relative;
@@ -49,7 +49,7 @@
     transition: all 0.3s ease;
 }
 
-.footer-links a::after {
+.kids-app .footer-links a::after {
     content: "";
     position: absolute;
     left: 0;
@@ -60,7 +60,7 @@
     transition: width 0.3s ease;
 }
 
-.footer-links a:hover::after {
+.kids-app .footer-links a:hover::after {
     width: 100%;
 }
 
@@ -69,28 +69,28 @@
     border: none;
 }
 
-.footer-section p {
+.kids-app .footer-section p {
     color: var(--color-gray);
 }
 
-.footer-bottom {
+.kids-app .footer-bottom {
     border-top: 1px solid var(--color-gray) !important;
     background-color: var(--color-primary-dark);
     color: var(--color-gray);
     font-size: 0.9rem;
 }
 
-.footer-bottom a {
+.kids-app .footer-bottom a {
     color: var(--color-secondary);
     text-decoration: none;
 }
 
-.footer-bottom a:hover {
+.kids-app .footer-bottom a:hover {
     text-decoration: underline;
 }
 
 
-.footer-bottom .container {
+.kids-app .footer-bottom .container {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -99,7 +99,7 @@
 }
 
 @media (max-width: 576px) {
-    .footer-bottom .container {
+    .kids-app .footer-bottom .container {
         flex-direction: column;
         text-align: center;
         gap: 0.5rem;
